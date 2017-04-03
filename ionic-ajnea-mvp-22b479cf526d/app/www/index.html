@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, minimum-scale=1.0, height=device-height">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://www.googleapis.com https://graph.facebook.com https://www.strava.com/">-->
+        <title>Victorise</title>
+
+        <!-- compiled css output -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ionic.app.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+
+      <script src="lib/bluebird.min.js"></script>
+
+      <!-- ionic/angularjs js -->
+       <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="lib/ionic.cloud.min.js"></script>
+
+        <!-- needed for cordova oauth -->
+        <script src="lib/ng-cordova.min.js"></script>
+        <!-- cordova script (this will be a 404 during development) -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+      <!-- jQuery -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script> function initMap() {} </script>
+      <script defer src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyDe4tQX9cDRbELNvxPXiAQVPVepWYAisdw&amp;libraries=places&amp;callback=initMap&amp;libraries=geometry"></script>
+      <!--Aws SDK-->
+      <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.17.min.js"></script>
+      <!-- translate module -->
+      <script src="lib/angular-translate.min.js"></script>
+      <!-- cookies -->
+      <script src="lib/angular-cookies.js"></script>
+      <!-- Underscore js -->
+      <script src="lib/underscore.min.js"></script>
+
+      <script src="lib/ng-cordova-oauth.min.js"></script>
+      <!-- Sha1 (for Twitter auth) -->
+      <script src="lib/sha1.min.js"></script>
+
+      <script type="text/javascript" src="js/BLE.js"></script>
+      <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+      <script src="lib/angular-http-auth/src/http-auth-interceptor.js"></script>
+      <script src="lib/ngstorage/ngStorage.min.js"></script>
+
+      <script src="https://sdk.amazonaws.com/js/aws-sdk-2.10.0.min.js"></script>
+      <script src="js/s3uploader.js"></script>
+      <script src="js/s3downloader.js"></script>
+
+        <!--use the ionic-ratings from the src NOT dist because it has been updated to support index in the callback-->
+      <script src="lib/ionic-ratings/src/ionic-ratings.js"></script>
+
+        <!-- your app's js -->
+
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
+            <!-- Nested controllers being injected into controllers.js -->
+            <script src="js/OnBoardingCtrl.js"></script>
+            <script src="js/LoginCtrl.js"></script>
+            <script src="js/InviteFriendCtrl.js"></script>
+            <script src="js/NewAccountCtrl.js"></script>
+            <script src="js/MenuCtrl.js"></script>
+            <script src="js/MyAccountCtrl.js"></script>
+            <script src="js/myActivitiesListCtrl.js"></script>
+            <script src="js/CreateActivityCtrl.js"></script>
+            <script src="js/SaveActivity.js"></script>
+            <script src="js/MarkertplaceItemCtrl.js"></script>
+            <script src="js/InviteFriendCtrl.js"></script>
+            <script src="js/ReportBugCtrl.js"></script>
+            <script src="js/BleConnectCtrl.js"></script>
+            <script src="js/AddNotifCtrl.js"></script>
+            <script src="js/PlayActivityCtrl.js"></script>
+            <script src="js/SettingCtrl.js"></script>
+            <script src="js/PreviewActivityCtrl.js"></script>
+            <script src="js/AboutCtrl.js"></script>
+            <script src="js/MarketplaceCtrl.js"></script>
+            <script src="js/CompleteActivityCtrl.js"></script>
+            <script src="js/MarketplaceInfoFormCtrl.js"></script>
+
+        <script src="js/app.js"></script>
+        <!-- This script always has to be last or your javascript won't work (We are manually bootstrapping the IONIC app) -->
+        <script>
+              angular.element(document).ready(function () {
+                     if (window.cordova) {
+                            console.log("Running in Cordova, will bootstrap AngularJS once 'deviceready' event fires.");
+                             document.addEventListener('deviceready', function () {
+                                console.log("Deviceready event has fired, bootstrapping AngularJS.");
+                                 angular.bootstrap(document.body, ['starter']);
+                            }, false);
+                    } else {
+                         console.log("Running in browser, bootstrapping AngularJS now.");
+                        angular.bootstrap(document.body, ['starter']);
+                    }
+                });
+        </script>
+
+    </head>
+
+    <body>
+
+        <ion-nav-view></ion-nav-view>
+
+    </body>
+
+</html>

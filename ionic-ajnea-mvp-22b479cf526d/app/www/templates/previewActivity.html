@@ -1,0 +1,171 @@
+<ion-view view-title="{{myActivity.name | cut:true:30:' ...'}}" class="previewActivity">
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-stable" align-title="center">
+    <ion-nav-back-button ng-click="goBack()"></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+      <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>-->
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <img style="float:right;" height="30px" width="30px" src="img/icon_playActivity.png" ng-click="playActivity()">
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+
+  <!-- Content -->
+
+  <ion-content overflow-scroll="false">
+
+    <div class="mapClass" style="height:75%;width: 100%;z-index: 2;">
+      <div id="map_canvas_3" style="width:100%; height:400px;" data-tap-disabled="true">
+        <button class="terrain_icon" ng-click="toggleMapType()"></button>
+      </div>
+    </div>
+
+
+
+    <!-- List of Notifications -->
+    <div>
+
+      <!-- <ion-list style="width:100%; height:60%;"> -->
+      <!-- <div class="row row-center text-center " style="margin-bottom: 10px;">
+                <div class="col " style="border-right: 1px solid black;">
+                  <div class="" style="margin-top: 15px;">
+                    <p align="center" ng-show="activity.info.distance">{{activity.info.distance | convertDistance:unit}}.mi </p>
+                    <span style="color: black; font-weight: bold; font-size: .75em; margin-top: -5px;">DISTANCE</span>
+                  </div>
+                </div>
+                <div class="col ">
+                  <div class="" style="margin-top: 15px;">
+                    <p align="center" ng-show="activity.info.completedTime">{{convertSec(activity.info.completedTime)}}</p>
+                    <span style="color: black; font-weight: bold; font-size: .75em; margin-top: -5px;">TIME</span>
+                  </div>
+                </div>
+                <div class="col ">
+                  <div class="" style="margin-top: 15px;">
+                    <p align="center" class="dataDisplay">{{myActivity.info.averageSpeed  | convertSpeed:unit}}</p>
+                      <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">AVERAGE SPEED</span>
+                    </div>
+                </div>
+              </div> -->
+
+      <ion-list style="width:100%; height:60%; margin-bottom:10%;">
+        <ion-item class="item"><span class="h3" id="previewTitles">{{'ACTIVITY.Info' | translate}}</span></ion-item>
+        <div style="background-color: #7BBEC1;">
+
+          <!--DATA-->
+          <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">{{myActivity.info.score | number:0}}</p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Score' | translate}}</span>
+              </div>
+            </div>
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">
+                  {{activity.info.completedTime | convertTime:2}}</p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>
+              </div>
+            </div>
+            <div class="col ">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{activity.info.distance | convertDistance:unit}}<span class="displayUnit">{{displayUnit.distance}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{activity.info.averageSpeed | convertSpeed:unit}}<span class="displayUnit">{{displayUnit.speed}}</span></p>
+                <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Average-speed' | translate}}</span>
+              </div>
+            </div>
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">{{myActivity.info.maxSpeed | convertSpeed:unit}}<span class="displayUnit">{{displayUnit.speed}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Max-speed' | translate}}</span>
+              </div>
+            </div>
+            <div class="col ">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.power}}<span class="displayUnit">{{displayUnit.power}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Power' | translate}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">{{myActivity.info.elevationGain |convertElevatiom:unit}}<span class="displayUnit">{{displayUnit.elevation}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationGain' | translate}}</span>
+              </div>
+            </div>
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.elevationLoss |convertElevatiom:unit}}<span class="displayUnit">{{displayUnit.elevation}}</span></p>
+                <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationLoss' | translate}}</span>
+              </div>
+            </div>
+            <div class="col ">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.calories}}</p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Calories' | translate}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <ion-item class="item">
+          <span class="h3" id="previewTitles">{{'NOTIFICATIONS.Notification' | translate}}</span>
+          <div class="item-icon-right">
+            <i class="icon ion-plus-circled" style="color:#666666" ng-click="createNotification(scope, myActivity, AllNotifications, countNotifType, clearAutoSplit, createSplitNotification, getAllNotifications,map); updateActivity(); updateMap(myActivity, map);"></i>
+          </div>
+        </ion-item>
+
+        <ion-item class="item" ng-repeat="item in AllNotifications | orderBy : 'timestampOrder' ">
+          <div class="item-icon-left">
+            <i class="icon" ng-class="{notifications_icon_start: $first}"></i>
+            <i class="icon notifications_icon" ng-show="$middle"></i>
+            <i class="icon notifications_icon_last" ng-show="$last"></i>
+            <ul style="font-size: 100%;">
+              <li style="display: inline" ng-repeat="message in item.messageObject">
+                <span ng-if="message.type == 'text'"> [Text]: {{message.message}} </span>
+                <span ng-if="message.type == 'audio'"> [Audio]: ({{message.filename}}.{{message.format}}) </span>
+                <span ng-if="message.type == 'BLE'"> [BLE]: [{{message.name}}] </span>
+                <span ng-if="message.type == 'split'">[split] {{message.name}}</span>
+                <span ng-if="message.type == 'autosplit'">[AutoSplit] {{message.name}}</span>
+              </li>
+            </ul>
+            <p style="color:#a9a9a9;" ng-repeat="metric in item.metricObject">
+              <span ng-show="metric.type == 'gps'">
+                            <!--Lat: {{metric.lat.toFixed(2)}} | Lng: {{metric.lng.toFixed(2)}} -->
+                          <span ng-show="metric.time"> Time: {{metric.time | convertTime:2}}</span><br>
+              <span ng-show="metric.interval"> Interval: {{metric.interval | convertTime:2}}</span>
+              </span>
+            </p>
+          </div>
+          <div class="item-icon-right">
+            <i class="icon ion-trash-a" style="color:#666666" ng-show="$middle" ng-click="deleteNotification(scope, myActivity, AllNotifications, getIdx(item, AllNotifications)); updateActivity(); updateMap(myActivity, map);"></i>
+          </div>
+        </ion-item>
+
+        <ion-item class="item" ng-show="!activity.boughtFromMarketplace || !activity.isInMarketplace"><span class="h3" id="previewTitles">{{'ACTIVITY.Preview-extra' | translate}}</span></ion-item>
+        <ion-item class="item item-icon-right" ng-show="!activity.boughtFromMarketplace || !activity.isInMarketplace" ng-click="marketInfo()">
+          <img style="float:left; padding-right: 10px;" height="23px" width="40px" src="img/icon_mini_marketplace.png">{{'ACTIVITY.Preview-publish' | translate}} <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+
+      </ion-list>
+      <!-- the activity.boughtFromMKT flag is set inside the services.js in the UserService publishToMarketplace function -->
+      <!--<div><button ng-show="activity.boughtFromMKT" ng-click="alreadyBought()" class="button button-large button-energized ng-binding"> Owned </button></div>-->
+    </div>
+  </ion-content>
+</ion-view>

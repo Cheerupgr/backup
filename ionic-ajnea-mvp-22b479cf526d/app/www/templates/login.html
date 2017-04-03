@@ -1,0 +1,103 @@
+<div class="login">
+    <!-- Title -->
+    <div class="row text-center h-25">
+            <div class="col col-center">
+                <img src="img/victoriseLogo.png" style="max-width: 100%;">
+            </div>
+    </div>
+    <!-- Content -->
+    <ion-content style="padding-top: 60px;">
+        <!-- Login form -->
+        <form ng-submit="login()">
+            <div class="list">
+                <!-- Username -->
+                <label class="item item-input item-floating-label">
+                    <div class="col-xs-2 loginIcon">
+                        <i class="ion-email"></i>
+                    </div>
+                    <div class="col-xs-10 loginInput">
+                        <input type="email" name="username" ng-model="loginData.email" placeholder="{{'NEWACCOUNT.Email' | translate}}" style="width:80%;">
+                    </div>
+                </label>
+                <!-- Password -->
+                <label class="item item-input item-floating-label">
+                    <div class="col-xs-2 loginIcon">
+                        <i class="ion-locked"></i>
+                    </div>
+                    <div class="col-xs-8 loginInput">
+                        <input type="password" name="password" ng-model="loginData.password" placeholder="{{'LOGIN.Password' | translate}}" style="width:100%;">
+                    </div>
+                    <div class="col-xs-2 loginHelpButton">
+                        <i class="ion-ios-help-outline"></i>
+                    </div>
+                </label>
+            </div>
+            <!-- Submit button -->
+            <button class="button button-large button-energized loginSignIn" type="submit">{{'LOGIN.Sign-in' | translate}}</button>
+        </form>
+        <!-- Not registred message -->
+        <p class="loginNotReg">{{'LOGIN.Not-reg' | translate}} <a ui-sref="newAccount()">{{'NEWACCOUNT.Sign-up' | translate}}</a></p>
+
+        <!-- Social medias buttons -->
+
+
+      <div class="row" style="">
+        <div class="col-50" style="position: relative;">
+
+          <div style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          right: 0;
+          width: 50%;
+          height: 30%;
+          margin: auto;"
+               ng-click="loginStrava()">
+            <p class="loginNotReg">or log in with</p>
+          </div>
+        </div>
+        <div class="col-50" style=" ">
+          <div class="socialMediaButtonLogo strava" ng-click="loginStrava()">
+            <img src="img/signin_strava.png" style="height: 50px; width: 50px;">
+          </div>
+           <!--<span>{{'LOGIN.Sign-strava' | translate}}</span>-->
+        </div>
+
+      </div>
+
+        <!--<div class="row" style="padding-left: 50px;">-->
+          <!--<div class="col-20">-->
+
+                <!--<div class="socialMediaButtonLogo facebook" ng-click="loginFacebook()">-->
+                    <!--<img src="img/signin_facebook.png" style="height: 50px; width: 50px;">-->
+                <!--</div>-->
+                <!--&lt;!&ndash; <span>{{'LOGIN.Sign-facebook' | translate}}</span> &ndash;&gt;-->
+          <!--</div>-->
+          <!--<div class="col-20">-->
+
+                <!--<div class="socialMediaButtonLogo google" ng-click="loginGoogle()">-->
+                    <!--<img src="img/siignin_google.png" style="height: 50px; width: 50px;">-->
+                <!--</div>-->
+                <!--&lt;!&ndash; <span>{{'LOGIN.Sign-google' | translate}}</span> &ndash;&gt;-->
+          <!--</div>-->
+          <!--<div class="col-20">-->
+
+                <!--<div class="socialMediaButtonLogo strava" ng-click="loginStrava()">-->
+                    <!--<img src="img/signin_strava.png" style="height: 50px; width: 50px;">-->
+                <!--</div>-->
+                <!--&lt;!&ndash; <span>{{'LOGIN.Sign-strava' | translate}}</span> &ndash;&gt;-->
+          <!--</div>-->
+          <!--<div class="col-20">-->
+                <!--<div class="socialMediaButtonLogo twitter" ng-click="loginTwitter()">-->
+                    <!--<img src="img/signin_twitter.png" style="height: 50px; width: 50px;">-->
+                <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+        <!-- Go offline button -->
+        <!-- <button class="button button-large button-energized loginSignIn" ng-click="loginOffline()"> -->
+
+    </ion-content>
+</div>

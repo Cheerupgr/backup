@@ -1,0 +1,33 @@
+<ion-view view-title="BLE" class="bluetooth">
+
+  <ion-nav-bar class="bar-stable  bar bar-header" align-title="center">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="onRefresh()">
+    </ion-refresher>
+
+
+    <div>
+      <ion-list>
+        <ion-item class="item-icon-right" ntype="item-text-wrap" ng-repeat="device in devices" type="item-text-wrap"
+                  ng-click="connecting(device)"  ng-show="device.name=='Victorise Goggles BLE' ">
+          <div><span ng-show="device.isConnected" >OK - </span>{{device.name}}</div>
+          <p>{{device.id}} &nbsp; RSSI: {{device.rssi | cut:true:25:' ...' }}</p>
+          <i class="icon ion-checkmark" ng-show="device.isConnected == false "></i>
+             <!--ng-show="device.isConnected"></i>-->
+        <!--ng-show="device.name=='Victorise Goggles BLE'-->
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </ion-content>
+
+</ion-view>

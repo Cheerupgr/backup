@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94d49742-aece-4ef9-b4f5-bf0f9f448432" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/ISSUE_TEMPLATE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/docs/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/docs/geofencing.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/docs/timing-diagram.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/example/images/android-sample-app.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/example/images/android-sdk-manager.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/example/images/distance-filter-city.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/example/images/distance-filter-highway.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/example/images/enable-background-audio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/android/CDVBackgroundGeolocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/android/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/android/libs/tslocationmanager.aar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/CDVBackgroundGeolocation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/CDVBackgroundGeolocation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/Headers/LocationManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/Headers/TSLocationManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/Headers/TSSchedule.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/Modules/module.modulemap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/TSLocationManager" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/_CodeSignature/CodeDirectory" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/_CodeSignature/CodeRequirements" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/_CodeSignature/CodeRequirements-1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/_CodeSignature/CodeResources" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/src/ios/TSLocationManager.framework/_CodeSignature/CodeSignature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/www/BackgroundGeolocation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode-bluetooth-central/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode-bluetooth-central/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode-bluetooth-central/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/appbeep.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/src/android/BackgroundMode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/src/android/ForegroundService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/src/ios/APPBackgroundMode.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/src/ios/APPBackgroundMode.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/src/wp8/BackgroundMode.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-background-mode/www/background-mode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/NOTICE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/RELEASENOTES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/de/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/de/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/es/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/es/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/fr/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/fr/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/it/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/it/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/ja/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/ja/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/ko/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/ko/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/pl/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/pl/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/ru/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/zh/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/doc/zh/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/android/Geolocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/firefoxos/GeolocationProxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/ios/CDVLocation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/ios/CDVLocation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/ubuntu/geolocation.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/ubuntu/geolocation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/windows/GeolocationProxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/src/wp/GeoLocation.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/tests/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/tests/tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/www/Coordinates.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/www/Position.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/www/PositionError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/www/android/geolocation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/www/blackberry10/GeolocationProxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-geolocation/www/geolocation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/roadmap.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/AsyncKmlParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/AsyncLicenseInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/AsyncLoadImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/AsyncLoadImageInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/External.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/GoogleMaps.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/MyGeocoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/MyPlugin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/MyPluginInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/MyPluginLayout.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginAsyncInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginCircle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginGroundOverlay.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginKmlOverlay.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginMap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginMarker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginPolygon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginPolyline.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginTileOverlay.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginTileProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Circle.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Circle.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/External.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/External.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Geocoder.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Geocoder.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/GoogleMaps.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/GoogleMaps.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/GoogleMapsViewController.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/GoogleMapsViewController.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/GroundOverlay.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/GroundOverlay.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/KmlOverlay.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/KmlOverlay.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MFGoogleMapAdditions/GMSCoordinateBounds+Geometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MFGoogleMapAdditions/GMSCoordinateBounds+Geometry.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MFGoogleMapAdditions/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MFGoogleMapAdditions/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Map.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Map.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Marker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Marker.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPlgunProtocol.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPluginLayer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPluginLayer.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPluginLayerDebugView.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPluginLayerDebugView.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPluginScrollView.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyPluginScrollView.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyReachability.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/MyReachability.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/NSData-Base64/NSData+Base64.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/NSData-Base64/NSData+Base64.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/NSData-Base64/NSData+Base64.podspec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/PluginUtil.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/PluginUtil.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Polygon.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Polygon.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Polyline.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/Polyline.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/TBXML.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/TBXML.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/TileOverlay.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/src/ios/GoogleMaps/TileOverlay.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.xml" afterPath="$PROJECT_DIR$/app/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/plugins/android.json" afterPath="$PROJECT_DIR$/app/plugins/android.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/plugins/fetch.json" afterPath="$PROJECT_DIR$/app/plugins/fetch.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/plugins/ios.json" afterPath="$PROJECT_DIR$/app/plugins/ios.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/js/CreateActivityCtrl.js" afterPath="$PROJECT_DIR$/app/www/js/CreateActivityCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/js/PlayActivityCtrl.js" afterPath="$PROJECT_DIR$/app/www/js/PlayActivityCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/www/js/app.js" afterPath="$PROJECT_DIR$/app/www/js/app.js" />
+    </list>
+    <ignored path="mvp_phonegap.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="mvp_phonegap" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CreateActivityCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/www/js/CreateActivityCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-685">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayActivityCtrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/www/js/PlayActivityCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/www/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/www/js/app.js" />
+        <option value="$PROJECT_DIR$/app/config.xml" />
+        <option value="$PROJECT_DIR$/app/www/js/CreateActivityCtrl.js" />
+        <option value="$PROJECT_DIR$/app/www/js/PlayActivityCtrl.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3432" />
+    <option name="y" value="85" />
+    <option name="width" value="1658" />
+    <option name="height" value="1127" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvp_phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvp_phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="master_branch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvp_phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="master_branch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94d49742-aece-4ef9-b4f5-bf0f9f448432" name="Default" comment="" />
+      <created>1460202344641</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1460202344641</updated>
+      <workItem from="1481073515883" duration="3733000" />
+      <workItem from="1486171737584" duration="7643000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11376000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="3432" y="85" width="1658" height="1127" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34147832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/www/js/CreateActivityCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-685">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/plugins/com.transistorsoft.cordova.background-geolocation/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/www/js/CreateActivityCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/www/js/PlayActivityCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

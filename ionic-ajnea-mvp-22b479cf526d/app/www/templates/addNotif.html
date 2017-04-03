@@ -1,0 +1,118 @@
+<ion-view view-title="{{'NOTIFICATIONS.Split-time' | translate}}" class="splitTime"  hide-tab>
+	<ion-nav-bar
+		class="bar-stable"
+		align-title="center"
+		style="height:5%">
+			<ion-nav-buttons>
+					<button
+						class="button button-icon button-clear ion-chevron-left"
+						ng-click="myGoBack()">
+						{{'ACTIVITY.Create-activity-cancel' | translate}}
+					</button>
+			</ion-nav-buttons>
+	</ion-nav-bar>
+<!--TODO: message text should be multiline-->
+
+    <!-- The body -->
+	<ion-content class="">
+
+    <!-- Slide container box -->
+    <ion-slide-box class="onBoardSlide" on-slide-changed="slideHasChanged($index)" show-pager="false" style="width:100%; height auto;">
+
+        <!-- Slide 1, Menu with Types of Notifications -->
+        <ion-slide on-drag-left="nextSlide()" >
+	        <ion-list style="width:100%; height:60%;" >
+	       	<ion-item class="item item-icon-right" ng-repeat="item in allNotificationTypes" ng-click="inputNotificationType(item.id)">
+	        <i class="icon ion-ios-arrow-right" ng-hide="allNotificationTypes[item.id].isSelected>0"></i>
+	        <i class="icon ion-ios-close-empty" ng-show="allNotificationTypes[item.id].isSelected>0"></i>
+	        {{item.name |translate}}
+	        </ion-item>
+	        </ion-list>
+
+	        <div class="" style="width:100%; height:150px; margin-left:0; margin-right:0; margin-top: 20%; margin-bottom:10%; bottom:10px;">
+				<img ng-click="submitNotification()" src="img/ok_button.png" style="
+	                position: relative;
+	                margin-left: 40%;
+	                margin-right: 40%;
+	                left: 0;
+	                right: 0;
+	                top: 0;
+	                width: 100px; height: 100px;">
+	        </div>
+        </ion-slide>
+
+        <!-- Slide 2, input of notifications with ng-show to choose which one to show -->
+        <ion-slide on-drag-right="prevSlide()">
+            <div ng-show="myActiveSlide == 0">
+            <p style="font-family: Tahoma, sans-serif; margin-left: 5%; margin-right: 50%; width: 90%; height 15px; padding: 5px; ">{{'NOTIFICATIONS.Add-notif' | translate}}</p>
+               <textarea type="text" ng-model="textOption" ng-change="updateText(textOption)"  rows="4" cols="30" style="
+               position: relative;
+               margin-left: 5%;
+               margin-right: 50%;
+               width: 90%;
+               border: 1px solid #cccccc;
+               padding: 5px;
+               font-family: Tahoma, sans-serif;"></textarea>
+              <p style="font-family: Tahoma, sans-serif; color: #999999; margin-left: 5%; margin-right: 50%; width: 90%; height 15px; padding: 5px; "><i>{{'NOTIFICATIONS.Discard-notif' | translate}}</i></p>
+                <div class="" style="width:100%; height:200px; margin-left:0; margin-right:0; margin-top: 20%; margin-bottom:10%; top:20px;">
+
+                    <img class="headerImg" ng-click="inputNotification(0,1)" src="img/ok_button.png" style="
+                        position: relative;
+                        margin-left: 40%;
+                        margin-right: 40%;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        width: 100px; height: 100px;">
+                </div>
+
+
+
+
+            </div>
+
+            <ion-scroll zooming="false" direction="y" style="position:relative; width:100%; height: 100%;">
+                <div  ng-show="myActiveSlide == 1">
+                    <ion-list style="width:100%;" >
+                        <ion-item class="item item-icon-right" ng-repeat="item in AudioNotification" ng-click="inputNotification(1,item.id)">
+                            {{item.name}}  <i class="icon ion-ios-checkmark-empty" ng-show="allNotificationTypes[1].isSelected==item.id"></i>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </ion-scroll>
+
+            <div ng-show="myActiveSlide == 2">
+                <ion-list style="width:100%; " >
+                    <ion-item class="item item-icon-right" ng-repeat="item in LEDNotification" ng-click="inputNotification(2,item.id)">
+                         {{item.label}}<i class="icon ion-ios-checkmark-empty" ng-show="allNotificationTypes[2].isSelected==item.id"></i>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+
+
+          <div ng-show="myActiveSlide == 3">
+              <ion-list style="width:100%;" >
+                <ion-item class="item item-icon-right"  ng-click="inputNotification(3,0)">
+                  {{'NOTIFICATIONS.Add-notif-off' | translate}}<i class="icon ion-ios-checkmark-empty" ng-show="allNotificationTypes[3].isSelected==0"></i>
+                </ion-item>
+                <ion-item class="item item-icon-right"  ng-click="inputNotification(3,1)">
+                  {{'NOTIFICATIONS.Add-notif-on' | translate}}<i class="icon ion-ios-checkmark-empty" ng-show="allNotificationTypes[3].isSelected==1"></i>
+                </ion-item>
+              </ion-list>
+          </div>
+
+
+        </ion-slide>
+
+        </ion-slide-box>
+
+	</ion-content>
+
+<!-- The Footer -->
+	<!--<div>-->
+		<!--<div class="bar bar-footer">-->
+
+  		<!--</div>-->
+  	<!--</div>-->
+  </ion-view>

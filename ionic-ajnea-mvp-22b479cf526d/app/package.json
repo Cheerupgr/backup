@@ -1,0 +1,46 @@
+{
+  "name": "victorise",
+  "version": "1.1.1",
+  "description": "victorise: An Ionic project",
+  "dependencies": {
+    "@ionic/cloud": "^0.14.1",
+    "@ionic/cloud-angular": "^0.8.0",
+    "bluebird": "^3.4.7",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "https://github.com/transistorsoft/cordova-background-geolocation-lt.git",
+    "cordova-plugin-app-event",
+    "cordova-plugin-background-fetch",
+    "cordova-plugin-background-mode-bluetooth-peripheral",
+    "cordova-plugin-ble-central",
+    "cordova-plugin-cocoalumberjack",
+    "cordova-plugin-compat",
+    "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-google-analytics",
+    "cordova-plugin-googlemaps",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-media",
+    "cordova-plugin-media-capture",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-tts",
+    "cordova-plugin-whitelist",
+    "de.appplant.cordova.plugin.local-notification",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": []
+}

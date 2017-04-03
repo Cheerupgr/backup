@@ -1,0 +1,179 @@
+<ion-view view-title="{{'CREATEDECK.Create-deck' | translate}}fdgd" class="createDeck">
+
+	 <!--Header -->
+
+	<ion-nav-bar class="bar-stable" align-title="center">
+		<ion-nav-buttons side="left">
+        	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-show="substate==1"></button>
+    </ion-nav-buttons>
+
+      <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-chevron-left" ng-show="substate==2" ng-click="backState()">Back</button>
+    </ion-nav-buttons>
+
+	</ion-nav-bar>
+
+  <!-- Content -->
+  <ion-content style="background-color: #7BBEC1;">
+
+    <div style=" z-index:-99; top:0px; bottom:0px; left:0px; right:0px;   padding: 0px 0px;
+  width: 100vw;
+  height: 65vh;
+  min-height:100px;">
+      <!--MAP-->
+      <div id="map_canvas" style="width:100%; height:100%; z-index:0; z-index:-99;" data-tap-disabled="true" ></div>
+    </div>
+    <div class="row row-center text-center" style="margin-top: 2%" ;
+    ng-show="substate==1">
+    <div class="col"><img ng-click="goToTracking()" src="img/start_button.png" style="width: 25%;"></div>
+    </div>
+
+
+    <!--DATA-->
+    <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;" ng-show="substate==2">
+      <div class="col " style="border-right: 1px solid #588888;">
+        <div class="" style="margin-top: 15px;">
+          <p class="dataDisplay">{{displayDistance | convertDistance:unit}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">DISTANCE</span>
+        </div>
+      </div>
+      <div class="col " style="border-right: 1px solid #588888;">
+        <div class="" style="margin-top: 15px;" ng-show="substate==2">
+          <p align="center" class="dataDisplay">{{displayClock}}</p>
+          <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">TIME</span>
+        </div>
+      </div>
+      <div class="col ">
+        <div class="" style="margin-top: 15px;" ng-show="substate==2">
+          <p align="center" class="dataDisplay">{{displaySpeed}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">SPEED</span>
+        </div>
+      </div>
+    </div>
+
+    <!--EXTRA INFO-->
+
+    <div class="row row-center text-center " style="margin-top: -10px; margin-bottom: 20px;" ng-show="substate==2 && metricDisplay==2">
+      <div class="col " style="border-right: 1px solid #588888;">
+        <div class="" style="margin-top: 15px;">
+          <p align="center" class="dataDisplay">{{displayMaxspeed}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">MAX SPEED</span>
+        </div>
+      </div>
+
+      <div class="col " style="border-right: 1px solid #588888;">
+        <div class="" style="margin-top: 15px;">
+          <p class="dataDisplay"> {{displayAveragespeed}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">AVERAGE SPEED</span>
+        </div>
+      </div>
+      <div class="col ">
+        <div class="" style="margin-top: 15px;">
+          <p align="center" class="dataDisplay">{{displayAltitude}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">ALTITUDE</span>
+        </div>
+      </div>
+    </div>
+    <!--EXTRA INFO-->
+
+
+
+    <!--SWITCH DISPLAY-->
+    <div class="row row-center text-center " style="margin-bottom: -20px;margin-top: -25px;" ng-show="substate==2">
+      <div class="col " style="">
+        <button class="button button-icon button-clear ion-chevron-up"  style="color:#ffffff; "  ng-show="metricDisplay==2" ng-click="togglemetricDisplay()"></button>
+        <button class="button button-icon button-clear ion-chevron-down" style="color:#ffffff; "  ng-show="metricDisplay==1" ng-click="togglemetricDisplay()"></button>
+      </div>
+    </div>
+
+
+    <!--BUTTONS-->
+    <div class="row row-center text-center" ng-show="substate==2">
+      <div class="col"><img id="stop_tracking_button" class="" ng-click="track_stop()" src="img/btn_stop.png"
+                            style="width: 70px; height: 70px; top:0%;"></div>
+      <div class="col"><img id="tag_button" class="" ng-click="tag()" src="img/btn_tag.png"
+                            style="width: 70px; height: 70px; top:0%;"></div>
+    </div>
+
+
+
+    <div id="positionText" ng-show="debugMode == true" ng-show="debugMode == true"></div>
+    <div class="row text-center " style="margin-top: 60px;" ng-show="substate==2 && debugMode == true">
+      <div class="col " style="border-right: 1px solid #588888;">
+        <div class="" style="margin-top: 15px;">
+          <p align="center" class="dataDisplay">{{displayAccuracy}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">(ACCURACY)</span>
+        </div>
+      </div>
+
+      <div class="col " style="border-right: 1px solid #588888;" >
+        <div class="" style="marging-show="debugMode == true"n-top: 15px;">
+          <p class="dataDisplay">{{myActivity.notifications.length}}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">(NUM NOTIF.}</span>
+        </div>
+      </div>
+      <div class="col ">
+        <div class="" style="margin-top: 15px;">
+          <p align="center" class="dataDisplay">{{displayDataLogLength }}</p>
+          <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">(DATALOG LENGTH)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-center text-center " style="margin-top: 60px;"   ng-show="debugMode == true">
+      <div class="col" style="border-right: 1px solid #588888;">
+        <button class="button button-large button-energized ouline" style="padding: 10px, margin; 10px" ng-click="printData()">Print
+        </button>
+      </div>
+    </div>
+
+    <div class="row row-center text-center " style="margin-top: 60px;" ng-show="debugMode == true">
+      <div class="col " style="border-right: 1px solid #588888;">
+        <input type="text" name="nbData" ng-model="nbData" placeholder="10">
+      </div>
+      <div class="col" style="border-right: 1px solid #588888;">
+        <button class="button button-large button-energized outline" style="padding: 10px, margin; 10px" ng-click="addData(nbData)">ADD DATA</button>
+      </div>
+    </div>
+
+
+
+  </ion-content>
+
+    <!-- Content -->
+	<!--<ion-content class="record">
+		<div style="position:relative;">
+
+			<div  ng-show="substate==1" class="startHeader" style="">
+				<div class="startButton" style="height: 50%;">
+					<img ng-click="goToTracking()" src="img/start_button.png" style="width: 50%;">
+				</div>
+			</div>
+
+			<div ng-show="substate==2" class="distance_counter_Class">
+				<div class="row row-center text-center duoButtons" id="duoButtons" style="height:100% ">
+					<div class="" style="width:50%;">
+						<div class="counterProperty" style="">
+							<p id="distance"> 0 </p>
+							<img id="stop_tracking_button" class="" ng-click="track_stop()" src="img/btn_stop.png" style="width: 70px; height: 70px; top:0%;">
+             	</div>
+					</div>
+
+
+					<div class="" style="width:50%;">
+						<div class="timeProperty" style=" ">
+							<p align="center" style="" id="pos_count" >  </p>
+							<img id="tag_button" class="" ng-click="tag()" src="img/btn_tag.png" style="width: 70px; height: 70px; top:0%;">
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="mapClass" style="z-index:-99; top:0px; bottom:0px; left:0px; right:0px; ">
+				<div id="map_canvas" style="width:100%; height:65%; z-index:0; z-index:-99;" data-tap-disabled="true"></div>
+			</div>
+		</div>
+	</ion-content>-->
+</ion-view>

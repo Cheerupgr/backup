@@ -1,0 +1,38 @@
+<ion-view view-title="{{'MYACCOUNT.ReportBug' | translate}}" class="reportBug"  hide-tab>
+
+	<ion-nav-bar class="bar-stable" align-title="center">
+			<ion-nav-back-button></ion-nav-back-button>
+			<ion-nav-buttons side="left">
+					<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+			</ion-nav-buttons>
+	</ion-nav-bar>
+
+    <!-- The body -->
+	<ion-content class="">
+		<div class="container">
+		<div class="row">
+			<div class="loginIcon" style="font-size: 30px;margin:auto;">
+				<i class="ion-bug"></i>
+			</div>
+		</div>
+		<form ng-submit="reportBug()">
+			<div>
+				<label class="item item-input item-floating-label">
+						<div class="form-group">
+							<div class="row">
+								<!-- <input type="bug" ng-model="report.bug" name="username" placeholder="{{'MYACCOUNT.ReportBug' | translate}}" style="width:80%;height:50px"> -->
+								<textarea class="form-control" rows="3" type="bug" ng-model="report.bug" name="username" placeholder="{{'MYACCOUNT.ReportBug' | translate}}" style="width:100%;"></textarea>
+							</div>
+						</div>
+				</label>
+			</div>
+			<div class="form-group">
+				<div class="col" style="text-align:center;">
+					<button class="button button-large button-energized" type="submit">{{'MYACCOUNT.ReportBugButton' | translate}}</button>
+				</div>
+			</div>
+		</form>
+		</div>
+
+	</ion-content>
+</ion-view>

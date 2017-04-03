@@ -1,0 +1,95 @@
+<ion-view view-title="{{myActivity.name}}" class="previewActivity">
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-stable" align-title="center">
+    <ion-nav-back-button></ion-nav-back-button>
+    <!--<ion-nav-buttons side="left">-->
+      <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-nav-title ng-bind="activity.name"></ion-nav-title>
+  </ion-nav-bar>
+
+  <!-- Content -->
+  <ion-content>
+
+    <div  class="activityItem item item-avatar">
+
+      <!-- Card Title and Ratings -->
+      <div id="Market_Title" style="margin-top:5px;">
+        <h2 style="color: white; float:left; text-overflow:ellipsis; width:70%;">{{marketItem.activity.name}}</h2>
+        <ionic-ratings style="float:right; width:30%;" ratingsobj='ratingsObject'></ionic-ratings>
+      </div>
+
+      <!-- Number of Notifications in the Activity -->
+      <div id="Market_Num" style="margin-top:5px;">
+        <p style="float:left; text-overflow:ellipsis; width:100%; color:#ffffff;">{{marketItem.activity.notifications.length}} {{'NOTIFICATIONS.Notification' | translate}}</p>
+      </div>
+
+      <!-- Getting information specific to each Activity  -->
+      <div id="Market_Info" style="margin-top:5px;">
+        <p style="color: #7BBEC1; width:100%; text-overflow:ellipsis;">
+        <table style="width:100%;">
+          <tr style="width:100%;">
+            <th style="width:33%; color: #7BBEC1; text-align:left;">{{convertSec(marketItem.activity.info.completedTime)}}</th>
+            <th style="width:33%; color: #7BBEC1; text-align:left;">{{marketItem.activity.info.distance | convertDistance:unit}} {{displayUnit.distance}}</th>
+            <th style="width:33%; color: #7BBEC1; text-align:left;">{{marketItem.activity.activityType}}</th>
+          </tr>
+        </table>
+        </p>
+      </div>
+
+      <!-- The Author of the Activity and Arrow image -->
+      <div class="circleAuthor" style="float:right;" ng-click="test()">{{marketItem.activity.authorName.toInitial().toUpperCase()}}</div>
+      <div id="Author" style="margin-top:5px;">
+
+      </div>
+    </div>
+    <div class="green_bg" style="">
+      <div style="padding: 10px;">{{marketItem.description}}</div>
+      <div class="col col-50 col-offset-50">
+        <button class="button button-energized"  style="
+        width :80%;
+        padding:10px;
+        margin: 10px;
+        border-radius: 20px;
+        " ng-click="buyMarketItem(marketItem)" side="right">{{ marketItem.price === 0 && ("Free") || (marketItem.price |currency)}}</button><br/>
+      </div>
+<div></div>
+    </div>
+    <!-- List of Notifications -->
+    <div>
+      <ion-list style="width:100%; height:60%;">
+        <ion-item class="item"  ><span class="h3" id="previewTitles">{{'NOTIFICATIONS.Notification' | translate}}</span></ion-item>
+
+        <ion-item class="item item-icon-left" ng-repeat="item in AllNotifications" >
+          <i class="icon" ng-class="{notifications_icon_start: $first}"></i>
+          <i class="icon notifications_icon" ng-show="$middle"></i>
+          <i class="icon notifications_icon_last" ng-show="$last"></i>
+          <ul style="font-size: 100%;" >
+            <li style="display: inline" ng-repeat="message in item.messageObject">
+              <span ng-if="message.type == 'text'"> [Text]: {{message.message | translate}} </span>
+              <span ng-if="message.type == 'audio'"> [Audio]: ({{message.filename}}.{{message.format}}) </span>
+              <span ng-if="message.type == 'BLE'"> [BLE]: [{{message.name}}] </span>
+              <span ng-if="message.type == 'split'">[split]</span>
+              <span ng-if="message.type == 'autosplit'">[split]</span>
+            </li>
+          </ul>
+          <p style="color:#a9a9a9;" ng-repeat="metric in item.metricObject">
+                        <span ng-show="metric.type == 'gps'">
+                            <!--Lat: {{metric.lat.toFixed(2)}} | Lng: {{metric.lng.toFixed(2)}} -->
+                          <span ng-show="metric.time">Time: {{metric.time | convertTime:2}}</span>
+                        </span>
+          </p>
+        </ion-item>
+
+
+
+
+
+      </ion-list>
+      <!-- the activity.boughtFromMKT flag is set inside the services.js in the UserService publishToMarketplace function -->
+      <!--<div><button ng-show="activity.boughtFromMKT" ng-click="alreadyBought()" class="button button-large button-energized ng-binding"> Owned </button></div>-->
+    </div>
+  </ion-content>
+
+</ion-view>

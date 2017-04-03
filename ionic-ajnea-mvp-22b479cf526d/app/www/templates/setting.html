@@ -1,0 +1,203 @@
+<ion-view view-title="{{'SETTINGS.My-settings' | translate}}" class="settings"  hide-tab>
+
+
+    <ion-nav-bar class="bar-stable" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+
+        <!-- REMOVE SAVE BUTTON!!!!! -->
+        <!-- <ion-nav-buttons side="right"> -->
+             <!-- <button class="button button-icon button-clear icon " type="submit" ng-click="SaveSettings()"> -->
+				<!-- Save -->
+				<!--<i class="icon ion-forward"></i>-->
+			 <!-- </button> -->
+        <!-- </ion-nav-buttons> -->
+    </ion-nav-bar>
+
+
+		<ion-content overflow-scroll="false" class="">
+
+      <ion-list>
+        <ion-item>
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-debug' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-victorise">
+             <input type="checkbox" id="debugMode" ng-model="mySettings.debugMode"
+             ng-true-value="true" ng-false-value="false" ng-change="SaveSettings()"
+             >
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+
+        <ion-item ng-show="mySettings.debugMode">
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-enter-radius' | translate}}</strong></span>
+          <span style="float:right;" ><input type="text" id="in-rad" style="text-align: right; width: 70px;" placeholder="{{mySettings.inRad}}" ng-model="mySettings.inRad" ng-change="SaveSettings()"></span>
+        </ion-item>
+
+        <ion-item ng-show="mySettings.debugMode">
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-exit-radius' | translate}}</strong></span>
+          <span style="float:right;" ><input type="text" id="ex-rad" style="text-align: right; width: 70px;" placeholder="{{mySettings.exRad}}" ng-model="mySettings.exRad" ng-change="SaveSettings()"></span>
+        </ion-item>
+
+        <ion-item ng-show="mySettings.debugMode">
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-foreground' | translate}}</strong></span>
+          <span style="float:right;" ><input type="text" id="fg-freq" style="text-align: right; width: 70px;" placeholder="{{mySettings.fgfreq}}" ng-model="mySettings.fgFreq" ng-change="SaveSettings()"></span>
+        </ion-item>
+
+        <ion-item ng-show="mySettings.debugMode">
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-background' | translate}}</strong></span>
+          <span style="float:right;" ><input type="text" id="bg-freq" style="text-align: right; width: 70px;" placeholder="{{mySettings.bgfreq}}" ng-model="mySettings.bgFreq" ng-change="SaveSettings()"></span>
+        </ion-item>
+
+        <ion-item ng-show="mySettings.debugMode">
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-timeoutDuration' | translate}}</strong></span>
+          <span style="float:right;" ><input type="text" id="fg-freq" style="text-align: right; width: 70px;" placeholder="{{mySettings.timeoutDuration}}" ng-model="mySettings.timeoutDuration" ng-change="SaveSettings()"></span>
+        </ion-item>
+
+  <!-- THIS FUNCTIONALITY IS NOT IMPLEMENTED YET? -->
+        <ion-item ng-show="mySettings.debugMode">
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-local-server' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-victorise">
+             <input type="checkbox">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+
+        <ion-item>
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-auto-pause' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-victorise">
+             <input type="checkbox" id="debugMode" ng-model="mySettings.autoPauseMode" ng-true-value="true" ng-false-value="false" ng-change="SaveSettings()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+
+        <ion-item>
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-auto-start' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-victorise">
+             <input type="checkbox" id="debugMode" ng-model="mySettings.autoStartMode" ng-true-value="true" ng-false-value="false" ng-change="SaveSettings()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+
+        <ion-item>
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-strava' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-strava">
+             <input type="checkbox" id="debugMode"  ng-model="mySettings.autoShareToStrava" ng-true-value="true" ng-false-value="false" ng-change="SaveSettings()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+
+        <ion-item>
+          <span style="float:left;" ><strong>{{'SETTINGS.My-settings-ble' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-victorise">
+              <input type="checkbox" id="debugMode" ng-model="mySettings.bluetoothMode" ng-true-value="true" ng-false-value="false" ng-change="SaveSettings()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+        <ion-item>
+          <span style="float:left;" ><strong>{{'SETTINGS.Recovery-mode' | translate}}</strong></span>
+          <span style="float:right;" >
+            <label class="toggle toggle-victorise">
+              <input type="checkbox" id="debugMode" ng-model="mySettings.recoveryMode" ng-true-value="true" ng-false-value="false" ng-change="SaveSettings()">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </span>
+        </ion-item>
+
+<!-- THIS USER TYPE FUNCTIONALITY HAS NOT IMPLEMENTED YET -->
+        <div>
+          <label id="unit" class="item-input item-select">
+            <div class="input-label" ng-model="mySettings.unit"><strong>{{'SETTINGS.My-settings-user-type' | translate}}</strong></div>
+            <select>
+              <option>Admin</option>
+              <option>Normal</option>
+              <option selected>Premium</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="list">
+          <label id="unit" class="item item-input item-select">
+            <div class="input-label"><strong>{{'SETTINGS.My-settings-unit' | translate}}</strong></div>
+            <select ng-model="mySettings.unit" ng-change="SaveSettings()">
+              <option value="metric">Metric</option>
+              <option value="imperial" selected>Imperial</option>
+            </select>
+          </label>
+        </div>
+
+      </ion-list>
+
+
+
+<!--                <div>
+
+                <ion-item class="item item-icon-right" menu-close ng-click="goToMyAccount()" ng-show="offlineMode == false" >
+                	<span class="ion-android-person"></span>
+                	<p style="position:relative; left:20%; margin: -19px 0 10px;">{{'MYACCOUNT.My-account' | translate}}</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item >
+
+                </div>
+
+                <div>
+                <ion-item  class="item item-icon-right" menu-close ng-click="logout()">
+                	<span class="ion-log-out"></span>
+                   	 <p style="position:relative; left:20%; margin: -19px 0 10px;"> {{'LOGIN.Logout' | translate}}</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item >
+                </div>
+
+                <div>
+                <ion-item  class="item item-icon-right" menu-close ng-click="about()">
+                	<img  style="position:relative; left:0;height:33px;width:23px" src="img/icon_fingers.png">
+                	<p style="position:relative; left:20%; margin: -32px 0 10px;">{{'ABOUT.about' | translate}}</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                </div>
+
+                <div>
+                <ion-item  class="item item-icon-right" menu-close ng-click="bluetooth()">
+                    <img  style="position:relative; left:0;height:30px;width:30px" src="img/bluetooth.png">
+                    <p style="position:relative; left:20%; margin: -32px 0 10px;">{{'SETTINGS.Bluetooth' | translate}}</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                </div>
+
+            </div>-->
+            <!--</ion-list>
+            </div>
+             <div class="" style="width:100%; height:120px; margin-left:0; margin-right:0; margin-top: 100%; margin-bottom:10%; bottom:0px;">
+            </div>
+        </ion-slide>
+        </ion-slide-box>-->
+        </ion-content>
+
+</ion-view>

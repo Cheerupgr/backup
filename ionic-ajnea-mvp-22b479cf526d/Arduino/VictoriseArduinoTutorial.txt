@@ -1,0 +1,114 @@
+/******************************************************************************
+			Victorise Arduino Tutorial V1.0 [by Carl, Aug 24, 2016]
+******************************************************************************/
+
+
+===============================================================================
+PART 1  Some Brief Description and Online Tutorials
+===============================================================================
+1.1 Current Using Boards and Modules
+
+Here are some tutorials and short description about all the boards and modules
+we are using. It is strongly suggested that you read them all before doing any
+changes to the current hardware.
+
+1.1.1 Adafruit Feather M0 Bluefruit LE:
+The most powerful board we are using so far. You can simply connect the feather
+M0 with LED and push button to make the most basic goggle hardware.
+https://learn.adafruit.com/adafruit-feather-m0-bluefruit-le?view=all
+
+1.1.2 Adafruit Feather 32u4 Bluefruit LE:
+The 32u4 has the same compatibility with M0. But it is a little bit slower, and
+it has less memory space than M0.
+https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le?view=all
+
+1.1.3 Adafruit Single NeoPixel:
+The RGB LED we are currently using. You can find extensive description, guide
+and code example in the following tutorials.
+https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#advanced-coding
+
+1.1.4 Push Button:
+We use a really universal push button in our hardware for tagging (i.e.
+triggering tag button in our app). You can find a simple description and some
+code examples in the following page:
+https://www.arduino.cc/en/Tutorial/Button
+P.S. The resistor we use in from the GND(ground) to the push button is a 10K
+resistor. Sorry that I forgot to put this into the diagram :)
+
+-------------------------------------------------------------------------------
+
+1.2 Still-on-Testing Boards and Modules
+
+The boards and modules below are the parts that we are still testing. Be
+careful when testing and using them!
+
+1.2.1 Adafruit Feather M0 Adalogger:
+Feather M0 with a micro SD card based data logger.
+https://learn.adafruit.com/adafruit-feather-m0-adalogger?view=all
+
+1.2.2 Adafruit Ultimate GPS:
+An independent and powerful GPS module that worked only once :(
+For taking advantage of the full utility of this GPS module, please follow
+the tutorial below. They have also got a good GPS library with some code
+examples.
+https://learn.adafruit.com/adafruit-ultimate-gps?view=all
+
+1.2.3 Adafruit Ultimate GPS featherwing
+A shield like GPS module. Works the same as the Adafruit Ultimate GPS.
+https://learn.adafruit.com/adafruit-ultimate-gps-featherwing?view=all
+
+1.2.4 Adafruit Bluefruit LE UART Friend
+An independent bluetooth GPS module. Please follow the tutorial below and take
+special care with the HARDWARE SERIAL and the SOFTWARE SERIAL part. It very
+important to get a correct sketch!!!
+https://learn.adafruit.com/introducing-the-adafruit-bluefruit-le-uart-friend?view=all
+
+For all the boards and modules above. You could also find some more sample code
+and sketches in the arduino IDE. They are pretty handy!
+
+
+===============================================================================
+PART 2  Hardware Setup
+===============================================================================
+Please reference to the MO_32u4CircuitDiagram.pdf and all the tutorials above.
+P.S. The resistor we use in from the GND(ground) to the push button is a 10K
+resistor.
+
+
+===============================================================================
+PART 3  Tips, Bugs & Fixes
+===============================================================================
+3.1 For all the still-on-testing boards and modules, here is their currently
+working or pairing results.
+
+Feather M0 + Ultimate GPS: worked for about 1 hour, then failed with same code
+for some reason
+
+Feather M0 + Bluefruit LE UART Friend: worked for 1 hour, then failed with same
+code for some reason
+
+Feather MO + Ultimate GPS + Bluefruit LE UART Friend: only GPS worked once, but
+not the bluetooth
+
+Feather M0 Adalogger + Ultimate GPS featherwing: works!
+
+To conclude, to whom want to start working on the new feature of our hardware,
+you can try to fix the problem about combo one: Feather MO + Ultimate GPS + Bluefruit LE UART Friend, or try the combo two: Feather M0 Adalogger + Ultimate
+GPS featherwing + Bluefruit LE UART Friend. Good luck!
+
+-------------------------------------------------------------------------------
+
+3.2 You may experience some bugs when developing for some hardware. Like cannot
+find the Serial Port, cannot upload the sketch(code), Serial Port has no
+respond etc. You can fix most of these problem by plug and unplug the USB cable,
+close and reopen the Arduino IDE etc. However, if you have some error code
+like [Board at /dev/cu.usbmodem1421 is not avaliable], even though everything
+you have is absolutely correct. You can fix it by changing your Tool/Port in
+Arduino IDE to another port and changing it back.
+
+-------------------------------------------------------------------------------
+
+3.3 For a good solid soldering. Please reference to this link:
+https://learn.adafruit.com/adafruit-guide-excellent-soldering?view=all
+
+Enjoy the hardward development!

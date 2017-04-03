@@ -1,0 +1,54 @@
+<ion-view view-title="{{'ABOUT.about' | translate}}" class="about" >
+
+    <ion-nav-bar class="bar-stable" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content ng-controller="AboutCtrl" class="">
+
+
+
+        <ion-list>
+
+            <ion-item>
+                <span style="float:left;" ng-click="openInAppBrowser('http://victorise.com/mobile_about_us.html')"><strong>About Us</strong></span>
+
+            </ion-item>
+
+
+
+            <ion-item>
+                <span style="float:left;" ng-click="openInAppBrowser('http://victorise.com/mobile_privacy.html')"><strong>Privacy Policy</strong></span>
+
+            </ion-item>
+
+            <ion-item>
+                <span style="float:left;" ng-click="openInAppBrowser('http://victorise.com/mobile_terms_and_conditions.html')"><strong>Terms and Conditions</strong></span>
+
+            </ion-item>
+
+          <ion-item>
+            <span style="float:left;" ng-click="playBLE('104002000')"><strong>testBLE red</strong></span>
+
+          </ion-item>
+          <ion-item>
+            <span style="float:left;" ng-click="playBLE('113002000')"><strong>testBLE green</strong></span>
+
+          </ion-item>
+          <ion-item>
+            <span style="float:left;" ng-click="playBLE('151001500')"><strong>testBLE orange</strong></span>
+
+          </ion-item>
+
+
+
+        </ion-list>
+
+
+    </ion-content>
+
+
+</ion-view>

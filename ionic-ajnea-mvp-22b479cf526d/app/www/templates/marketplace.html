@@ -1,0 +1,99 @@
+<ion-view view-title="{{'MARKET.market' | translate}}" class="myMarket">
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-stable" align-title="center">
+    <!--<ion-nav-back-button></ion-nav-back-button>-->
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+  <!-- Content -->
+
+  <ion-content overflow-scroll="false" style="background-color: #2a2a2a">
+
+    <!--<div class="item">-->
+    <!--<ion-item class="item item-icon-right"  >-->
+    <!--<i class="icon ion-search"></i>-->
+    <!--<input type="text" style="width:100%" ng-model="searchOption" ng-change="changeSearch(searchOption)" rows="2" cols="100" placeholder="Search for activities" />-->
+    <!--</ion-item>-->
+    <!---->
+    <!--</div>-->
+    <!--ng-change="changeSearch(searchOption)"-->
+
+    <label class="item item-input victorise_search">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search"  class="victorise_search" placeholder="{{'MARKET.My-market-search-bar' | translate}}"  ng-model="searchOption" >
+    </label>
+
+    <ion-refresher class="spiral spinner-energized" pulling-text="pull to refresh..." on-refresh="refresh()"></ion-refresher>
+
+    <!-- My deck(s) -->
+    <ul class="list" ng-show="myDecksTabsActivated == true">
+      <div ng-repeat="marketItem in marketActivities | orderBy:'':true | searchFor:searchOption" class="activityItem item item-avatar" ng-click="previewMarketItem(marketItem)">
+
+
+      <!-- Card Title and Ratings -->
+        <div id="Market_Title" style="margin-top:5px;">
+          <h2 style="color: white; float:left; text-overflow:ellipsis; width:70%;">{{marketItem.activity.name | cut:true:35:' ...'}}</h2>
+          <ionic-ratings ratingsobj='getRatingsObject(marketItem.ratingAverage, marketItem._id)' index =marketItem._id style="float:right; width:30%;" ></ionic-ratings>
+        </div>
+
+        <!-- Number of Notifications in the Activity -->
+        <div id="Market_Num" style="margin-top:5px;">
+          <p style="float:left; text-overflow:ellipsis; width:100%; color:#ffffff;">{{marketItem.activity.notifications.length}} {{'MARKET.My-market-notifications' | translate}}</p>
+        </div>
+
+        <!-- Getting information specific to each Activity  -->
+        <div id="Market_Info" style="margin-top:5px;">
+          <p style="color: #7BBEC1; width:100%; text-overflow:ellipsis;">
+          <table style="width:100%;">
+            <tr style="width:100%;">
+              <th style="width:33%; color: #7BBEC1; text-align:left;">{{convertSec(marketItem.activity.info.completedTime)}}</th>
+              <th style="width:33%; color: #7BBEC1; text-align:left;">{{marketItem.activity.info.distance | convertDistance:unit}} {{displayUnit.distance}}</th>
+              <th style="width:33%; color: #7BBEC1; text-align:left;">{{marketItem.activity.activityType}}</th>
+            </tr>
+          </table>
+          </p>
+        </div>
+
+        <!-- The Author of the Activity and Arrow image -->
+        <div class="circleAuthor" style="float:right;" ng-click="test()">{{marketItem.activity.authorName.toInitial().toUpperCase()}}</div>
+        <div id="Author" style="margin-top:5px;">
+
+        </div>
+
+
+      </div>
+
+    </ul>
+    <!--It's a work around because the last element is hiden by the tabs!! TODO : we should handle better the footer-->
+    <div class="" style="height:30px; background-color: #2a2a2a"></div>
+
+  </ion-content>
+
+  <!-- Tabs -->
+  <div class="tabs-striped tabs-color-energized myDecksTabs">
+    <div style="background-color:#333333;" class="tabs tabs-icon-top">
+      <a class="tab-item"  ng-class="myDecksTabsActivated == true ? 'active' : ''" ng-click="myDecksTabsActivated = true" ui-sref="menu.marketplace">
+        <img class="icon ion-android-cart" src="img/icontab_marketplace_active.png" toggle-slide="left" style="margin-top:5px;width: 33px; height: 30px;">
+      </a>
+      <a class="tab-item" ng-class="myDecksTabsActivated == false ? 'active' : ''" ng-click="myDecksTabsActivated = true" ui-sref="menu.CreateActivity()">
+        <img class="footerImg" src="img/icontab_recorder.png" style="
+					position: absolute;
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: 5px;
+					left: 0;
+					right: 0;
+					width: 35px;
+					height: 35px;">
+      </a>
+      <a class="tab-item" ng-class="myDecksTabsActivated == false ? 'active' : ''" ng-click="myDecksTabsActivated = true"  ui-sref="menu.myActivitiesList">
+        <img class="footerImg" src="img/icontab_listactivities.png" style="padding-top: 5px; width: 33px; height: 30px; margin-top:5px;">
+      </a>
+    </div>
+  </div>
+
+</ion-view>

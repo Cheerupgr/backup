@@ -1,0 +1,132 @@
+
+<ion-view cache-view="false" view-title="{{activity.name | cut:true:30:' ...'}}" class="playActivity" hide-tabs>
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-stable" align-title="center">
+    <ion-nav-back-button ng-click="$ionicGoBack()"></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-navicon" ng-click="testSplitTime()" ng-show="debugMode == true">test</button>
+    </ion-nav-buttons>
+    <ion-nav-title ng-bind="activity.name"></ion-nav-title>
+  </ion-nav-bar>
+
+  <!-- Content -->
+  <ion-content style ="background-color: transparent;">
+
+    <div id="full_page" style="
+    /*height:100vh;*/
+     /*display: -webkit-box;*/
+     /*display: -moz-box;*/
+     /*display: -ms-flexbox;*/
+     /*display: -webkit-flex;*/
+     /*display: flex;*/
+     /*flex-direction: column;*/
+     background: none;
+     height: 100vh;
+     display: table;
+     width: 100%;
+     ">
+
+      <div id="map_container"
+           style="
+                 height: 100%;
+                 display: table;
+                 width: 100%;
+                 /*display:none*/
+                  " ng-show="mapReady">
+
+        <!--MAP-->
+        <div id="map_canvas_4" style="
+				          width:100%;
+				          height:100%;
+				          z-index:0;
+				          z-index:-99;" data-tap-disabled="true">
+          <button class="terrain_icon" ng-click="toggleMapType()"></button>
+        </div>
+
+      </div>
+
+
+        <div id="metric_container" class="" style="display: table-row;height:250px; background-color: #FF5C2D;">
+
+
+            <!--Start Button-->
+            <div class="row row-center text-center" style="" ng-if="substate==1">
+                <div class="col" style="height:250px;">
+                    <img style="margin-top: 7%; width: 25%;" ng-click="playActivity()"
+                    src="img/start_button_orange@2x.png">
+                </div>
+            </div>
+
+            <!--Bottom substate 2-->
+
+            <div class="row row-center text-center " style="margin-bottom: 10px"
+                 ng-show="substate==2">
+                <div class="col " style="border-right: 1px solid white;">
+                    <div class="" style=";">
+                        <p class="dataDisplay" >{{displayDistance | convertDistance:unit}}<span
+                                class="displayUnit" >{{displayUnit.distance}}</span></p>
+                        <span style="color: white; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>
+                    </div>
+                </div>
+                <div class="col " style="border-right: 1px solid white;">
+                    <div class="" style=";" >
+                        <p align="center" class="dataDisplay">{{displayClock}}</p>
+                        <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+                        <span style="color: white; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>
+                    </div>
+                </div>
+                <div class="col ">
+                    <div class="" style=";">
+                        <p align="center" class="dataDisplay">{{displaySpeed | convertSpeed:unit}}<span
+                                class="displayUnit" >{{displayUnit.speed}}</span></p>
+                        <span style="color: white; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Speed' | translate}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-center text-center" ng-show="substate==2">
+              <div class="col ">
+                <img height="100px" id="stop_clock_button" ng-click="toggleClock()" style="width: 70px; height: 70px; top:0%;" src="img/btn_stop_white.png">
+              </div>
+              <div class="col ">
+                <img id="finish_button"  ng-click="finish()" src="img/btn_finish_orange.png" style="width: 70px; height: 70px; top:0%;">
+              </div>
+            </div>
+            <!--NOTIFICATION POPUP-->
+            <div  class="notificationPopup"  ng-show="showNotification" >
+
+              <div class="row row-center text-center ">
+                <div class="col">
+                  <p align="center" class="dataDisplay" >{{time}}</p>
+                  <span class=" ion-volume-high" style="font-size: 2em;"  ng-show="isMsgAudio"></span>       &nbsp;&nbsp;&nbsp;
+                  <span class=" ion-bluetooth" style="font-size: 2em;" ng-show="isMsgBLE" ></span>
+                </div>
+              </div>
+                <div class="row row-center text-center ">
+                <div class="col">
+                  <p class="notificationProperty">{{currNotification}}</p>
+                </div>
+              </div>
+            </div>
+
+              <!--<div class="row row-center text-center">-->
+                <!--<div class="col">-->
+                  <!--<img height="100px" id="stop_clock_button" ng-click="toggleClock()" style="width: 70px; height: 70px;" src="img/btn_stop_white.png">-->
+                <!--</div>-->
+                <!--<div class="col" >-->
+                  <!--<img id="finish_button" class="" ng-click="finish()" src="img/btn_finish_orange.png" style="width: 70px; height: 70px;">-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+        <!-- End of metric container div -->
+        </div>
+    <!-- end full page div -->
+    </div>
+
+  </ion-content>
+
+</ion-view>

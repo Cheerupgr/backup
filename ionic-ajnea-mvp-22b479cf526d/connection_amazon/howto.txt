@@ -1,0 +1,31 @@
+
+
+-connect with ssh
+ssh -i "Victorise.pem" ubuntu@54.149.59.167
+
+(eventually chmod 600 ./Victorise.pem)
+
+
+-configure app with new server :add in app.js
+[4/10/16, 5:19:07 PM] Julien Regnier: .constant("server", { url: "http://54.200.34.170", port: "8080" })
+
+
+
+
+- how to restart the server
+
+ssh -i "Victorise.pem" ubuntu@54.149.59.167
+cd victorise_server/
+
+forever stopall
+git pull (pws !E****22!)
+forever start server.js
+
+
+- cloner un repo:
+git clone https://jeromelacote@bitbucket.org/ajnea/victorise_server.git
+
+
+DB
+user: ubuntu
+pwd

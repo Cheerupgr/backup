@@ -1,0 +1,166 @@
+<ion-view view-title="{{activity.name}}" class="completeActivity" hide-tabs>
+
+  <!--Header-->
+  <ion-nav-bar class="bar-stable">
+    <!--<ion-nav-back-button></ion-nav-back-button>-->
+    <!--<ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>-->
+
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear" ng-click="finish()">{{'NOTIFICATIONS.Complete-activity-done' | translate}}</button>
+    </ion-nav-buttons>
+    <ion-nav-title ng-bind="activity.name"></ion-nav-title>
+  </ion-nav-bar>
+
+  <ion-content overflow-scroll="false">
+    <div class="record">
+      <div class="finishLogoHeader">
+        <img class="finishLogo" src="img/logo_fingers.png">
+      </div>
+      <div class="finishHeader">
+        <p class="notificationProperty" style="color:white;">{{'NOTIFICATIONS.Complete-activity-finish' | translate}}</p>
+      </div>
+    </div>
+
+
+    <!-- List of Notifications -->
+    <ion-list style="width:100%; height:60%; margin-bottom:10%;">
+      <ion-item class="item"><span class="h3" id="previewTitles">{{'NOTIFICATIONS.Complete-activity-info' | translate}}</span>
+      </ion-item>
+      <div style="background-color: #7BBEC1;">
+        <!--DATA-->
+        <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p class="dataDisplay">{{activity.info.score}}</p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Score' | translate}}</span>
+            </div>
+          </div>
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">
+                {{currentActivity.info.completedTime | convertTime:2}}</p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{currentActivity.info.distance  | convertDistance:unit}}<span
+                      class="displayUnit" >{{displayUnit.distance}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{currentActivity.info.averageSpeed  | convertSpeed:unit}}<span
+                      class="displayUnit" >{{displayUnit.speed}}</span></p>
+              <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Average-speed' | translate}}</span>
+            </div>
+          </div>
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p class="dataDisplay">{{currentActivity.info.maxSpeed | convertSpeed:unit}}<span
+                      class="displayUnit" >{{displayUnit.speed}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Max-speed' | translate}}</span>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{currentActivity.info.power}}<span
+                      class="displayUnit" >{{displayUnit.power}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Power' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p class="dataDisplay">{{currentActivity.info.elevationGain |convertElevatiom:unit}}<span
+                      class="displayUnit" >{{displayUnit.elevation}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationGain' | translate}}</span>
+            </div>
+          </div>
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{currentActivity.info.elevationLoss |convertElevatiom:unit}}<span
+                      class="displayUnit" >{{displayUnit.elevation}}</span></p>
+              <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationLoss' | translate}}</span>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{currentActivity.info.calories}}</p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Calories' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <ion-item class="item"><span class="h3" id="previewTitles">{{'NOTIFICATIONS.Notification' | translate}}</span></ion-item>
+
+      <ion-item class="item item-icon-left" ng-repeat="item in AllNotifications">
+        <i class="icon" ng-class="{notifications_icon_start: $first}"></i>
+        <i class="icon notifications_icon" ng-show="$middle"></i>
+        <i class="icon notifications_icon_last" ng-show="$last"></i>
+
+        <ul style="font-size: 100%;" ><li style="display: inline" >
+          <span > {{$index +1}} </span>
+          <span ng-if="item.messageObject[0].type == 'text'"> [Text]: {{item.messageObject[0].message}} </span>
+          <span ng-if="item.messageObject[0].type == 'audio'"> [Audio]: ({{item.messageObject[0].filename}}.{{item.messageObject[0].type format}}) </span>
+          <span ng-if="item.messageObject[0].type  == 'BLE'"> [BLE]: [{{item.messageObject[0].name}}] </span>
+          <span ng-if="item.messageObject[0].type  == 'split'">[Split]{{item.messageObject[0].message}} </span>
+          <span ng-if="item.messageObject[0].type  == 'autosplit'">[Autosplit]{{item.messageObject[0].message}} </span>
+        </li></ul>
+
+        <!--<p class="cmpltAct" style="color:#a9a9a9; padding-top: 12px;" >-->
+          <!--<span >-->
+            <!--<i class="ion-android-checkmark-circle" ng-show="referenceTime[$index] == null"></i>-->
+            <!--<i class="ion-android-radio-button-off" ng-hide="referenceTime[$index] == null"></i>-->
+            <!--Reference : {{item.metricObject[0].diff | convertTime:2}}</span>-->
+        <!--</p>-->
+<div >
+        <p class="cmpltAct" style="color:#a9a9a9;"  ng-repeat="metricObject in getCurrentMetricObjectFrom($index) | orderBy : 'metricObject[0].timestamp'" ng-hide="$parent.$index == 0 || getCurrentMetricObjectFrom($parent.$index).length<2">
+
+          <span ng-click="setAsReference($parent.$index, $index)" >
+            <i class="ion-android-checkmark-circle" ng-show="referenceTime[$parent.$index] == $index"></i>
+            <i class="ion-android-radio-button-off" ng-hide="referenceTime[$parent.$index] == $index" ng-show="getCurrentMetricObjectFrom($parent.$index).length>1"></i>
+
+              <span ng-show="$first" ng-class="{'bestTime' : metricObject.bestTime}">Reference : {{metricObject.interval| convertTime:2}}</span>
+              <span ng-hide="$first" ng-class="{'bestTime' : metricObject.bestTime}">Segment {{$index}}:  {{metricObject.interval| convertTime:2}} </span>
+             </span>
+             </span>
+
+
+        </p>
+</div>
+      </ion-item>
+
+      </ion-item>
+
+      <ion-item >
+        <span >[LapTime] </span>
+          <p class="cmpltAct" style="color:#a9a9a9;" ng-repeat="metricObject in getFinishNotification()">   <span ng-click="setAsFinalLap($index)" >
+                <i class="ion-android-checkmark-circle" ng-show="finalTime[$index] == $index"></i>
+                <i class="ion-android-radio-button-off" ng-hide="finalTime[$index] == $index"
+                ng-show="getFinishNotification($index).length>1"></i>
+            <span ng-show="$first">Reference : {{metricObject.time| convertTime:2}}</span>
+            <span ng-hide="$first">Lap {{$index}} Time : {{metricObject.lapTime| convertTime:2}}</span>
+            </span>
+          </p>
+
+      </ion-item>
+    </ion-list>
+
+
+  </ion-content>
+</ion-view>

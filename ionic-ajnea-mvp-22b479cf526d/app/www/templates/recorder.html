@@ -1,0 +1,38 @@
+<body class="record">
+<ion-view view-title="{{'RECORD.New-activity' | translate}}" class="record">
+
+	<!-- Header -->
+    <ion-nav-bar class="bar-stable" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button style="padding-left:10px;" class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <!-- Content -->
+	<ion-content>
+
+
+		<div class="list listNoBottomPadding">
+            <!-- Type -->
+		    <div class="record" ng-show="currentCard.type.value=='Question'">
+		    	<span>{{'CREATECARD.Type' | translate}}
+		        <select ng-model="currentCard.type"
+		                ng-init="currentCard.type = cardTypes[2]"
+		                ng-options="type.value for type in cardTypes">
+					</select>
+		    </div>
+
+		<div class="record" ng-show="currentCard.type.value == 'Track Map'" ng-show="substate == 1 || substate== 2">
+			<div class="mapClass">
+				<div id="map_canvas" style="width:100%; height:550px;" data-tap-disabled="true"></div>
+			</div>	
+		</div>
+
+		</div>
+
+
+
+	</ion-content>
+</ion-view>
+</body>

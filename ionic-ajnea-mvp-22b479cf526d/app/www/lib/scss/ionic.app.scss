@@ -1,0 +1,976 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// A media query file to help for the responsive part
+@import "media-queries";
+
+// A file for the animations
+@import "animations";
+
+// Custom font
+@font-face {
+    font-family: "Comme-font";
+    src: url("../font/Comme-font.ttf");
+}
+$font-family-base: "Comme-font", sans-serif !default;
+
+// Main color
+$energized: #e2743c;
+$energized-activated: #df6426;
+
+// Custom radius and shadow for all the buttons
+$custom-button-radius: 50px;
+$custom-button-shadow: 2px 2px 10px 0px rgba(50, 50, 50, 0.5);
+
+
+
+// ---------------------------------------------------
+// ---------------------- Mixins ---------------------
+// ---------------------------------------------------
+// Mixin for a full page background
+@mixin full-background($url) {
+	background: url($url) no-repeat center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+// Mixin for the animations
+@mixin animation($animation, $duration, $mode) {
+	-webkit-animation: $animation $duration $mode;
+	-moz-animation: $animation $duration $mode;
+	-ms-animation-name: $animation $duration $mode;
+	animation: $animation $duration $mode;
+}
+
+@mixin animationFillMode($mode) {
+	-webkit-animation-fill-mode: $mode;
+	-moz-animation-fill-mode: $mode;
+	-ms-animation-fill-mode: $mode;
+	-o-animation-fill-mode: $mode;
+	animation-fill-mode: $mode;
+}
+
+
+
+// ---------------------------------------------------
+// ---------------------- Images ---------------------
+// ---------------------------------------------------
+$onBoardBackgroundImage: "../img/onBoardBackground.png";
+$loginBackgroundImage: "../img/accountBackground.png";
+$headerBackground: "../img/headerBackground.png";
+$menuHeaderBackground: "../img/menuHeaderBackground.png";
+$fullScreenBackground: "../img/fullScreenBackground.png";
+
+
+// ---------------------------------------------------
+// ---------------------- Common ---------------------
+// ---------------------------------------------------
+html, body { background-color: black; }
+.row + .row { padding: 0; }
+.row.h-100 { height: 100%; }
+.row.h-80 { height: 80%; }
+.row.h-60 { height: 60%; }
+.row.h-35 { height: 35%; }
+.row.h-30 { height: 30%; }
+.row.h-25 { height: 25%; }
+.row.h-20 { height: 20%; }
+.row.h-15 { height: 15%; }
+.row.h-10 { height: 10%; }
+
+body .loading-container .loading {
+	border-radius: 50px;
+}
+
+.list.listNoBottomPadding>.item { padding-bottom: 0; }
+
+$whiteCircleBackgrounLogoSizeXS: 100px;
+$whiteCircleBackgrounLogoSizeSM: 150px;
+$whiteCircleBackgrounLogoSizeMD: 200px;
+$whiteCircleBackgrounLogoSizeLG: 250px;
+
+$whiteCircleBackgrounLogoColor: rgba(255, 255, 255, 0.3);
+$whiteCircleDarkerBackgrounLogoColor: rgba(100, 100, 100, 0.3);
+$whiteCircleBackgrounLogoRadius: 50%;
+
+$footerHeight: 65px;
+
+.whiteCircle {
+	background-color: $whiteCircleBackgrounLogoColor;
+	&.darker { background-color: $whiteCircleDarkerBackgrounLogoColor; }
+	border-radius: $whiteCircleBackgrounLogoRadius;
+	margin-left: auto;
+	margin-right: auto;
+
+	height: $whiteCircleBackgrounLogoSizeXS;
+	width: $whiteCircleBackgrounLogoSizeXS;
+
+	@media (min-width: 768px) { height: $whiteCircleBackgrounLogoSizeSM; width: $whiteCircleBackgrounLogoSizeSM; }
+	@media (min-width: 992px) { height: $whiteCircleBackgrounLogoSizeMD; width: $whiteCircleBackgrounLogoSizeMD; }
+	@media (min-width: 1200px) { height: $whiteCircleBackgrounLogoSizeLG; width: $whiteCircleBackgrounLogoSizeLG; }
+
+	img {
+		width: 50%;
+		height: 50%;
+		margin-left: 25%;
+		margin-top: 25%;
+	}
+}
+
+
+
+// ---------------------------------------------------
+// -------------------- Buttons ----------------------
+// ---------------------------------------------------
+.addSomethingButton.bar.bar-footer.bar-balanced {
+	background-color: transparent;
+	border: 0;
+	height: auto;
+	color: black;
+
+	.col { text-align: right; margin-right: 10px; }
+
+	.button.button-energized {
+		border-radius: $custom-button-radius;
+		box-shadow: $custom-button-shadow;
+		padding: 3px 0px 0px 0px;
+		height: 45px;
+		width: 45px;
+		i { font-size: 20px; }
+	}
+}
+
+.duoButtons {
+	button {
+		border-radius: $custom-button-radius;
+		box-shadow: $custom-button-shadow;
+		width: 90%;
+		padding: 0;
+		margin-bottom: 10px;
+	}
+	.button.button-energized.button-outline {
+		border-color: white;
+		color: white;
+		box-shadow: none;
+	}
+}
+
+
+// ---------------------------------------------------
+// ---------------- Popover / Popups -----------------
+// ---------------------------------------------------
+ion-popover-view.popover {
+	height: auto;
+	width: auto;
+
+	ion-content {
+		position: relative;
+		background-color: white;
+
+		.item.popItem {
+			background-color: white;
+			border: 0;
+			
+			&:not(.lastItem) {
+				border-bottom: 1px solid #ddd;
+				margin-bottom: 1px;
+			}
+		}
+	}
+}
+.popup {
+	.popup-head {
+		background: url($headerBackground);
+		h3 { color: white; }
+	}
+	.popup-body { background-color: white; }
+	.popup-buttons {
+		background-color: white;
+		button {
+			border-radius: $custom-button-radius;
+			background-color: $energized;
+			color: white;
+			&.activated { background-color: $energized-activated; }
+		}
+	}
+}
+
+
+// ---------------------------------------------------
+// ---------------------- Tags -----------------------
+// ---------------------------------------------------
+.list {
+	&.autoCompleteTagsList>.item {
+		background-color: #FAFAFA;
+	}
+
+	>.item.tagLabel {
+		border-bottom: 0;
+		>.tagBadge {
+			float: left;
+			font-size: 14px;
+			padding: 3px 5px;
+			margin-right: 10px;
+			margin-top: 10px;
+			border-radius: 5px;
+			background-color: #f0f0f0;
+			i { margin-left: 3px; font-size: 15px; }
+		}
+	}
+
+	>.item.tagInputLabel {
+		border-top: 0;
+		margin-top: 1px;
+
+		>input { padding-left: 20px; }
+
+		>.icon.ion-ios-search.placeholder-icon {
+
+			float: left;
+			margin-top: 6px;
+			margin-bottom: -30px;
+		}
+	}
+}
+
+
+
+// ---------------------------------------------------
+// --------------------- OnBoard ---------------------
+// ---------------------------------------------------
+
+.img-center {
+	background-color:rgba(0, 255, 0, 0.5);
+	margin:0 auto;
+}
+.onBoardSlide {
+
+	&.pane.slider {
+		background-color: $energized;
+	}
+
+	.slider-pager {
+		bottom: 20%;
+
+		.slider-pager-page {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 14px;
+
+			&.active {
+				color: #FF9F00;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.onBoard {
+		@include full-background($onBoardBackgroundImage);
+		height: 100%;
+
+		.titleImg {
+			
+			margin-top: 10px;
+		}
+
+		.row + .row {
+			margin-top: 0;
+			margin-right: auto;
+	    	margin-left: auto;
+		}
+
+		h1, h4 {
+			color: white;
+		}
+	}
+}
+
+
+
+// ---------------------------------------------------
+// ---------------------- Login ----------------------
+// ---------------------------------------------------
+$lineColor: rgba(255, 255, 255, 0.2);
+$transparentWhiteColor: rgba(255,255,255,0.7);
+
+.login
+{
+	@include full-background($loginBackgroundImage);
+
+	.titleImg {
+		
+		margin-top: 10px;
+	}
+
+	.bar.bar-header {
+		background-color: transparent;
+
+		button, .h1.title { color: white; }
+	}
+
+	ion-content {
+		background: transparent;
+		top: 20%;
+
+		label {
+			font-size: 21px;
+			color: $transparentWhiteColor;
+			border: 0;
+			margin-bottom: 20px;
+		}
+
+		.loginIcon {
+			padding-bottom: 5px;
+			text-align: center;
+			border: 0;
+		}
+
+		.loginInput {
+			float: left;
+			margin: 0;
+			input[type="email"], input[type="password"], input[type="text"] { color: white; }
+			border-bottom: 2px solid $lineColor;
+	
+		}
+		
+		.login_Input input::-moz-placeholder,
+			textarea::-moz-placeholder {
+  			color: #ffffff !important; 
+		  }
+
+		.login_Input input:-ms-input-placeholder,
+			textarea:-ms-input-placeholder {
+			color: #fff !important; 
+			}
+
+		.login_Input input::-webkit-input-placeholder,
+			textarea::-webkit-input-placeholder {
+			color: #fff !important;
+		}
+
+		.loginHelpButton {
+			text-align: center;
+			margin-top: 5px;
+			border-bottom: 2px solid $lineColor;
+		}
+
+		.loginSignIn {
+			border-radius: $custom-button-radius;
+			box-shadow: $custom-button-shadow;
+			width: 90%;
+			margin-left: 5%;
+			padding: 0;
+			margin-bottom: 20px;
+		}
+
+		.socialMediaButton {
+			border-radius: $custom-button-radius;
+			width: 90%;
+			margin-left: 5%;
+			margin-bottom: 10px;
+			color: white;
+			font-size: 16px;
+			text-align: left;
+
+			&.activated { background-color: $energized; }
+
+			.socialMediaButtonLogo {
+				border-radius: $custom-button-radius;
+				font-size: 32px;
+				color: white;
+				width: 49px;
+				height: 49px;
+				margin: 2px 10px 0px -10px;
+				float: left;
+				text-align: center;
+
+				&.facebook { background-color: #3d5e96; }
+				&.google { background-color: #ba3b39; }
+				&.twitter { background-color: #63ade9; }
+			}
+		}
+
+		.loginNotReg {
+			text-align: center;
+			color: $transparentWhiteColor;
+
+			a, a:hover, a:focus, a:active {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+
+// ---------------------------------------------------
+// ---------------------- Menu -----------------------
+// ---------------------------------------------------
+ion-side-menus {
+
+	ion-side-menu {
+
+		ion-content {
+
+			&.scroll-content.has-header {
+				top: 20%;
+			}
+
+			ion-list ion-item span {
+			    font-size: 28px;
+			    position: relative;
+			    top: 4px;
+			    margin-right: 8px;
+			    color: #888;
+			}
+		}
+
+		ion-header-bar.bar.bar-stable {
+			@include full-background($menuHeaderBackground);
+			height: 20%;
+
+			h2 { color: white; font-size: 30px; margin-bottom: 0; }
+			span { color: $transparentWhiteColor; font-size: 15px; }
+		}
+	}
+
+	ion-side-menu-content ion-nav-bar {
+
+		.bar.bar-stable {
+			background-color: transparent;
+			border: 0;
+
+			.button.button-clear, .title { color: white; }
+		}
+
+		.bar.bar-stable:not(.transparentBackground) {
+			@include full-background($headerBackground);
+
+			.button.button-clear, .title { color: white; }
+		}
+	}
+}
+
+
+// ---------------------------------------------------
+// -------------------- My account -------------------
+// ---------------------------------------------------
+.myAccount {
+
+	ion-content {
+
+		h2 {
+			margin-bottom: 0;
+			margin-top: 5px;
+			margin-left: 10px;
+		}
+		h5 {
+			margin-top: 0;
+			margin-left: 17px;
+			color: #888;
+		}
+
+		.accountInfosValues .col {
+			padding-top: 20px;
+			padding-bottom: 0;
+			font-size: 16px;
+			font-weight: bold;
+			color: $energized;
+		}
+		.accountInfos .col {
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		hr {
+			height: 2px;
+			background-color: #ccc;
+			margin: 20px 10px;
+		}
+
+		button {
+			border-radius: $custom-button-radius;
+			width: 90%;
+			margin-left: 5%;
+
+			img {
+				width: 100px;
+				position: relative;
+				margin-left: 10px;
+				top: 8px;
+			}
+		}
+	}
+	
+	.bar-footer {
+		margin-bottom: 10px;
+
+		.row>.col>span {
+			padding: 5px 10px;
+		}
+	}
+}
+
+
+// ---------------------------------------------------
+// --------------------- My decks --------------------
+// ---------------------------------------------------
+.myDecks {
+
+	ion-content {
+
+	    margin-bottom: $footerHeight;
+
+		.list .item p {
+
+			margin-top: 6px;
+			i {
+				font-size: 30px;
+				float: left;
+				margin-right: 5px;
+				margin-top: -5px;
+			}
+		}
+	}
+
+	.myDecksTabs {
+		a, a:hover, a:focus, a:active {
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+// ---------------------------------------------------
+// ------------------- Create deck -------------------
+// ---------------------------------------------------
+.createDeck {
+	
+	input { width: 100%; }
+}
+
+
+// ---------------------------------------------------
+// ------------------- Create card -------------------
+// ---------------------------------------------------
+.createCard {
+
+	input { width: 100%; }
+
+	.list {
+
+		button.addBlankButton {
+			width: 100%;
+		}
+
+		.fillInBlankAnswer {
+			padding-bottom: 9px;
+			padding-top: 25px;
+			font-size: 14px;
+			line-height: 16px;
+
+			input {
+				border: 1px solid $energized;
+				border-radius: 7px;
+				margin: 10px 0px;
+				padding: 0px 5px;
+			}
+		}
+	}
+
+	select {
+		border-style: none;
+		padding: 10px;
+		color: $energized;
+	}
+
+	.selectRow {
+		text-align: center;
+		color: $energized;
+		padding: 10px 0px;
+	}
+
+	.duoButtons .button.button-energized.button-outline {
+		border-color: $energized;
+		color: $energized;
+		&.activated { color: white; }
+	}
+}
+
+
+
+// ---------------------------------------------------
+// ------------------ Display deck -------------------
+// ---------------------------------------------------
+.displayDeck {
+
+	ion-content {
+	    
+	    &:not(.isSellingContent) { margin-bottom: $footerHeight; }
+
+	    .duoButtons {
+	    	margin-top: 0px;
+	    	margin-bottom: 10px;
+
+	    	.button.button-energized.button-outline {
+				border-color: $energized;
+				color: $energized;
+				&.activated { color: white; }
+			}
+	    }
+
+	    .unseenCards {
+	    	color: #666;
+	    	padding-top: 0;
+
+	    	i {
+				font-size: 30px;
+				top: 5px;
+				position: relative;
+				margin-right: 5px;
+	    	}
+
+	    	.col { padding-top: 0; }
+	    }
+
+	    .list .row {
+		    padding-top: 8px;
+		    padding-bottom: 10px;
+		    padding-left: 5px;
+		    cursor: pointer;
+
+	    	.indexQuestionCol {
+			    width: auto;
+			    min-width: 30px;
+			    padding-top: 4px;
+		    }
+		}
+
+		&.isSellingContent {
+			.list .item {
+				input {
+					width: 100%;
+				}
+				textarea {
+					width: 100%;
+					resize: none;
+					padding-left: 4px;
+				}
+			}
+
+			.descriptionLength {
+				text-align: center;
+				padding-top: 30px;
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------
+// ------------------ Display card -------------------
+// ---------------------------------------------------
+$cardBorderRadius: 15px;
+.displayCard {
+
+	@include full-background($fullScreenBackground);
+
+	ion-content {
+
+		.scroll { height: 100%; }
+
+		.list.card {
+			height: 100%;
+			border-radius: $cardBorderRadius;
+			margin: 0px 20px 0px 20px;
+			padding: 0;
+
+			.item.itemHeader {
+				height: 85%;
+				border-bottom: 0;
+				padding-top: 50px;
+				overflow: initial;
+				overflow-y: auto;
+				white-space: initial;
+				border-top-left-radius: $cardBorderRadius;
+				border-top-right-radius: $cardBorderRadius;
+
+				h1 {
+					font-size: 28px;
+					font-weight: bold;
+					color: $energized;
+					margin-top: 50px;
+				}
+
+				* {
+					margin-left: auto;
+					margin-right: auto;
+					overflow: initial;
+					white-space: initial;
+    			}
+			}
+			.item.itemFooter {
+				height: 15%;
+				background-color: $energized-activated;
+				margin-top: 3px;
+				color: white;
+				padding-top: 0px;
+				border-bottom-left-radius: $cardBorderRadius;
+				border-bottom-right-radius: $cardBorderRadius;
+
+				i {
+					position: relative;
+					font-size: 30px;
+					top: 4px;
+				}
+			}
+
+			&:last-child.card { margin-bottom: 0; }
+		}
+
+	    .duoButtons {
+	    	margin-top: 0px;
+	    	margin-bottom: 10px;
+
+	    	.button.button-energized {
+				border-color: white;
+				color: white;
+				background-color: transparent;
+				box-shadow: none;
+				&.activated { color: white; }
+			}
+	    }
+
+		// ---------------------------------------------------
+		// ----------------- Card animation ------------------
+		// ---------------------------------------------------
+		$animationDuration: 0.3s;
+		$animationMode: ease-in-out;
+		$animationFillMode: forwards;
+		.card {
+
+			&.moveTopGo {
+				@include animation(moveTopGo, $animationDuration, $animationMode);
+				@include animationFillMode($animationFillMode);
+			}
+			&.moveTopReturn {
+				@include animation(moveTopReturn, $animationDuration, $animationMode);
+				@include animationFillMode($animationFillMode);
+			}
+
+			&.moveLeftGo {
+				@include animation(moveLeftGo, $animationDuration, $animationMode);
+				@include animationFillMode($animationFillMode);
+			}
+			&.moveLeftReturn {
+				@include animation(moveLeftReturn, $animationDuration, $animationMode);
+				@include animationFillMode($animationFillMode);
+			}
+
+			&.moveRightGo {
+				@include animation(moveRightGo, $animationDuration, $animationMode);
+				@include animationFillMode($animationFillMode);
+			}
+			&.moveRightReturn {
+				@include animation(moveRightReturn, $animationDuration, $animationMode);
+				@include animationFillMode($animationFillMode);
+			}
+		}
+	}
+}
+
+
+
+// ---------------------------------------------------
+// ------------------- Deckstore ---------------------
+// ---------------------------------------------------
+$searchStoreBackground: rgba(0,0,0,0.5);
+$newDecksStoreBackground: rgba(0,0,0,0.28);
+$popularDecksStoreBackground: rgba(0,0,0,0.20);
+$userDecksStoreBackground: rgba(0,0,0,0.12);
+
+$deckPadding: 8px;
+$deckInStoreBackground: rgba(255,255,255,0.9);
+
+$deckTitleAuthorBackground: rgba(0,0,0,0.5);
+$deckDescriptionBackground: rgba(0,0,0,0.28);
+
+.deckstore {
+
+	@include full-background($fullScreenBackground);
+
+	&.buyDeck ion-content {
+		color: white;
+
+		.row>.col>h2 { margin-bottom: 0; color: white; }
+		.row>.col>h4 { margin-top: 0; color: white; }
+
+		.deckTitle, .deckAuthor {
+			background-color: $deckTitleAuthorBackground;
+			padding-top: 15px;
+			padding-left: 10px;
+			padding-bottom: 0;
+			margin-top: 10px;
+
+			&.deckAuthor { margin-top: 0; padding-top: 0; }
+
+			button>a { color: $energized; }
+
+			h2 { color: white; }
+			>.col {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+		.deckDescription {
+			padding-top: 0px;
+			margin-top: 0;
+			background-color: $deckDescriptionBackground;
+			p { margin: 10px 0px; }
+		}
+		.deckBuyButton {
+			background-color: $deckTitleAuthorBackground;
+			margin-top: 0;
+			padding: 0px 10px 10px 0px;
+		}
+	}
+
+	ion-content {
+
+		.scroll { height: 100%; }
+
+		.searchStore {
+			background-color: $searchStoreBackground;
+
+			label {
+				background-color: transparent;
+				border: 0;
+				padding: 0;
+				width: 100%;
+				margin: 0px 10px;
+
+				form {
+					width: 100%;
+					
+					input {
+						color: white;
+						margin-top: 1px;
+						border-bottom: 1px solid rgba(255,255,255,0.3);
+						font-size: 14px;
+						height: 20px;
+					}
+				}
+			}
+		}
+
+		.newDecksStore {
+			background-color: $newDecksStoreBackground;
+		}
+		.popularDecksStore {
+			background-color: $popularDecksStoreBackground;
+		}
+		.userDecksStore {
+			background-color: $userDecksStoreBackground;
+		}
+
+		.storeElement {
+
+			>div { height: 100%; width: 100% }
+			
+			.displayDeckInStore {
+
+				margin: 0;
+				height: 100%;
+				width: 100%;
+				padding: 0;
+				position: relative;
+				background-color: $deckInStoreBackground;
+				border-radius: ($cardBorderRadius / 2);
+
+				* { overflow: hidden; }
+
+				.deckHeader {
+					top: 0;
+					position: absolute;
+					width: 100%;
+					padding-left: $deckPadding;
+					padding-top: $deckPadding;
+					color: #888;
+
+					h4 {
+						font-size: 16px;
+						margin-top: 0;
+						margin-bottom: 3px;
+						color: black;
+					}
+				}
+				.deckBody {
+					padding: 56px $deckPadding 28px $deckPadding;
+					height: 100%;
+
+					p { height: 100%; overflow: hidden; }
+				}
+				.deckFooter {
+					bottom: 0;
+					position: absolute;
+					margin-bottom: 3px;
+					text-align: center;
+					width: 100%;
+					border-top: 1px solid rgba(226, 116, 60, 0.3);
+
+					a, a:focus, a:hover { color: $energized; text-decoration: none; }
+				}
+			}
+		}
+
+		.decksStoreContainer {
+			width: 100%;
+			height: 30%;
+			white-space: nowrap;
+			overflow: hidden;
+			z-index: 1;
+
+			.storeElementContainer {
+				height: 100%;
+				padding-bottom: 37px;
+			}
+
+			.storeElement {
+				height: 100%;
+				display: inline-block;
+				padding: 0px 5px;
+			}
+		}
+
+		.seeAllDeckStore {
+			width: 100%;
+			height: 100%;
+			white-space: normal;
+			overflow: hidden;
+
+			.storeElement {
+				float: left;
+				padding: $deckPadding;
+				width: 33%;
+
+				@media (max-width: 512px) { width: 50%; }
+				@media (max-width: 256px) { width: 100%; }
+			}
+		}
+
+		.storeTitle,
+		.seeAllButton {
+			z-index: 5;
+			height: 22px;
+			color: white;
+			font-size: 18px;
+			padding: 0;
+		}
+	}
+}
+
+
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";

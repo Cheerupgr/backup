@@ -1,0 +1,114 @@
+<ion-side-menus enable-menu-with-back-views="true">
+
+  <ion-side-menu-content class="" >
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+      <!--<ion-nav-back-button class="button-clear">
+        <i class="icon ion-chevron-left"></i>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>-->
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+
+    <!--Set up tabs at the bottom of the page-->
+    <ion-tabs class="tabs-icon-only tabs-victorise tabs-striped {{hideTabs()}}">
+
+      <ion-tab icon-on="market_on" icon-off="market_off" href="#/menu/marketplace">
+        <ion-nav-view name="tab-market"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="create" icon-on="create_on" icon-off="create_off" href="#/menu/CreateActivity" on-deselect="clearHistory()">
+        <ion-nav-view name="tab-createActivity"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab icon-on="play_on" icon-off="play_off" href="#/menu/myActivitiesList">
+        <ion-nav-view name="tab-playActivity"></ion-nav-view>
+      </ion-tab>
+
+    </ion-tabs>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <!--<header class="bar bar-header"  style="height:20%">-->
+    <!--</header>-->
+    <ion-content>
+      <ion-list style="width:100%; height:60%; margin-bottom:10%;">
+          <ion-item class="row SideMenu" style="background-color: rgba(123,190,193,1); height:50%;" >
+            <div class="col-30" style="align: center">
+              <img src="img/gfx_fingers.png" height="90px" style="padding-top: 20px; padding-left: 20px; padding-right: 0px;">
+            </div>
+            <div class="col-70" style="padding-top: 30px; padding-bottom: 30px;
+                padding-left: 20px;">
+              <h2 class="MenuPageHeader">{{getUsername()}}</h2>
+              <span style="color:white; font-size: 16px; text-align: left;">{{getEmail()}}</span>
+            </div>
+          </ion-item>
+
+          <ion-item class="item item-icon-right" menu-toggle href="#/menu/CreateActivity/:newTag/:userID" >
+            <span class="ion-ios-home"></span>
+            <p style="position:relative; left:20%; margin: -19px 0 10px;">{{'HOME.Home' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item >
+
+          <!--<ion-item class="item item-icon-right" menu-close href="#/menu/myAccount" ng-show="offlineMode == false" >-->
+            <!--<span class="ion-android-person"></span>-->
+            <!--<p style="position:relative; left:20%; margin: -19px 0 10px;">{{'MYACCOUNT.My-account' | translate}}</p>-->
+            <!--<i class="icon ion-ios-arrow-right"></i>-->
+          <!--</ion-item >-->
+
+          <ion-item  class="item item-icon-right" menu-toggle ng-click="logout()">
+            <span class="ion-log-out"></span>
+            <p style="position:relative; left:20%; margin: -19px 0 10px;"> {{'LOGIN.Logout' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item >
+
+          <ion-item  class="item item-icon-right" menu-toggle href="#/menu/setting">
+            <span class="ion-gear-a"></span>
+            <p style="position:relative; left:20%; margin: -20px 0 10px;">{{'SETTINGS.My-settings' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+
+          <ion-item  class="item item-icon-right" menu-toggle href="#/menu/about">
+            <img  style="position:relative; left:0;height:33px;width:23px" src="img/icon_fingers.png">
+            <p style="position:relative; left:20%; margin: -32px 0 10px;">{{'ABOUT.about' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+
+          <ion-item  class="item item-icon-right" menu-toggle href="#/menu/bleConnect">
+            <img  style="position:relative; left:0;height:30px;width:30px" src="img/bluetooth.png">
+            <p style="position:relative; left:20%; margin: -32px 0 10px;">{{'SETTINGS.Bluetooth' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+
+          <ion-item  class="item item-icon-right" menu-toggle ng-click="rateApp()">
+            <span class="ion-ios-star-half"></span>
+            <p style="position:relative; left:20%; margin: -20px 0 10px;">{{'MYACCOUNT.Rate' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+
+          <ion-item  class="item item-icon-right" menu-toggle href="#/menu/inviteFriend">
+            <span class="ion-person-add"></span>
+            <p style="position:relative; left:20%; margin: -20px 0 10px;">{{'MYACCOUNT.Invite' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+
+          <ion-item  class="item item-icon-right" menu-toggle href="#/menu/reportBug">
+            <span class="ion-bug"></span>
+            <p style="position:relative; left:20%; margin: -20px 0 10px;">{{'MYACCOUNT.ReportBug' | translate}}</p>
+            <i class="icon ion-ios-arrow-right"></i>
+          </ion-item>
+
+
+        <ion-item  class="item item-icon-right" menu-toggle href="#/menu/home">
+          <span class="ion-bug"></span>
+          <p style="position:relative; left:20%; margin: -20px 0 10px;">TEST GPS</p>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

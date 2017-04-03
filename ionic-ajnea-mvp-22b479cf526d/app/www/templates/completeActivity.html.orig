@@ -1,0 +1,236 @@
+<ion-view view-title="{{activity.name}}" class="completeActivity" hide-tabs>
+
+  <!--Header-->
+  <ion-nav-bar class="bar-stable">
+    <!--<ion-nav-back-button></ion-nav-back-button>-->
+    <!--<ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>-->
+
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear" ng-click="finish()">{{'NOTIFICATIONS.Complete-activity-done' | translate}}</button>
+    </ion-nav-buttons>
+    <ion-nav-title ng-bind="activity.name"></ion-nav-title>
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="record">
+      <div class="finishLogoHeader">
+        <img class="finishLogo" src="img/logo_fingers.png">
+      </div>
+      <div class="finishHeader">
+        <p class="notificationProperty" style="color:white;">{{'NOTIFICATIONS.Complete-activity-finish' | translate}}</p>
+      </div>
+    </div>
+
+
+    <!-- List of Notifications -->
+    <ion-list style="width:100%; height:60%; margin-bottom:10%;">
+      <ion-item class="item"><span class="h3" id="previewTitles">{{'NOTIFICATIONS.Complete-activity-info' | translate}}</span>
+      </ion-item>
+      <div style="background-color: #7BBEC1;">
+        <!--DATA-->
+        <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p class="dataDisplay">{{activity.info.score}}</p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Score' | translate}}</span>
+            </div>
+          </div>
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">
+                {{activity.info.completedTime | convertTime:2}}</p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{activity.info.distance  | convertDistance:unit}}<span
+                      class="displayUnit" >{{displayUnit.distance}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{activity.info.averageSpeed  | convertSpeed:unit}}<span
+                      class="displayUnit" >{{displayUnit.speed}}</span></p>
+              <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Average-speed' | translate}}</span>
+            </div>
+          </div>
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p class="dataDisplay">{{myActivity.info.maxSpeed | convertSpeed:unit}}<span
+                      class="displayUnit" >{{displayUnit.speed}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Max-speed' | translate}}</span>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{myActivity.info.power}}<span
+                      class="displayUnit" >{{displayUnit.power}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Power' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p class="dataDisplay">{{myActivity.info.elevationGain |convertElevatiom:unit}}<span
+                      class="displayUnit" >{{displayUnit.elevation}}</span></p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationGain' | translate}}</span>
+            </div>
+          </div>
+          <div class="col " style="border-right: 1px solid #588888;">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{myActivity.info.elevationLoss |convertElevatiom:unit}}<span
+                      class="displayUnit" >{{displayUnit.elevation}}</span></p>
+              <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationLoss' | translate}}</span>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="" style="margin-top: 15px;">
+              <p align="center" class="dataDisplay">{{myActivity.info.calories}}</p>
+              <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Calories' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!--&lt;!&ndash;DATA&ndash;&gt;-->
+        <!--<div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">-->
+          <!--<div class="col " style="border-right: 1px solid #588888;">-->
+            <!--<div class="" style="margin-top: 15px;">-->
+              <!--<p class="dataDisplay">{{myActivity.info.distance | convertDistance:unit}}</p>-->
+              <!--<span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col " style="border-right: 1px solid #588888;">-->
+            <!--<div class="" style="margin-top: 15px;">-->
+              <!--<p align="center" class="dataDisplay">-->
+                <!--{{ myActivity.info.completedTime | convertTime:2}}</p>-->
+              <!--&lt;!&ndash;<p class="dataDisplay" ng-bind="clock"></p>&ndash;&gt;-->
+              <!--<span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col ">-->
+            <!--<div class="" style="margin-top: 15px;">-->
+              <!--<p align="center" class="dataDisplay">{{myActivity.info.averageSpeed | convertSpeed:unit}}</p>-->
+              <!--<span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Average-speed' | translate}}</span>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">-->
+          <!--<div class="col " style="border-right: 1px solid #588888;">-->
+            <!--<div class="" style="margin-top: 15px;">-->
+              <!--<p class="dataDisplay">{{myActivity.info.maxSpeed | convertSpeed:unit}}</p>-->
+              <!--<span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Max-speed' | translate}}</span>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col " style="border-right: 1px solid #588888;">-->
+            <!--<div class="" style="margin-top: 15px;">-->
+              <!--<p align="center" class="dataDisplay">{{myActivity.info.elevationGain |convertElevatiom:unit}} ft</p>-->
+              <!--&lt;!&ndash;<p class="dataDisplay" ng-bind="clock"></p>&ndash;&gt;-->
+              <!--<span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Elevation' | translate}}</span>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col ">-->
+            <!--<div class="" style="margin-top: 15px;">-->
+              <!--<p align="center" class="dataDisplay">{{myActivity.info.calories}}</p>-->
+              <!--<span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Calories' | translate}}</span>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      </div>
+
+      <!--<ion-item class="item"><span class="h3" id="previewTitles">{{'NOTIFICATIONS.Notification' | translate}}</span></ion-item>-->
+      <!--<ion-item class="item item-icon-left" ng-repeat="item in AllNotifications" ng-if="item.messageObject[0].type == 'split'">-->
+  <!--<div  >-->
+  <!--<i class="icon" ng-class="{notifications_icon_start: $first}"></i>-->
+  <!--<i class="icon notifications_icon" ng-show="$middle"></i>-->
+  <!--<i class="icon notifications_icon_last" ng-show="$last"></i>-->
+  <!--<ul style="font-size: 100%;" >-->
+    <!--<li style="display: inline" ng-repeat="message in item.messageObject">-->
+      <!--<span ng-if="message.type == 'split'">[split]</span>-->
+    <!--</li>-->
+  <!--</ul>-->
+  <!--<p style="color:#a9a9a9;" ng-repeat="metric in item.metricObject">-->
+    <!--<span ng-show="metric.type == 'gps'">-->
+        <!--<div  class ="row" ng-show="metric.time">-->
+           <!--<span> Time: {{metric.time | convertTime:2}}sec</span>-->
+        <!--</div>-->
+
+      <!--<div  class ="row"  ng-repeat="metricObj in  currentNotifications[$parent.$index].metricObject">-->
+        <!--<span> NewTime: {{metricObj.time| convertTime:2}}sec</span>-->
+         <!--<div class="item-icon-right">-->
+           <!--<i class="icon ion-trash-a" style="color:#666666"  ng-click="save">x</i>-->
+         <!--</div>-->
+      <!--</div>-->
+    <!--</span>-->
+  <!--</p></div>-->
+<!--</ion-item>-->
+
+
+      <ion-item class="item"><span class="h3" id="previewTitles">{{'NOTIFICATIONS.Notification' | translate}}</span></ion-item>
+
+<<<<<<< HEAD
+      <ion-item class="item item-icon-left" ng-repeat="item in AllNotifications">
+        <i class="icon notifications_icon" ></i>
+
+        <ul style="font-size: 100%;" ><li style="display: inline" >
+          <span > {{$index}}[notif] - </span>
+          <span ng-if="item.messageObject[0].type == 'text'"> [Text]: {{item.messageObject[0].message}} </span>
+          <span ng-if="item.messageObject[0].type == 'audio'"> [Audio]: ({{item.messageObject[0].filename}}.{{item.messageObject[0].type format}}) </span>
+          <span ng-if="item.messageObject[0].type  == 'BLE'"> [BLE]: [{{item.messageObject[0].name}}] </span>
+          <span ng-if="item.messageObject[0].type  == 'split'">[split]</span>
+          <span ng-if="item.messageObject[0].type  == 'autosplit'">[autosplit]</span>
+        </li></ul>
+
+        <p class="cmpltAct" style="color:#a9a9a9; padding-top: 12px;" >
+          <span >Reference Time: Time: {{item.metricObject[0].time | convertTime:2}}sec</span><i class="ion-checkmark"></i>
+        </p>
+<div >
+        <p class="cmpltAct" style="color:#a9a9a9;"  ng-repeat="metricObject in getCurrentMetricOjectFrom($index)">
+          <span >new time:  {{metricObject.time| convertTime:2}}sec</span> <i class="ion-star" ng-show="metricObject.best"></i>
+        </p>
+</div>
+=======
+      <ion-item class="item item-icon-left">
+        <i class="icon notifications_icon"></i>
+        <ul style="font-size: 100%;" >
+          <li style="display: inline" >
+            <span > [Text]:name  </span>
+          </li>
+        </ul>
+        <p class="cmpltAct" style="color:#a9a9a9; padding-top: 12px;" >
+          <span >line 01</span><i class="ion-star"></i>
+        </p>
+        <p class="cmpltAct" style="color:#a9a9a9;" >
+          <span >line 01</span>
+        </p>
+        <p class="cmpltAct" style="color:#a9a9a9;" >
+          <span >line 01</span> <i class="ion-checkmark"></i>
+        </p>
+        <p class="cmpltAct" style="color:#a9a9a9;" >
+          <span >line 01</span>
+        </p>
+        <p class="cmpltAct" style="color:#a9a9a9;" >
+          <span >line 01</span>
+        </p>
+>>>>>>> 6b0d8e2328ef866166b9fd2c03eca8bcc7d8d10e
+      </ion-item>
+
+      </ion-item>
+
+    </ion-list>
+
+
+  </ion-content>
+</ion-view>

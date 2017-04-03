@@ -1,0 +1,95 @@
+<ion-view view-title="{{'ACTIVITY.My-activities' | translate}}" class="myDecks"  style="background-color: #2a2a2a">
+
+	<!-- Header -->
+    <ion-nav-bar class="bar-stable" align-title="center">
+        <!--<ion-nav-back-button></ion-nav-back-button>-->
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+
+
+    <!-- Content -->
+	<ion-content overflow-scroll="false" >
+
+		<ion-refresher class="spiral spinner-energized" pulling-text="pull to refresh..." on-refresh="refresh()">
+    	</ion-refresher>
+
+
+		<!-- Working spinner -->
+<!-- 		<div class="row text-center" ng-show="gettingDecks == true">
+			<div class="col">
+				<ion-spinner class="spiral spinner-energized"></ion-spinner>
+			</div>
+		</div> -->
+
+		<!-- My deck(s) -->
+		<ul class="list" ng-show="myDecksTabsActivated == true">
+			<div ng-repeat="activity in AllActivities | orderBy:'':true" class="activityItem item item-avatar" on-hold="deleteActivity(activity)" ng-click="previewActivity(activity)">
+				<div style="float:left;" >
+					<h2 style="color:white;" >{{activity.name | cut:true:35:' ...'}}</h2>
+					<p style="color:#a9a9a9;">
+
+            <span ng-show="activity.info.distance">{{'ACTIVITY.My-activities-distance' | translate}} {{activity.info.distance | convertDistance:unit}} {{ displayUnit.distance }} | </span>
+            <span ng-show="activity.info.completedTime"> {{'ACTIVITY.My-activities-time' | translate}} {{convertSec(activity.info.completedTime)}} | </span>
+            <span ng-show="activity.info.completedTime"> {{'ACTIVITY.My-activities-type' | translate}} {{activity.activityType}}</span>
+            <span ng-show="activity.boughtFromMarketplace == true" style="color:#a9a9a9;"> | From &nbsp;<img class="" src="img/icontab_marketplace.png"  style="margin-top;3px; width: 20px; height: 16px;"> </span>
+					 <!--(activity.info.completedTime.toFixed(2)/1000).toFixed(1)-->
+          </p>
+
+				</div>
+
+				<img style="float:right; z-index: 100;" height="30px" width="30px" src="img/icon_playActivity.png" ng-click="$event.stopPropagation(); playActivity(activity, false)">
+			</div>
+		</ul>
+
+		 <!--Owned deck(s)
+		<div>OWNED</div>
+				<ul class="list" ng-show="myDecksTabsActivated == false">
+			<a ng-repeat="storeElement in getOwnedDecks()" class="item item-avatar" ng-click="displayDeck(storeElement.deck, true)">
+				<h2>{{storeElement.deck.name}}</h2>
+				<p>
+					<span>{{'DECKSTORE.Created-by' | translate}} {{storeElement.authorName}}</span>
+				</p>
+			</a>
+		</ul>-->
+
+	</ion-content>
+
+	<!-- Add deck button -->
+	<!-- <div class="bar bar-footer bar-balanced addSomethingButton">
+		<div class="row">
+			<div class="col col-center">
+				{{'MYDECKS.Add-deck' | translate}}
+			</div>
+			<button class="button button-large button-energized" ui-sref="menu.createDeck()">
+				<i class="ion-plus"></i>
+			</button>
+		</div>
+	</div> -->
+
+	<!-- Tabs -->
+	<!--<div class="tabs-striped tabs-color-energized myDecksTabs">
+		<div style="background-color:#333333;" class="tabs tabs-icon-top">
+			<a class="tab-item"  ng-class="myDecksTabsActivated == false ? 'active' : ''" ng-click="myDecksTabsActivated = true" ui-sref="menu.marketplace">
+				<img class="icon ion-android-cart" src="img/icontab_marketplace.png" toggle-slide="left" style="margin-top:5px;width: 33px; height: 30px;">
+			</a>
+			<a class="tab-item" ng-class="myDecksTabsActivated == false ? 'active' : ''" ng-click="myDecksTabsActivated = true" ui-sref="menu.CreateActivity()">
+				<img class="footerImg" src="img/icontab_recorder.png" style="
+					position: absolute;
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: 5px;
+					left: 0;
+					right: 0;
+					width: 35px;
+					height: 35px;">
+				</a>
+			<a class="tab-item" ng-class="myDecksTabsActivated == true ? 'active' : ''" ng-click="myDecksTabsActivated = true">
+				<img class="footerImg" src="img/icontab_listactivities_active.png" style="padding-top: 5px; width: 33px; height: 30px; margin-top:5px;">
+			</a>
+		</div>
+	</div>-->
+
+</ion-view>

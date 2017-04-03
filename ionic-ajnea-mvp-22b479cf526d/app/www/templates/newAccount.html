@@ -1,0 +1,119 @@
+<div class="login">
+    <!-- Header -->
+		<!-- <ion-nav-bar class="bar-stable bar bar-header" align-title="center" style="height:5%">
+        <ion-nav-buttons side="left">
+            <button ui-sref="login()" class="button button-icon button-clear icon ion-ios-arrow-left"></button>
+        </ion-nav-buttons>
+				<div class="h1 title">{{'NEWACCOUNT.New-account' | translate}}</div>
+    </ion-nav-bar> -->
+
+
+	<div class="bar bar-header">
+		<button ui-sref="login()" class="button button-icon button-clear icon ion-ios-arrow-left"></button>
+		<div class="h1 title">{{'NEWACCOUNT.New-account' | translate}}</div>
+	</div>
+    <!-- Content -->
+    <ion-content style="top: 70px;">
+    	<!-- Image uploader -->
+		<div class="row" style="padding-left: 37%;">
+			<div>
+				<img src="img/illustartion_new_account.png" style="height: 120px; width: 120px;">
+			</div>
+		</div>
+		<!-- New account form -->
+        <form ng-submit="createAccount()">
+            <div class="list">
+            	<!-- Username -->
+                <label class="item item-input item-floating-label">
+                    <div class="col-xs-2 loginIcon">
+                        <i class="ion-person"></i>
+                    </div>
+                    <div class="col-xs-10 loginInput">
+                        <input type="text" ng-model="accountData.username" placeholder="{{'NEWACCOUNT.Name' | translate}}">
+                    </div>
+                </label>
+                <!-- Email -->
+                <label class="item item-input item-floating-label">
+                    <div class="col-xs-2 loginIcon">
+                        <i class="ion-email"></i>
+                    </div>
+                    <div class="col-xs-10 loginInput">
+                        <input type="email" ng-model="accountData.email" placeholder="{{'NEWACCOUNT.Email' | translate}}">
+                    </div>
+                </label>
+                <!-- Password -->
+                <label class="item item-input item-floating-label">
+                    <div class="col-xs-2 loginIcon">
+                        <i class="ion-locked"></i>
+                    </div>
+                    <div class="col-xs-10 loginInput">
+                        <input type="password" ng-model="accountData.password" placeholder="{{'LOGIN.Password' | translate}}">
+                    </div>
+                </label>
+
+								<!-- Preferred Activity -->
+									<label class="item item-input item-floating-label" ng-model="accountData.profile.preferredActivityType">
+	                  <div class="col-xs-2 loginIcon">
+	                      <i class="ion-flash"></i>
+	                  </div>
+	                  <div class="col-xs-10 loginInput item-select item-input select-style">
+											<select>
+												<option selected disabled>Preferred Activity</option>
+												<option ng-repeat="item in preferredActivityTypeList"> {{item.name}}</option>
+											</select>
+	                  </div>
+	                </label>
+
+								<!-- Weight -->
+							<label class="item item-input item-floating-label">
+								<!-- <label class="item item-input item-floating-label"> -->
+									<span class="col-xs-2 loginIcon">
+											<i class="ion-clipboard"></i>
+									</span>
+                  <span class="col-xs-2 loginInput">
+										<span>
+											<input class="weight-text" type="text" maxlength="3" ng-model="accountData.profile.weight" placeholder="{{'NEWACCOUNT.Weight' | translate}}">
+										</span>
+                  </span>
+               		<span class="col-xs-2 item-select select-style" ng-model="accountData.profile.weightUnit">
+										<select>
+											<option selected>lbs</option>
+											<option>kgs</option>
+										</select>
+									</span>
+
+
+								<!-- Age -->
+                <label class="item item-input item-floating-label">
+                  <span class="col-xs-1 loginIcon">
+                    <i class="ion-man"></i>
+                  </span>
+									<span class="col-xs-4 loginInput">
+										<span>
+											<input class="weight-text" type="text" maxlength="3" ng-model="accountData.profile.age" placeholder="{{'NEWACCOUNT.Age' | translate}}">
+										</span>
+									</span>
+              	<!-- </label> -->
+								</label>
+							</label>
+								<!-- Gender -->
+								<div class="row">
+									<div class="col-xs-2"></div>
+									<div class="col">
+										<i class="ion-female"></i>
+										<input type="radio" name="radio-group" value="Female" value="on" ng-model="accountData.profile.gender"> {{'NEWACCOUNT.Female' | translate}}
+									</div>
+									<div class="col">
+										<i class="ion-male"></i>
+										<input type="radio" name="radio-group" value="male" value="on" ng-model="accountData.profile.gender"> {{'NEWACCOUNT.Male' | translate}}
+									</div>
+								</div>
+
+						<!-- end list -->
+          	</div>
+
+            <!-- Submit button -->
+            <button class="button button-large button-energized loginSignIn newAccountSignIn" type="submit">{{'NEWACCOUNT.Sign-up' | translate}}</button>
+        </form>
+	</ion-content>
+</div>

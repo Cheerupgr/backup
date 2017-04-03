@@ -1,0 +1,224 @@
+<ion-view view-title="{{'ACTIVITY.Save-activity-title' | translate}}" class="displayDeck" hide-tabs>
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-stable" align-title="center">
+    <ion-nav-back-button ng-click="removeFinishNotif()"></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+      <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>-->
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear icon " ng-click="saveActivity()" ng-hide="savingInProgress">
+                {{'SAVEACTIVITY.Save' | translate}}
+                <!--<i class="icon ion-forward"></i>-->
+            </button>
+
+      <i class="button button-icon button-clear icon ion-loading-d" ng-show="savingInProgress"> in progress..</i>
+
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+  <!-- Content -->
+  <ion-content ng-show="isSelling == false" overflow-scroll="false">
+        <!--<div class="record"> -->
+
+            <!--<div> -->
+                <div class="item" ng-show="substate==1">
+                    <!-- <input type="text" maxlength="100" ng-model="currentDeck.name" placeholder="{{'DISPLAYDECK.activityName' | translate}}"> -->
+                    <!--<ion-list style="width:100%; height:60%; margin-bottom:10%; border: :0px;" >-->
+                    <ion-item class="item item-icon-right">
+                        <i class="icon ion-edit"></i>
+                        <input type="text" id="ActivityName" maxlength="100" style="width:100%"
+                               placeholder="{{myActivity.name}}">
+                    </ion-item>
+
+                    <!--<span><button class="button  item item-icon-right" ng-click="SaveActivity()"> SAVE</button></span>-->
+
+              <!--</div> -->
+
+                <div style="height:75%; width: 100%; margin-top: 15px;">
+                    <div id="map_canvas_2" style="width:100%; height:400px;" data-tap-disabled="true">
+
+                      <button class="terrain_icon" ng-click="toggleMapType()"></button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <div class="record" ng-show="currentCard.type.value == 'Track Map'" ng-show="substate == 1 || substate== 2">
+                <div class="mapClass">
+                    <div id="map_canvas" style="width:100%; height:550px;" data-tap-disabled="true"></div>
+                </div>
+            </div> -->
+
+      <!-- List of Notifications -->
+      <ion-list style="width:100%; height:60%; margin-bottom:10%;">
+        <ion-item class="item"><span class="h3" id="previewTitles">{{'SAVEACTIVITY.Save-info' | translate}}</span></ion-item>
+        <div style="background-color: #7BBEC1;">
+
+          <!--DATA-->
+          <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">{{myActivity.info.score}}</p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Score' | translate}}</span>
+              </div>
+            </div>
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">
+                  {{myActivity.info.completedTime | convertTime:2}}</p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>
+              </div>
+            </div>
+            <div class="col ">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.distance | convertDistance:unit}}<span class="displayUnit">{{displayUnit.distance}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.averageSpeed | convertSpeed:unit}}<span class="displayUnit">{{displayUnit.speed}}</span></p>
+                <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Average-speed' | translate}}</span>
+              </div>
+            </div>
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">{{myActivity.info.maxSpeed | convertSpeed:unit}}<span class="displayUnit">{{displayUnit.speed}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Max-speed' | translate}}</span>
+              </div>
+            </div>
+            <div class="col ">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.power}}<span class="displayUnit">{{displayUnit.power}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Power' | translate}}</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row row-center text-center " style="margin-bottom: 5px; margin-top: 5px;">
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p class="dataDisplay">{{myActivity.info.elevationGain |convertElevatiom:unit}}<span class="displayUnit">{{displayUnit.elevation}}</span></p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationGain' | translate}}</span>
+              </div>
+            </div>
+            <div class="col " style="border-right: 1px solid #588888;">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.elevationLoss |convertElevatiom:unit}}<span class="displayUnit">{{displayUnit.elevation}}</span></p>
+                <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.ElevationLoss' | translate}}</span>
+              </div>
+            </div>
+            <div class="col ">
+              <div class="" style="margin-top: 15px;">
+                <p align="center" class="dataDisplay">{{myActivity.info.calories}}</p>
+                <span style="color: #588888; font-weight: bold; font-size: .75em; margin-top: -5px;">{{'METRICLABEL.Calories' | translate}}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <ion-item class="item">
+          <span class="h3" id="previewTitles">{{'SAVEACTIVITY.Save-notifs' | translate}}</span>
+          <div class="item-icon-right">
+            <i class="icon ion-plus-circled" style="color:#666666" ng-click="createNotification(scope, myActivity, AllNotifications, countNotifType, clearAutoSplit, createSplitNotification, getAllNotifications,map); updateMap(myActivity, map);"></i>
+          </div>
+        </ion-item>
+        <ion-item class="item" ng-repeat="item in AllNotifications | orderBy : 'timestampOrder' ">
+
+          <div class="item-icon-left">
+            <i class="icon" ng-class="{notifications_icon_start: $first}"></i>
+            <i class="icon notifications_icon" ng-show="$middle"></i>
+            <i class="icon notifications_icon_last" ng-show="$last"></i>
+            <ul style="font-size: 100%;">
+              <li style="display: inline" ng-repeat="message in item.messageObject">{{getIdx(item, AllNotifications)}}
+                <span ng-if="message.type == 'text'"> [Text]: {{message.message}} </span>
+                <span ng-if="message.type == 'audio'"> [Audio]: ({{message.filename}}.{{message.format}}) </span>
+                <span ng-if="message.type == 'BLE'"> [BLE]: [{{message.name}}] </span>
+                <span ng-if="message.type == 'split'">[Split]: {{message.name}}</span>
+                <span ng-if="message.type == 'autosplit'">[AutoSplit]: {{message.name}}</span>
+              </li>
+            </ul>
+            <p style="color:#a9a9a9;" ng-repeat="metric in item.metricObject">
+              <span ng-show="metric.type == 'gps'">
+									<!--Lat: {{metric.lat.toFixed(2)}} | Lng: {{metric.lng.toFixed(2)}} -->
+                  <span ng-show="metric.time">
+                   Time: {{metric.time | convertTime:2}}
+                  </span>
+              </span>
+            </p>
+          </div>
+          <div class="item-icon-right">
+            <i class="icon ion-trash-a" style="color:#666666" ng-show="$middle" ng-click="deleteNotification(scope, myActivity, AllNotifications, getIdx(item, AllNotifications)); updateMap(myActivity, map);"></i>
+          </div>
+        </ion-item>
+        <ion-item class="item">
+          <span style="float:left;"><strong>You have {{AllNotifications.length }} tag(s)</strong></span>
+          <span style="float:right;">
+                      <!--ng-if=" AllNotifications.length > 1 && AllNotifications.length <10"-->
+
+                </span>
+          <!--TODO: if user is premium-->
+          <span style="float:right;" ng-if=" AllNotifications.length > 0">
+                  <button class="button " ng-click="optimizeNotification()"> {{'SAVEACTIVITY.Optimize-notifs' | translate}}</button>
+                </span>
+        </ion-item>
+      </ion-list>
+
+
+      <ion-item class="item"><span class="h3" id="previewTitles">{{'SAVEACTIVITY.Sharing-Tile' | translate}}</span></ion-item>
+      <ion-item class="item">
+        <span style="float:left;">
+              <img src="img/signin_strava.png" style="height: 35px; width: 35px;padding: 3px">
+              <!--<strong>{{'SAVEACTIVITY.Strava' | translate}}</strong>-->
+            </span>
+        <span style="float:right;" ng-show="isStravaUser == true">
+              <label class="toggle toggle-strava">
+                <input type="checkbox" id="autoShareToStrava" ng-model="mySettings.autoShareToStrava"
+                    ng-true-value="true" ng-false-value="false"
+                    ng-change="SaveSettings()"
+                    >
+                <div class="track">
+                  <div class="handle"></div>
+                </div>
+              </label>
+
+            </span>
+
+        <!--TODO add link to connect with strava-->
+        <span style="float:right;" ng-show="isStravaUser == false"><button ng-click="loginStrava()">link your account to Strava </button></span>
+      </ion-item>
+
+      <!--TODO: to implement when analytics platform is ready-->
+      <!--<ion-item class="item"><span class="h3" id="previewTitles">{{'TBD.Premium' | translate}}</span></ion-item>-->
+      <!--<ion-item class="item">-->
+      <!--<span style="float:left;" ><strong>{{'TBD.ANALISYS' | translate}}</strong></span>-->
+      <!--<span style="float:right;" ><button class="button  item item-icon-right ion-ios-star" ng-click="optimizeNotification()"> {{'SAVEACTIVITY.Optimize-notifs' | translate}}</button></span>-->
+      <!--</ion-item>-->
+
+      <div style="background-color: white; text-align:center; padding-top: 5px;">
+        <!--<button class="button" style="border-radius: 50%; background: rgb(255, 92, 45); color: white; padding: 20px; font-size: 26px;" ng-click="saveActivity()">-->
+        <!--{{'SAVEACTIVITY.Save' | translate}}-->
+        <!--</button>-->
+        <img ng-click="saveActivity()" src="img/ok_button.png" style="
+            /*position: relative;*/
+            margin-left: 35%;
+            margin-right: 35%;
+            margin-top: 10%;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 100px; height: 100px;">
+      </div>
+
+
+  </ion-content>
+</ion-view>

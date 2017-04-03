@@ -1,0 +1,189 @@
+<ion-view view-title="{{'ACTIVITY.Create-activity-title' | translate}}" class="createDeck">
+
+    <!--Header -->
+    <ion-nav-bar
+            class="bar-stable"
+            align-title="center"
+            style="height:5%">
+        <ion-nav-buttons side="left">
+            <button
+                    class="button button-icon button-clear ion-navicon"
+                    menu-toggle="left"
+                    ng-show="substate==1"
+            ></button>
+          <!--<button-->
+            <!--class="button button-icon button-clear ion-chevron-left"-->
+
+            <!--ng-click="debugMe()">debug</button>-->
+
+            <button
+                    class="button button-icon button-clear ion-chevron-left"
+                    ng-show="substate > 1"
+                    ng-click="backState()">
+                {{'ACTIVITY.Create-activity-cancel' | translate}}
+            </button>
+
+        </ion-nav-buttons>
+
+        <ion-nav-buttons side="right">
+          <i class="ion-bluetooth iconHeaderRight_white" ng-show="bluetoothMode" ng-class="BLEisConnected ? 'iconHeaderRight_white' : 'iconHeaderRight_grey'" ng-click="forceBLEautoConnect()"></i>
+        </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <!-- Content -->
+    <ion-content style="background-color: #7BBEC1;">
+        <div id="full_page" style="
+        /*height:100vh;*/
+         /*display: -webkit-box;*/
+         /*display: -moz-box;*/
+         /*display: -ms-flexbox;*/
+         /*display: -webkit-flex;*/
+         /*display: flex;*/
+         /*flex-direction: column;*/
+         height: 100vh;
+         display: table;
+         width: 100%;
+         ">
+
+            <div id="map_container"
+                 style="
+                 height: 100%;
+                 display: table;
+                 width: 100%;
+                 /*display:none*/
+                  ">
+
+                <!--MAP-->
+                <div id="map_canvas" style="
+				          width:100%;
+				          height:100%;
+				          z-index:0;
+				          z-index:-99;" data-tap-disabled="true">
+                  <button class="terrain_icon" ng-click="toggleMapType()"></button>
+                </div>
+
+            </div>
+
+
+            <div id="metric_container" class="" style="display: table-row;height:250px; background-color: #7BBEC1" ng-cloak>
+
+
+                <!--Start Button-->
+                <div class="row row-center text-center" style="" ng-if="substate==1">
+                    <div class="col" style="height:250px;">
+                        <img style="margin-top: 7%; width: 25%;" ng-click="requestTracking();"
+                             src="img/start_record_button.png">
+                    </div>
+                </div>
+
+                <!--Bottom substate 2-->
+
+                <div class="row row-center text-center " style="margin-bottom: 10px"
+                     ng-show="substate==2">
+                    <div class="col " style="border-right: 1px solid #588888;">
+                        <div class="" style=";">
+                            <p class="dataDisplay" >{{displayDistance | convertDistance:unit}}<span
+                                    class="displayUnit" >{{displayUnit.distance}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Distance' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col " style="border-right: 1px solid #588888;">
+                        <div class="" style=";" >
+                            <p align="center" class="dataDisplay">{{displayClock}}</p>
+                            <!--<p class="dataDisplay" ng-bind="clock"></p>-->
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Time' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="" style=";">
+                            <p align="center" class="dataDisplay">{{displaySpeed | convertSpeed:unit}}<span
+                                    class="displayUnit" >{{displayUnit.speed}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Speed' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row row-center text-center " style="margin-top: -10px; margin-bottom: 10px; padding: 5px;"
+                     ng-show="substate==2 && metricDisplay==2">
+                    <div class="col " style="border-right: 1px solid #588888;">
+                        <div class="" style="margin-top: 15px;">
+                            <p align="center" class="dataDisplay">{{displayMaxspeed | convertSpeed:unit}}<span
+                                    class="displayUnit" >{{displayUnit.speed}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Max-speed' | translate}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col " style="border-right: 1px solid #588888;">
+                        <div class="" style="margin-top: 15px;">
+                            <p class="dataDisplay"> {{displayAveragespeed | convertSpeed:unit}}<span
+                                    class="displayUnit" >{{displayUnit.speed}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Average-speed' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="" style="margin-top: 15px;">
+                            <p align="center" class="dataDisplay">{{displayPower}}</p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Power' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-center text-center " style="margin-top: -10px; margin-bottom: 10px; padding: 5px;"
+                     ng-show="substate==2 && metricDisplay==2">
+                    <div class="col " style="border-right: 1px solid #588888;">
+                        <div class="" style="margin-top: 15px;">
+                            <p align="center" class="dataDisplay">{{displayElevationGain | convertElevatiom:unit}}<span
+                                    class="displayUnit" >{{displayUnit.elevation}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.ElevationGain' | translate}}</span>
+                        </div>
+                    </div>
+
+                    <div class="col " style="border-right: 1px solid #588888;">
+                        <div class="" style="margin-top: 15px;">
+                            <p class="dataDisplay"> {{displayElevationLoss | convertElevatiom:unit}}<span
+                                    class="displayUnit" >{{displayUnit.elevation}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.ElevationLoss' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="" style="margin-top: 15px;">
+                            <p align="center" class="dataDisplay">{{displayAltitude}}<span
+                                    class="displayUnit" >{{displayUnit.elevation}}</span></p>
+                            <span style="color: #588888; font-weight: bold; font-size: .70em; margin-top: -5px;">{{'METRICLABEL.Altitude' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--EXTRA INFO-->
+
+
+                <!--SWITCH DISPLAY-->
+                <div class="row row-center text-center " style="margin-bottom: -20px;margin-top: -25px;"
+                     ng-show="substate==2">
+                    <div class="col " style="">
+                        <button class="button button-icon button-clear ion-chevron-up" style="color:#ffffff; "
+                                ng-show="metricDisplay==2" ng-click="togglemetricDisplay()"></button>
+                        <button class="button button-icon button-clear ion-chevron-down" style="color:#ffffff; "
+                                ng-show="metricDisplay==1" ng-click="togglemetricDisplay()"></button>
+                    </div>
+                </div>
+
+                <!--end bottom substate 2-->
+
+
+                <div class="row row-center text-center" ng-show="substate==2">
+                    <div class="col"><img id="stop_tracking_button" class="" ng-click="toggle_tracking()"
+                                          src="img/btn_stop.png"
+                                          style="width: 70px; height: 70px; top:0%;"></div>
+                    <div class="col"><img id="tag_button" class="" ng-click="tag()" src="img/btn_tag.png"
+                                          style="width: 70px; height: 70px; top:0%;"></div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

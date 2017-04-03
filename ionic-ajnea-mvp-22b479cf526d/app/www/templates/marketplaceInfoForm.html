@@ -1,0 +1,73 @@
+<ion-view class="">
+    <!-- The Header -->
+	<div class="bar bar-header">
+		<button style="position:absolute;" ng-click="back_button()">
+            <img  src="img/arrow_left.png" style="position: absolute; height:20px; top:5px; left:5px;">
+        </button>
+		<div class="h1 title">Required Information</div>
+	</div>
+
+
+    <!-- The body -->
+	<ion-content class="has-header">
+        <ion-list>
+            <!--<ion-item>-->
+                <!--<input type="text" ng-model="myActivityName"  ng-change="newActivityName(myActivityName)" rows="5" cols="100" placeholder="{{ $scope.name}}" style="width:100%;"/>-->
+            <!--</ion-item>-->
+            <!--<ion-item>-->
+                <!--<ion-label primary stacked>Public Author Name: </ion-label>-->
+                <!--<p style="width:100%;">{{authorName}}</p>-->
+                <!--<br />-->
+            <!--</ion-item>-->
+
+            <ion-item>
+                <ion-label primary stacked ><span class="h3" id="previewTitles">DESCRIPTION</span></ion-label>
+              <textarea name="" cols="40" rows="5" ng-model="description" ng-change="newDescription(description)" placeholder="Write a Short Description..." style="
+               position: relative;
+               margin-top: 15px;
+               margin-right: 0%;
+               width: 100%;
+               height: 120px;
+               border: 1px solid #cccccc;
+               padding: 5px;
+               font-family: Tahoma, sans-serif;
+              vertical-align: top;
+
+                ">
+                </textarea>
+
+            </ion-item>
+            <ion-item ng-hide="hidePriceList">
+              <ion-label primary stacked   ><div class="h3" id="previewTitles" style="padding-bottom: 10px; align:left;">SET A PRICE</div></ion-label>
+              <div class="list">
+
+                <ion-radio ng-repeat="item in priceList"
+                           ng-value="item.value"
+                           ng-model="$scope.price"
+                           ng-change="updatePrice(item)"
+                           ng-checked="item.checked"
+                           name="Form">
+                  {{ item.text }}
+                </ion-radio>
+                </div>
+                <!--<input type="number" ng-model="myprice" ng-change="newPrice(myprice)" placeholder="4.99"/>-->
+            </ion-item>
+
+        </ion-list>
+
+    <img ng-click="publishToMarketplace()" src="img/ok_button.png" style="
+                        /*position: relative;*/
+                        margin-left: 35%;
+                        margin-right: 35%;
+                        margin-top: 10%;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        width: 100px; height: 100px;">
+    </div>
+	</ion-content>
+  <div>
+
+<!-- The Footer -->
+
+  </ion-view>
