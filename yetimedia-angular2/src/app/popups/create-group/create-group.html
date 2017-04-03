@@ -1,0 +1,21 @@
+<div class="padding-20 back-white">
+  <ion-list>
+    <ion-list-header>Create Group:</ion-list-header>
+    <ion-item>
+      <ion-input class="input-group" type="text" placeholder="Group Name" [(ngModel)]="newGroup"></ion-input>
+    </ion-item>
+    <ion-list-header>Add Patient:</ion-list-header>
+    <ion-item>
+      <ion-input class="input-patient" type="text" placeholder="Patient Name"
+        [(ngModel)]="newPatient" [disabled]="!newGroup"></ion-input>
+    </ion-item>
+    <ion-list-header>Remove Group:</ion-list-header>
+    <div class="group-list">
+      <ion-item *ngFor="let group of initialGroups; let i = index">
+        <ion-label>{{group.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="group.checked"></ion-checkbox>
+      </ion-item>
+    </div>
+  </ion-list>
+  <button ion-button class="button-done back-brown" (click)="done()">DONE</button>
+</div>

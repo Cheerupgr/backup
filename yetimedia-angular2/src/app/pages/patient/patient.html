@@ -1,0 +1,361 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Welcome in!</ion-title>
+
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logOut($event)">
+        <ion-icon name="contact">Log out</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> -->
+<ion-header>
+  <!-- <ion-navbar>
+
+  </ion-navbar> -->
+</ion-header>
+<ion-content class="has_sidebar scrollbar">
+  <!-- <ion-list>
+    <ion-item>
+      <ion-input placeholder="Clear Input" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Enter a description"></ion-textarea>
+    </ion-item>
+  </ion-list> -->
+    <!-- <ion-scroll scrollY="true"> -->
+      <ion-grid>
+      <ion-row responsive-sm>
+          <ion-col width-75 class="profile-content">
+              <ion-row>
+
+                <ion-col class="col-width-60 profile-content-edit-col" width-67>
+                  <ion-card class="profile-card">
+                    <ion-row>
+                      <ion-col width-33 class="profile-edit">
+                        <img src="/assets/icon/profile1.png" alt="" class="profile-img">
+                        <button ion-button color="orange" class="profile-edit-button">Edit Profile</button>
+
+                      </ion-col>
+                      <ion-col width-67 class="profile-info">
+                        <ion-row>
+                          <span>{{profileInfo.firstName}} {{profileInfo.lastName}}</span>
+                        </ion-row>
+                        <ion-row>
+                          <span>DOB (Age):  </span>{{profileInfo.birthday}} ({{profileInfo.age}})
+                        </ion-row>
+                        <ion-row>
+                          <span>Address:  </span>{{profileInfo.address}}
+                        </ion-row>
+                        <ion-row>
+                          <span>Phone (H):  </span>{{profileInfo.phoneNumber}}
+                        </ion-row>
+                        <ion-row>
+                          <span>Patient Status:  </span>{{profileInfo.status}}
+                        </ion-row>
+                        <ion-row>
+                          <span>Diagnosis:  </span>{{profileInfo.diagnosis}}
+                        </ion-row>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card>
+                </ion-col>
+                <ion-col class="profile-content-careteam-col" width-33>
+                  <ion-card class="careteam-card">
+                    <p>Care Team:</p>
+                    <ion-row *ngFor="let person of profileCareTeam" class="careteam-card-person">
+                      <ion-col class="careteam-card-person" width-10>
+                      </ion-col>
+                      <ion-col class="careteam-card-person" width-20>
+                        <img src="/assets/icon/person{{person.img}}.png"/>
+                      </ion-col>
+                      <ion-col width-50 class="careteam-card-person-name">
+                        {{person.name}}
+                      </ion-col>
+                    </ion-row>
+                    <ion-row class="careteam-card-person">
+                      <ion-col width-80>
+                      </ion-col>
+                      <ion-col width-20>
+                        <a href="#">Edit</a>
+                      </ion-col>
+
+                    </ion-row>
+
+
+
+                  </ion-card>
+                  <img src="/assets/icon/group-113.png" class="careteam-card-groupadd"/>
+                </ion-col>
+
+
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-card class="profile-card profile-card-activity">
+                    <p class="activity-title">Activity Timeline (11/13 - 11/19)</p>
+                    <img src="/assets/activity-time.png" alt="" class="activity-time-img"/>
+                    <ion-row class="activity-tab">
+                      <ion-col width-25>
+                      </ion-col>
+                      <ion-col class="col-width-17" [ngClass]="activityClickedFlag==1?'activity-tab-item-clicked':'bb'" class="activity-tab-item" (click)="onActivityTab(1)">
+                        DAY
+                      </ion-col>
+                      <ion-col class="col-width-17" [ngClass]="activityClickedFlag==2?'activity-tab-item-clicked':'bb'" class="activity-tab-item" (click)="onActivityTab(2)">
+                        WEEK
+                      </ion-col>
+                      <ion-col class="col-width-17" [ngClass]="activityClickedFlag==3?'activity-tab-item-clicked':'bb'" class="activity-tab-item" (click)="onActivityTab(3)">
+                        MONTH
+                      </ion-col>
+                      <ion-col width-25>
+                      </ion-col>
+                    </ion-row>
+                    <div class="activity-category">
+                      <div class="activity-category-title">Temperature</div>
+                      <div class="activity-category-content"></div>
+                      <div class="activity-category-title">Blood Pressure</div>
+                      <div class="activity-category-content"></div>
+                      <div class="activity-category-title">Oxygen</div>
+                      <div class="activity-category-content"></div>
+                    </div>
+
+                    <ion-icon ios="ios-calendar" md="md-calendar" class="activity-calendar-icon"></ion-icon>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-card class="profile-card medical-history-card">
+                    <ion-row class="medical-history-title">
+                      <ion-col width-75>
+                        <img src="/assets/icon/medical-history.png">
+                        <p>MEDICAL HISTORY</p>
+                      </ion-col>
+                      <ion-col width-25 class="medical-history-type">
+                        Edit
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row class="medical-history-content" padding-top *ngFor="let content of medicalhistoryList">
+                      <ion-col width-67>
+                        {{content.name}}
+                      </ion-col>
+                      <ion-col width-33 class="medical-history-content-type">
+                        {{content.type}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-card>
+                </ion-col>
+                <ion-col>
+                  <ion-card class="profile-card daily-activity-card">
+                    <ion-row class="daily-activity-title">
+                      <ion-col width-67>
+                        <img src="/assets/icon/dailyactivity.png">
+                        <p>DAILY ACTIVITY</p>
+                      </ion-col>
+                      <ion-col width-33 class="daily-activity-type">
+                        Edit
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row class="daily-activity-content">
+                      <ion-col width-25></ion-col>
+                      <ion-col width-50 class="calendar-col" padding-bottom>Friday, December 9, 2016</ion-col>
+                      <ion-col width-10 class="calendar-col">
+                        <img src="/assets/icon/calendar.png">
+                      </ion-col>
+                      <ion-col width-10></ion-col>
+
+                    </ion-row>
+                    <ion-row class="daily-activity-content daily-content">
+                      <ion-col width-10>
+                        <img src="/assets/icon/pillicon.png">
+                      </ion-col>
+                      <ion-col width-10>
+                        <span>8AM</span>
+                      </ion-col>
+                           Medication
+                    </ion-row>
+                    <ion-row class="daily-activity-content daily-content">
+                      <ion-col width-10>
+                        <img src="/assets/icon/foodicon.png">
+                      </ion-col>
+                      <ion-col width-10>
+                        <span>9AM</span>
+                      </ion-col>
+                           Breakfast
+                    </ion-row>
+                    <ion-row class="daily-activity-content daily-content">
+                      <ion-col width-10>
+                        <img src="/assets/icon/walkicon.png">
+                      </ion-col>
+                      <ion-col width-10>
+                        <span>12PM</span>
+                      </ion-col>
+                           Exercise
+                    </ion-row>
+
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-card class="profile-card care-activity-card">
+                    <ion-row class="care-activity-title">
+                      <ion-col width-90>
+                        <ion-icon ios="ios-heart" md="md-heart" class="heart-icon"></ion-icon>
+                        ACUTE CARE ACTIVITY
+                        <ion-icon md="md-warning" class="warning-icon"></ion-icon>
+                      </ion-col>
+                      <ion-col width-10 class="edit-icon">
+                        Edit
+                      </ion-col>
+                    </ion-row>
+                    <ion-row class="care-activity-table-title">
+                      <ion-col class="col-width-20">
+                        DATE
+                        <ion-icon name="ios-arrow-down"></ion-icon>
+                      </ion-col>
+                      <ion-col class="col-width-30">
+                        FACILITY TYPE
+                        <ion-icon name="ios-arrow-down"></ion-icon>
+                      </ion-col>
+                      <ion-col class="col-width-30">
+                        FACILITY NAME
+                        <ion-icon name="ios-arrow-down"></ion-icon>
+                      </ion-col>
+                      <ion-col class="col-width-20">
+                        STATUS
+                        <ion-icon name="ios-arrow-down"></ion-icon>
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row class="care-activity-table-content" *ngFor="let content of careactivityList; let i = index" [ngClass]="i%2==1?'back-gray':'back-white'">
+                      <ion-col class="col-width-20">
+                        <ion-icon name="eye"></ion-icon>
+                        {{content.date}}
+                      </ion-col>
+                      <ion-col class="col-width-30">
+                        {{content.type}}
+                      </ion-col>
+                      <ion-col class="col-width-30">
+                        {{content.name}}
+                      </ion-col>
+                      <ion-col class="col-width-20">
+                        {{content.status}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-card>
+
+                </ion-col>
+              </ion-row>
+
+          </ion-col>
+          <ion-col width-25 class="activity-content">
+            <ion-card class="activity-content-card">
+              <ion-row class="allergies">
+                <ion-col width-80 class="activity-content-card-title">
+                  <ion-icon name="ios-leaf"></ion-icon>
+                  ALLERGIES
+                </ion-col>
+                <ion-col width-20 class="activity-content-card-title-add">
+                  <ion-icon name="add"></ion-icon>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let content of allergiesList; let i = index">
+                <div class="dot"></div>
+                <div class="activity-content-card-content">{{content.name}}</div>
+              </ion-row>
+              <div class="bottom-edit-button">
+                Edit
+              </div>
+
+            </ion-card>
+            <ion-card class="activity-content-card">
+              <ion-row class="medication">
+                <ion-col width-80 class="activity-content-card-title">
+                  <img src="/assets/icon/pillicon2.png">
+                  <p>MEDICATIONS</p>
+                </ion-col>
+                <ion-col width-20 class="activity-content-card-title-add">
+                  <ion-icon name="add"></ion-icon>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let content of medicationList; let i = index">
+                <div class="dot"></div>
+                <div class="activity-content-card-content">{{content.name}}</div>
+              </ion-row>
+              <div class="bottom-edit-button">
+                Edit
+              </div>
+            </ion-card>
+            <ion-card class="activity-content-card">
+              <ion-row class="groups">
+                <ion-col width-80 class="activity-content-card-title">
+                  <img src="/assets/icon/groupicon.png">
+                  GROUPS
+                </ion-col>
+                <ion-col width-20 class="activity-content-card-title-add">
+                  <ion-icon name="add"></ion-icon>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let content of groupList; let i = index">
+                <div class="dot"></div>
+                <div class="activity-content-card-content">{{content.name}}</div>
+              </ion-row>
+              <!-- <div class="bottom-edit-button">
+                Edit
+              </div> -->
+            </ion-card>
+            <ion-card class="activity-content-card">
+              <ion-row class="contacts">
+                <ion-col width-80 class="activity-content-card-title">
+                  <img src="/assets/icon/medicaladd.png">
+                  ER CONTACTS
+                </ion-col>
+                <ion-col width-20 class="activity-content-card-title-add">
+                  <ion-icon name="add"></ion-icon>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let content of contactsList; let i = index">
+                <div class="dot"></div>
+                <div class="activity-content-card-content">{{content.name}}</div>
+              </ion-row>
+              <!-- <div class="bottom-edit-button">
+                Edit
+              </div> -->
+            </ion-card>
+            <ion-card class="activity-content-card">
+              <ion-row class="files">
+                <ion-col width-80 class="activity-content-card-title">
+                  <ion-icon name="ios-folder"></ion-icon>
+                  FILES
+                </ion-col>
+                <ion-col width-20 class="activity-content-card-title-add">
+                  <ion-icon name="add"></ion-icon>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let content of filesList; let i = index">
+                <div class="dot"></div>
+                <div class="activity-content-card-content">{{content.name}}</div>
+              </ion-row>
+              <div class="bottom-edit-button">
+                Edit
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+      </ion-row>
+    </ion-grid>
+    <!-- </ion-scroll> -->
+
+</ion-content>

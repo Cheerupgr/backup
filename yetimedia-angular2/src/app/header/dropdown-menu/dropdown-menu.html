@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-list-header>Account Settings</ion-list-header>
+  <ion-item>
+    <ion-label>Push Notifications</ion-label>
+    <ion-toggle color="$color-green"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <span>Snooze Notifications</span>
+    <ion-icon item-right name="ios-arrow-down"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <span>Edit Profile</span>
+    <ion-icon item-right name="ios-person-outline"></ion-icon>
+  </ion-item>
+  <ion-item class="signout-item" (click)="signout()">
+    <span>Sign Out</span>
+  </ion-item>
+</ion-list>

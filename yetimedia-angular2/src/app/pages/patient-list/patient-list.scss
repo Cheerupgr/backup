@@ -1,0 +1,226 @@
+page-patient-list {
+  // profile-card{
+  //   width: 60px !important;
+  //   height: 60px !important;
+  // }
+
+  ion-content {
+    background: white;
+    .scroll-content{
+      padding: 0 0 0 90px !important;
+      padding-top: 80px !important;
+    }
+
+  }
+
+  .list-header {
+    width: 90%;
+    margin-left: 3%;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    .patient-type-button {
+      padding-left: 15px !important;
+      width: 220px;
+      margin: 0px;
+      text-align: left;
+      background-color: #E6DFDF;
+      color: black;
+      box-shadow: none;
+
+      p{
+        width: 150px;
+      };
+    };
+
+    .patient-type-button:hover {
+      background-color: #E6DFDF;
+    };
+
+    .patient-type-list {
+      position: absolute;
+      top:40px; left: 0px;
+      background-color: white;
+      z-index: 100;
+      border-radius: 1px;
+      width: 220px;
+      border: 1px solid #95989A;
+      transition: bottom 1s ease-in;
+
+      .patient-list-item {
+        border-bottom: 1px solid #95989A;
+      };
+
+      .patient-list-item:last-child {
+        border-bottom: none;
+      };
+
+      p {
+        padding: 0px;
+        margin: 5px 0px;
+        text-align: center;
+      };
+    };
+
+    .patient-pagination {
+      position: relative;
+      right: 0px;
+      display: inline-block;
+      float: right;
+
+    .page-count-list {
+        position: absolute;
+        top:40px;
+        left: 148px;
+        width: 49px;
+        background-color: white;
+        z-index: 100;
+        border-radius: 4px;
+        // width: 200px;
+        border: 1px solid #95989A;
+        transition: bottom 1s ease-in;
+
+        .count-list-item {
+          border-bottom: 1px solid #95989A;
+          text-align: center;
+          width: 100%;
+          height: 36px;
+          p{
+            margin: 0px auto;
+            width: 100%;
+            text-align: center;
+          };
+        };
+
+        .count-list-item:last-child {
+          border-bottom: none;
+        };
+      };
+
+      p {
+        float: left;
+        margin: 0px 0px 0px 15px;
+        padding: 12px;
+      };
+
+      button {
+        float: left;
+        margin: 0px 0px 0px 15px;
+        padding: 0px 5px;
+        color: black;
+        background-color: #E6DFDF;
+        box-shadow: none;
+
+        p {
+          margin: 0px;
+          font-size: 2rem;
+        };
+        // min-width: .5em !important;
+        ion-icon {
+          font-size: 2rem !important;
+          padding: 0px;
+          margin: 0px 0px 0px 0px;
+        };
+      };
+
+      .pagination-count-button:hover {
+        background-color: #E6DFDF;
+      };
+
+      ion-icon {
+        float: left;
+        font-size: 4rem;
+        margin: 0px 0px 0px 15px;
+      };
+    };
+  }
+
+
+  profile-card {
+    // float: left;
+    // position: relative;
+    //
+    // margin: 20px 5px 0rem 5px;
+    // border: 3px;
+    position: absolute;
+    top:0px;
+    width: 100%;
+    height: 100%;
+  };
+
+  .record-15 {
+    width: calc(20% - 14px);
+    width: -webkit-calc(20% - 14px);
+    padding-top: calc(16% - 9px);
+    padding-top: -webkit-calc(16% - 9px);
+  };
+
+  .record-24 {
+    width: calc(16.5% - 14px);
+    width: -webkit-calc(16.5% - 14px);
+    padding-top: calc(13% - 9px);
+    padding-top: -webkit-calc(13% - 9px);
+  };
+
+  .list-content{
+    background-color: map-get($colors, light);
+    width: 90%;
+    margin-left: 3%;
+
+    padding-bottom: 7px;
+    .profile-sub-list{
+      display: inline-block;
+      width: 100%;
+
+      .profile-list-content {
+        position: relative;
+        display: inline-block;
+        float: left;
+        margin: 25px 7px 0px 7px;
+      };
+
+      .patient-header-letter {
+        position: absolute;
+        top:-20px;
+        left: 0px;
+        z-index: 50;
+      };
+    }
+  };
+
+
+
+  .sort-list {
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 3%;
+    text-align: center;
+    .category {
+      display: inline-block;
+    };
+
+    .category-title {
+      float: left;
+      line-height: 25px;
+      margin-left: 5px;
+    };
+
+    .category-content {
+      float: left;
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      // background: red;
+      margin-left: 15px;
+    };
+
+    $colordots:  #FED618,#36BE27, #ED1F0A;
+
+    @for $i from 1 through length($colordots) {
+    	.category-content:nth-child(#{length($colordots)}n+#{$i}) {
+    		background: lighten(nth($colordots, $i), 0%);
+    	};
+    };
+  };
+};

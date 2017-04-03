@@ -1,0 +1,51 @@
+left-sidebar {
+  ion-content{
+    background: color($colors, white);
+    .scroll-content{
+      overflow-y: hidden;
+    }
+    .fix-sidebar {
+      background-color:color($colors, dark-gray);
+      position:fixed;
+      width:80px;
+      top: 70px;
+      left:0;
+      z-index:1;
+
+      ion-list{
+        margin-top: 35px;
+
+        ion-item{
+          background-color:transparent;
+          padding: 0 20px;
+
+          .item-inner{
+            padding-right:0 !important;
+            ion-label{
+              margin:12px 0;
+              text-align: center;
+
+              ion-icon{
+                @include rem-fallback(font-size, 3.2);
+                color:color($colors, white);
+                position:relative;
+
+                ion-badge{
+                  background-color:color($colors, red);
+                  border-radius: 6px;
+                  height: 13px;
+                  padding: 0px 5px 0 4px;
+                  @include rem-fallback(font-size, 0.9);
+                  color: #fff;
+                  position: absolute;
+                  right: -6px;
+                  top: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-content padding="true" class="login">
+    <ion-row>
+      <ion-col>
+
+	<div class="logo">
+	  <h2>Tethercare</h2>
+	  <img src="/assets/logo.png" alt="">
+	</div>
+
+	<form (ngSubmit)="onConfirmRegistration($event)">
+
+	  <div class="form-group">
+	    <h2>Confirm Registration</h2>
+	  </div>
+
+	  <ion-list>
+
+	    <ion-item>
+	      <!-- <ion-label floating>Email</ion-label> -->
+	      <ion-input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" name="email" placeholder="Email" clearInput required></ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      <!-- <ion-label floating>Confirmation Code</ion-label> -->
+	      <ion-input type="text" [(ngModel)]="confirmationCode" [ngModelOptions]="{standalone: true}" name="text" placeholder="Code" clearInput required></ion-input>
+	    </ion-item>
+	  </ion-list>
+
+	  <!-- <div padding> -->
+	    <button ion-button block>Confirm</button>
+	    <!-- </div> -->
+
+	  <hr>
+	  <p>Can't find your code? <a [routerLink]="['/auth/resendCode']"> <i class="fa fa-fw fa-group anchor-link"></i> Resend
+	    Code</a>
+	    <a [routerLink]="['/auth/login']"> <i class="fa fa-fw fa-user anchor-link"></i> Login</a>
+	  </p>
+	</form>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</ion-content>

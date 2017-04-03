@@ -1,0 +1,19 @@
+@import "../../pages/custom.scss";
+
+dropdown-menu {
+  ion-list {
+    ion-list-header {
+      text-align: center;
+      font-size: 18px !important;
+      margin: 0 !important;
+    }
+    ion-item {
+      .item-inner {
+        border-bottom: none !important;
+      }
+    }
+    .signout-item {
+      color: $color-sky;
+    }
+  }
+}

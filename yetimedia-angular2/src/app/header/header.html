@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <img src="/assets/logo.png" class="logo"/>
+    </ion-buttons>
+
+    <div class="left-actions" end>
+      <div class="add-user-popup" *ngIf = "clickedUserFlag">
+        <div class="special-popup-item" (click)="editPatient()">PATIENT</div>
+        <div class="special-popup-item" (click)="editCaregiver()">CAREGIVER</div>
+      </div>
+      <div class="buttons-actions">
+      	<button ion-button icon-only (click)="addUser()">
+      	  <ion-icon name="add-circle"></ion-icon>
+      	</button>
+      	<button ion-button icon-only>
+      	  <ion-icon name="search"></ion-icon>
+      	</button>
+
+      </div>
+      <div class="header-setting" (click)="setting($event)">
+        <span>Tammi Rutherford</span>
+        <button class="logoutButton" ion-button>
+          	<ion-icon name="ios-arrow-down"></ion-icon>
+        </button>
+      </div>
+      <div class="header-thumb" (click)="profile()">
+        <img src="/assets/mock_photo.jpeg" class="user-img"/>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

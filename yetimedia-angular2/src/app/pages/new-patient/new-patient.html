@@ -1,0 +1,122 @@
+
+<ion-header>
+  <!-- <ion-navbar>
+
+  </ion-navbar> -->
+</ion-header>
+<ion-content class="has_sidebar has-topbar">
+  <div class="list-header">
+    <p class="title bold">ADD NEW PATIENT PROFILE</p>
+    <button ion-button class="profile-save-button" (click)="profileSave()">SAVE</button>
+  </div>
+
+  <div class="main-content">
+
+    <ion-list class="user-form">
+      <ion-item>
+        <ion-label color="dark" fixed>Name:</ion-label>
+        <ion-input placeholder="name" name="name" [(ngModel)]="newpatient.name"></ion-input>
+      </ion-item>
+      <ion-row>
+        <div  class="profile-image">
+          <!-- <img src="/assets/profilepng/profile1.png"/> -->
+          <img [attr.src]='newpatient.photo' alt=""/>
+        </div>
+        <div class="add-image-button">
+          <label class="custom-file-input">
+              <input type="file" id="previewlogo" (change)="fileChange(input)" #input>
+          </label>
+        </div>
+      </ion-row>
+
+      <ion-item>
+        <ion-label color="dark" fixed>Email:</ion-label>
+        <ion-input type="email" name="email" placeholder="email" [(ngModel)]="newpatient.email"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label color="dark" fixed>UserID:</ion-label>
+        <ion-input placeholder="userid" [(ngModel)]="selectedUser.userid" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label color="dark" fixed>Address:</ion-label>
+        <ion-input placeholder="address" [(ngModel)]="newpatient.address" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Phone # (H):</ion-label>
+        <ion-input type="tel" placeholder="phone number" [(ngModel)]="newpatient.phoneH" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Phone # (C):</ion-label>
+        <ion-input type="tel" placeholder="phone number" [(ngModel)]="newpatient.phoneC" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark" fixed>DOB (AGE):</ion-label>
+        <ion-datetime [(ngModel)]="newpatient.dob" max="2030" min="1920" displayFormat="MM/DD/YYYY" pickerFormat="MMMM-DD-YYYY">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>SSN:</ion-label>
+        <ion-input placeholder="123-45-6789" [(ngModel)]="newpatient.ssn" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Patient Status:</ion-label>
+        <ion-input placeholder="Non-Hospice" [(ngModel)]="newpatient.status.name" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Servicing Office Location:</ion-label>
+        <ion-input placeholder="San Jose, CA" [(ngModel)]="newpatient.servicingOfficeLocation" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <div class="selected-dnr">
+        <ion-row>DNR on File:</ion-row>
+        <p *ngFor="let type of dnrlist;" (click)="onSelectDnrList(type)">
+          <img src="/assets/icon/check.png" *ngIf="newpatient.dnrOnFile == type.value"/>
+          <img src="/assets/icon/noncheck.png" *ngIf="newpatient.dnrOnFile != type.value"/>{{type.name}}
+        </p>
+      </div>
+    </ion-list>
+  </div>
+
+  <p class="history-title">PATIENT MEDICAL HISTORY</p>
+  <div class="patient-history-group">
+    <ion-row>
+      <ion-col class="colwidth60 patient-history">
+        <select>
+         <option value="0">Diagnosis</option>
+         <option value="{{i+1}}" *ngFor = "let item of medicalHistoryList; let i = index">{{item}}</option>
+        </select>
+
+        <ion-row>
+          Accessed by:  <span>Valerie Key</span>
+        </ion-row>
+        <ion-row>
+          Primary Care Physician (PCP):   <span>Dr. John</span>
+        </ion-row>
+        <ion-row>
+          PCP's Contact #:   <span>(444) 444-4444</span>
+        </ion-row>
+      </ion-col>
+
+
+      <ion-col class="colwidth40 patient-group back-white">
+        <div class="patient-group-header">
+          <img src="/assets/icon/groupicon.png"/>
+          <p>GROUPS</p>
+          <a class="color-black"><ion-icon name="md-add"></ion-icon></a>
+        </div>
+        <div class="patient-group-check">
+          <div class="group-check-item padding-10 col-1-2" *ngFor="let group of groups">
+            <ion-checkbox [(ngModel)]="group.attented"></ion-checkbox>
+            {{group.name}}
+          </div>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+
+</ion-content>

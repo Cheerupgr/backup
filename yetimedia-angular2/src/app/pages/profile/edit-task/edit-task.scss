@@ -1,0 +1,19 @@
+@import "../../custom.scss";
+
+edit-task {
+  .item-icon {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .content {
+    select, span, a {
+      ion-icon {
+        font-size: 24px;
+      }
+      margin: 0 12px;
+    }
+  }
+}

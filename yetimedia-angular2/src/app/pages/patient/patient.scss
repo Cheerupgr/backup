@@ -1,0 +1,457 @@
+page-patient {
+
+  .colwidth60 {
+    -webkit-flex: 0 0 60%;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .colwidth40 {
+    -webkit-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .colwidth17 {
+    -webkit-flex: 0 0 17%;
+    -ms-flex: 0 0 17%;
+    flex: 0 0 17%;
+    max-width: 17%;
+  }
+
+  .colwidth20 {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  .colwidth30 {
+    -webkit-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+
+
+  .scroll-content {
+    padding-top: 80px;
+    padding-left: 65px;
+  }
+
+  ion-content {
+    background: map-get($colors, light);
+  }
+
+  .content-md {
+    background-color: map-get($colors, light);
+  }
+
+  .profile-content {
+    padding: 10px 0px 5px 16px;
+  }
+
+  .profile-content ion-card {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile-content .profile-card {
+    background-color: white;
+    // height: 60px;
+  }
+
+  .profile-content-edit-col {
+    padding-right: 0px;
+  }
+  .profile-content-careteam-col{
+    padding-left: 1px;
+    position: relative;
+  }
+
+  .careteam-card-groupadd {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 35px;
+  }
+
+  .profile-content .profile-card .profile-img {
+    width: 60%;
+    max-width: 90px;
+    margin: 0px auto;
+    border-radius: 100%;
+    border: 5px solid red;
+  }
+
+  .profile-content .profile-card .profile-edit {
+    // margin: 0px auto;
+    text-align: center;
+  }
+
+  .profile-content .profile-card .profile-edit-button {
+    // margin: 0px auto;
+    padding: 0px 3px;
+    font-size: 1.3rem;
+    font-family: Soleil, sans-serif;
+    font-weight: bold;
+    height: 30px;
+    width: 90%;
+    max-width: 120px;
+    box-shadow: none;
+  }
+
+  .profile-content .careteam-card {
+    background-color: white;
+    text-align: center;
+    // position: relative;
+    // height: 60px;
+  }
+
+  .profile-content .careteam-card p {
+    color: #95989A;
+  }
+
+
+  .profile-content .careteam-card .careteam-card-person ion-col {
+    padding: 0px 7px 7px 0px;
+  }
+
+  .profile-content .careteam-card .careteam-card-person img {
+    vertical-align: middle;
+    width: 100%;
+    max-width: 50px;
+  }
+
+  .profile-card-activity {
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .profile-card-activity .activity-tab {
+    margin-top: 20px;
+  }
+
+  .activity-tab-item {
+    border: 1px solid #95989A;
+    border-left: none;
+    text-align: center;
+    background: white;
+    color: #95989A;
+    padding: 2px;
+    font-size: 1.2rem;
+    font-family: Soleil;
+  }
+
+  .activity-tab-item:first-child {
+    border-left: 1px solid #95989A;
+  }
+
+  .activity-tab-item-clicked {
+    background-color: #0DA8FA;
+    color: white;
+  }
+
+  .activity-category {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: inline-block;
+  }
+
+  .activity-category-title {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #95989A;
+  }
+
+  .activity-category-content {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border-radius: 100%;
+    margin-right: 7px;
+  }
+
+  $colordots: #FDAF00, #ED1F0A, #0DA8FA;
+
+  @for $i from 1 through length($colordots) {
+  	.activity-category-content:nth-child(#{length($colordots)}n+#{$i}) {
+  		background: lighten(nth($colordots, $i), 20%);
+  	}
+  }
+  .activity-calendar-icon {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .activity-title {
+    font-size: 1.7rem;
+    color: #0DA8FA;
+  }
+
+  .medical-history-card, .daily-activity-card{
+    padding: 0px 10px 10px 10px;
+  }
+
+
+
+  .medical-history-card, .daily-activity-card {
+    padding: 0px 10px 10px 10px;
+  }
+
+
+  .medical-history-title img, .daily-activity-title img {
+    height: 25px;
+    width: auto;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .daily-activity-content .calendar-col{
+    text-align: center;
+    max-width: 190px;
+    font-weight: bold;
+    padding-top: 8px;
+  }
+
+  .daily-activity-content .calendar-col img {
+    height: 20px;
+    width: auto;
+    float: left;
+  }
+
+  .daily-activity-content img {
+    height: 20px;
+    width: auto;
+    float: left;
+    margin-left: 10px;
+  }
+
+
+  .daily-activity-content {
+  }
+
+
+
+  .daily-activity-content span {
+    font-size: 1.1rem;
+    color: #95989A;
+    line-height: 2.3rem;
+    // margin-right: 7px;
+    // padding-top: 0.6rem;
+  }
+
+  .daily-activity-content.daily-content ion-col{
+    max-width: 50px;
+    min-width: 50px;
+  }
+
+
+  .daily-activity-title p {
+    color: #ED1F0A;
+  }
+
+  .medical-history-title p {
+    color: #FD7400;
+  }
+
+  .medical-history-title ion-col {
+    padding: 10px 0px 0px 15px;
+  }
+
+  .daily-activity-title ion-col {
+    padding: 10px 0px 0px 15px;
+  }
+
+  .medical-history-content ion-col, .daily-activity-content ion-col {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.2rem;
+  }
+
+  .medical-history-content-type, .medical-history-type, .daily-activity-type {
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .careteam-card-person-name {
+    text-align: left;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+  }
+
+  .activity-content {
+    padding: 5px 3px;
+  }
+
+  .profile-info span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .care-activity-title {
+    color: #36BE27;
+    padding: 0px 10px 10px 10px;
+  }
+  .care-activity-title .warning-icon{
+    color: #ED1F0A;
+  }
+
+  .care-activity-title .heart-icon {
+    color: #333;
+  }
+  .care-activity-title .edit-icon {
+    color: #333;
+    text-align: right;
+  }
+
+  .care-activity-table-title ion-col {
+    border: 1px solid #95989A;
+    border-left: none;
+    text-align: center;
+    background-color: #E6DFDF;
+  }
+
+  .care-activity-table-title ion-icon {
+    font-size: 1.6rem;
+    margin-left: 5px;
+  }
+
+
+  .care-activity-table-title ion-col:first-child {
+    border: 1px solid #95989A;
+  }
+
+
+
+  .care-activity-table-title ion-col:first-child {
+    border: 1px solid #95989A;
+  }
+
+
+  .care-activity-table-content ion-col {
+    position: relative;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .care-activity-table-content ion-icon {
+    font-size: 1.4rem;
+    // margin-left: 5px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+  }
+
+  .back-gray {
+    background-color: #E6DFDF;
+  }
+
+  .back-white {
+    background-color: white;
+  }
+
+  .activity-content-card {
+    padding: 0px 0px 10px 10px ;
+    position: relative;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    float: left;
+    border-radius: 7px;
+    background-color: black;
+    margin: auto 7px auto 7px;
+  }
+
+  .activity-content-card-content {
+    float: left;
+    font-size: 1.2rem;
+  }
+
+  .activity-content-card-title ion-icon {
+    color: #4E4C50 !important;
+  }
+
+  .activity-content-card-title-add {
+    text-align: center;
+    min-width: 40px;
+    max-width: 40px;
+    position: absolute;
+    right:0px;
+  }
+
+  .activity-content-card ion-row {
+    position: relative;
+  }
+
+  .bottom-edit-button {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+  }
+
+
+  .allergies .activity-content-card-title, .files .activity-content-card-title{
+    color: #36BE27;
+  }
+
+  .allergies .activity-content-card-title ion-icon, .files .activity-content-card-title ion-icon {
+    margin-right: 5px;
+  }
+
+  .medication .activity-content-card-title {
+    color: #0DA8FA;
+  }
+
+  .groups .activity-content-card-title {
+    color: #FD7400;
+  }
+
+
+  .allergies .activity-content-card-title ion-icon, .files .activity-content-card-title ion-icon {
+    margin-right: 5px;
+  }
+
+  .medication .activity-content-card-title {
+    color: #0DA8FA;
+  }
+
+  .groups .activity-content-card-title {
+    color: #FD7400;
+  }
+
+
+  .contacts .activity-content-card-title {
+    color: #ED1F0A;
+  }
+  // .medication .activity-content-card-title img, .groups .activity-content-card-title img,
+  // .contacts .activity-content-card-title img {
+  //
+  // }
+
+  .medication .activity-content-card-title img {
+    width: 17px !important;
+    margin-right: 8px !important;
+    padding-top: 2px !important;
+  }
+
+  .activity-content-card-title img {
+    width: 15px;
+    margin-right: 10px;
+    padding-top: 4px;
+    // width: auto;
+    float: left;
+  }
+
+
+};

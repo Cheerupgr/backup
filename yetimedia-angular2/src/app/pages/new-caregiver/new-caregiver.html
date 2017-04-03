@@ -1,0 +1,96 @@
+
+<ion-header>
+  <!-- <ion-navbar>
+
+  </ion-navbar> -->
+</ion-header>
+<ion-content class="has_sidebar has-topbar">
+  <div class="list-header">
+    <p class="title bold">ADD NEW {{selectedRole.name}} PROFILE</p>
+    <button ion-button class="profile-save-button" (click)="profileSave()">SAVE</button>
+  </div>
+
+  <div class="main-content">
+    <button ion-button icon-only class="role-type-button" (click)="openRole()">
+        <p>{{selectedRole.name}}</p>
+        <ion-icon name="ios-arrow-down"></ion-icon>
+    </button>
+    <ion-list class="role-type-list" *ngIf="roleClickedFlag">
+      <div class="role-list-item" *ngFor="let role of roleList; let i = index" (click)="onSelectRole(role)">
+        <p>{{role.name}}</p>
+      </div>
+    </ion-list>
+
+
+    <ion-list class="user-form">
+      <ion-item>
+        <ion-label color="dark" fixed>Name:</ion-label>
+        <ion-input placeholder="name" [(ngModel)]="selectedUser.name" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-row>
+        <div  class="profile-image">
+          <!-- <img src="/assets/profilepng/profile1.png"/> -->
+          <img [attr.src]='selectedUser.photo' alt=""/>
+        </div>
+        <div class="add-image-button">
+          <label class="custom-file-input">
+                <input type="file" id="previewlogo" (change)="fileChange(input)" #input>
+            </label>
+        </div>
+      </ion-row>
+
+      <ion-item>
+        <ion-label color="dark" fixed>Email:</ion-label>
+        <ion-input type="tel" placeholder="email" [(ngModel)]="selectedUser.email" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label color="dark" fixed>UserID:</ion-label>
+        <ion-input placeholder="userid" [(ngModel)]="selectedUser.userid" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label color="dark" fixed>Password:</ion-label>
+        <ion-input type="password" placeholder="Format e.g. Abc.12345" [(ngModel)]="selectedUser.password" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Address:</ion-label>
+        <ion-input placeholder="address" [(ngModel)]="selectedUser.address" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Phone # (C):</ion-label>
+        <ion-input type="tel" placeholder="phone number" [(ngModel)]="selectedUser.phoneC" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" fixed>Phone # (H):</ion-label>
+        <ion-input type="tel" placeholder="phone number" [(ngModel)]="selectedUser.phoneH" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+
+    <button ion-button icon-only class="patient-type-button" (click)="openPatientList()" *ngIf="selectedRole.name == 'Caregiver'">
+        <p>Add Patient</p>
+        <ion-icon name="ios-arrow-down"></ion-icon>
+    </button>
+    <ion-list class="patient-type-list" *ngIf="patientClickedFlag && selectedRole.name == 'Caregiver'">
+      <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="onInput($event)"></ion-searchbar>
+      <div class="patient-list-item" *ngFor="let patient of patientList; let i = index" (click)="onSelectPatient(patient)">
+        <p class="item-line" *ngIf="i==0 || patientList[i-1].lname[0]!=patientList[i].lname[0]">{{patient.fname}} {{patient.lname}} <span>{{patient.lname[0]}}</span></p>
+        <p class="item-noline" *ngIf="i!=0 && patientList[i-1].lname[0]==patientList[i].lname[0]">{{patient.fname}} {{patient.lname}}</p>
+      </div>
+    </ion-list>
+    <div class="selected-patient-list" *ngIf="selectedRole.name == 'Caregiver'">
+      <span *ngFor="let patient of selectedUser.patientsList; let i = index">{{patient.fname}} {{patient.lname}}</span>
+    </div>
+
+    <div class="selected-speciallist" *ngIf="selectedRole.name == 'Doctor'">
+      <ion-row>Specialist Type:</ion-row>
+      <p *ngFor="let type of specialList;" (click)="onSelectSpecialList(type)">
+        <img src="/assets/icon/check.png" *ngIf="selectedUser.specialistType == type"/>
+        <img src="/assets/icon/noncheck.png" *ngIf="selectedUser.specialistType != type"/>{{type}}
+      </p>
+    </div>
+  </div>
+
+
+</ion-content>

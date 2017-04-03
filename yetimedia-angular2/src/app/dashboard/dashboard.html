@@ -1,0 +1,289 @@
+<ion-content>
+  <ion-content padding class="dashboard-container">
+    <ion-row>
+      <ion-col width-50>
+        <p class="title">Dashboard</p>
+      </ion-col>
+      <ion-col width-50>
+        <p class="date">Today, November 8</p>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-md>
+      <ion-col width-75 class="dashboard-stats">
+        <ion-row class="dashboard-component graphs-container" responsive-lg>
+          <ion-col width-33 no-padding>
+            <div [ngSwitch]="statsByTime">
+              <ion-list *ngSwitchCase="'day'">
+                <ion-item>
+                  <h3>Number of patients</h3>
+                  <p class="total">425</p>
+                </ion-item>
+                <ion-item class="critical-list">
+                  <div>
+                    <h3 class="stats">most critical patients</h3>
+                    <div item-left>
+                      <ol>
+                        <li><span>Adam Boum</span></li>
+                        <li><span>Sue Wong</span></li>
+                      </ol>
+                    </div>
+                    <div item-right>
+                      <ul text-right>
+                        <li>Admitted to ER</li>
+                        <li>Vital low</li>
+                      </ul>
+                    </div>
+                  </div>
+                </ion-item>
+                <ion-item class="top-conditions">
+                  <div>
+                    <h3>Top conditions</h3>
+                    <div item-left>
+                      <ul>
+                        <li>Dementia</li>
+                        <li>Diabetes</li>
+                      </ul>
+                    </div>
+                    <div item-right>
+                      <ul text-right>
+                        <li class="down">+5%</li>
+                        <li class="up">-6%</li>
+                      </ul>
+                    </div>
+                  </div>
+                </ion-item>
+              </ion-list>
+
+              <ion-list *ngSwitchCase="'week'">
+                <ion-item>
+                  <h3>Number of patients</h3>
+                  <p class="total">425</p>
+                </ion-item>
+                <ion-item class="critical-list">
+                  <div>
+                    <h3>most critical patients</h3>
+                    <div item-left>
+                      <ol>
+                        <li><span>Patient1</span></li>
+                        <li><span>Patient2</span></li>
+                      </ol>
+                    </div>
+                    <div item-right>
+                      <ul text-right>
+                        <li>Admitted to ER</li>
+                        <li>Vitals low</li>
+                      </ul>
+                    </div>
+                  </div>
+                </ion-item>
+                <ion-item class="top-conditions">
+                  <div>
+                    <h3>Top conditions</h3>
+                    <div item-left>
+                      <ul>
+                        <li>Dementia</li>
+                        <li>Diabetes</li>
+                      </ul>
+                    </div>
+                    <div item-right>
+                      <ul text-right>
+                        <li class="down">+5%</li>
+                        <li class="up">-6%</li>
+                      </ul>
+                    </div>
+                  </div>
+                </ion-item>
+              </ion-list>
+
+              <ion-list *ngSwitchCase="'month'">
+                <ion-item>
+                  <h3>Number of patients</h3>
+                  <p class="total">425</p>
+                </ion-item>
+                <ion-item class="critical-list">
+                  <div>
+                    <h3>most critical patients</h3>
+                    <div item-left>
+                      <ol>
+                        <li><span>Adam Boum</span></li>
+                        <li><span>Sue Wong</span></li>
+                      </ol>
+                    </div>
+                    <div item-right>
+                      <ul text-right>
+                        <li>Admitted to ER</li>
+                        <li>Vital low</li>
+                      </ul>
+                    </div>
+                  </div>
+                </ion-item>
+                <ion-item class="top-conditions">
+                  <div>
+                    <h3>Top conditions</h3>
+                    <div item-left>
+                      <ul>
+                        <li>Dementia</li>
+                        <li>Diabetes</li>
+                      </ul>
+                    </div>
+                    <div item-right>
+                      <ul text-right>
+                        <li class="down">+5%</li>
+                        <li class="up">-6%</li>
+                      </ul>
+                    </div>
+                  </div>
+                </ion-item>
+              </ion-list>
+            </div>
+            <ion-toolbar>
+              <ion-segment [(ngModel)]="statsByTime">
+                <ion-segment-button value="day">
+                  day
+                </ion-segment-button>
+                <ion-segment-button value="week">
+                  week
+                </ion-segment-button>
+                <ion-segment-button value="month">
+                  month
+                </ion-segment-button>
+              </ion-segment>
+            </ion-toolbar>
+          </ion-col>
+          <ion-col width-67 class="graph">
+            <h3>AVERAGE PATIENT ACTIVITY</h3>
+            <img src="assets/mock_graph.png">
+          </ion-col>
+        </ion-row>
+        <ion-row class="buttons-options">
+          <ion-col width-50>
+            <p class="title">Groups</p>
+          </ion-col>
+          <ion-col width-50>
+            <a class="button-create" text-right color="primary" (click)="createGroup()">
+              <ion-icon name="md-add"></ion-icon>
+              <span class="text-size">Create Group</span>
+            </a>
+          </ion-col>
+        </ion-row>
+        <ion-row class="loading" *ngIf="!groupUpdated">
+          <p>Loading ...</p>
+        </ion-row>
+        <ion-row class="statsByIll" responsive-md *ngIf="groupUpdated">
+
+          <ion-col class="group-item" width-33 *ngFor="let group of groups">
+            <div class="dashboard-component">
+              <h3 color="primary" class="title">{{group.name}}</h3>
+              <ion-list no-lines no-padding>
+                <ion-item>
+                  <div item-left>
+                    Number of Patients
+                  </div>
+                  <div item-right *ngIf="group.patients">
+                    {{group.patients.length}}
+                  </div>
+                  <div item-right *ngIf="!group.patients">
+                    0
+                  </div>
+                </ion-item>
+                <ion-item>
+                  <ion-thumbnail item-left *ngFor="let patient of group.patients">
+                    <img src="assets/mock_photo.jpeg">
+                  </ion-thumbnail>
+                </ion-item>
+                <ion-item>
+                  <div item-left>
+                    Vitals
+                  </div>
+                  <div item-right>
+                    <p class="down">+5%</p>
+                  </div>
+                </ion-item>
+                <ion-item>
+                  <div item-left>
+                    Vitals
+                  </div>
+                  <div item-right>
+                    <p class="up">-6%</p>
+                  </div>
+                </ion-item>
+                <ion-item>
+                  <div item-left>
+                    Vitals
+                  </div>
+                  <div item-right>
+                    <p class="up">-6%</p>
+                  </div>
+                </ion-item>
+              </ion-list>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col width-25 no-padding class="notifications-container">
+        <div class="dashboard-component">
+          <h3 color="green" class="title">NOTIFICATIONS</h3>
+          <ion-list class="notifications-list">
+            <ion-item>
+              <div item-left>
+                <img src="assets/mock_photo.jpeg">
+              </div>
+              <h2>Dr. John Green</h2>
+              <p>Message detail...</p>
+              <div item-right>
+                <span>5:30</span>
+                <span>
+                  <ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon>
+                  <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+		</span>
+              </div>
+            </ion-item>
+            <ion-item>
+              <div item-left>
+                <img src="assets/mock_photo.jpeg">
+              </div>
+              <h2>Dr. John Green</h2>
+              <p>Message detail...</p>
+              <div item-right>
+                <span>5:30</span>
+                <span>
+                  <ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon>
+                  <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+		</span>
+              </div>
+            </ion-item>
+            <ion-item>
+              <div item-left>
+                <img src="assets/mock_photo.jpeg">
+              </div>
+              <h2>Dr. John Green</h2>
+              <p>Message detail...</p>
+              <div item-right>
+                <span>5:30</span>
+                <span>
+                  <ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon>
+                  <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+		</span>
+              </div>
+            </ion-item>
+            <ion-item>
+              <div item-left>
+                <img src="assets/mock_photo.jpeg">
+              </div>
+              <h2>Dr. John Green</h2>
+              <p>Message detail...</p>
+              <div item-right>
+                <span>5:30</span>
+                <span>
+                  <ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon>
+                  <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+		</span>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</ion-content>

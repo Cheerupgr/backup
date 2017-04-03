@@ -1,0 +1,28 @@
+@import "../../pages/custom.scss";
+
+create-group {
+  ion-list-header {
+    font-size: 20px !important;
+    border-top: none !important;
+    margin-bottom: 0 !important;
+  }
+  ion-item {
+    padding-left: 0 !important;
+    .item-inner {
+      border: 1px solid $color-gray-1 !important;
+    }
+  }
+  .group-list {
+    border: 1px solid $color-gray-1;
+    padding-left: 16px;
+    ion-item {
+      .item-inner {
+        border: none !important;
+      }
+    }
+  }
+  .button-done {
+    float: right;
+    margin-bottom: 20px;
+  }
+}

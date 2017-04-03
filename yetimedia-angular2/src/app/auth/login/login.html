@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-content padding="true" class="login">
+    <ion-row>
+      <ion-col>
+
+	<div class="logo">
+	  <h2>Tethercare</h2>
+	  <img src="/assets/logo.png" alt="">
+	</div>
+
+	<form (ngSubmit)="onLogin($event)" #logInForm="ngForm">
+	  <ion-list>
+
+	    <ion-item detail-none item-sm>
+	      <ion-input type="email"
+			 [(ngModel)]="email"
+			 placeholder="Email"
+			 name="email"
+			 clearInput
+			 required></ion-input>
+	    </ion-item>
+
+	    <ion-item detail-none>
+	      <ion-input type="password"
+			 [(ngModel)]="password"
+			 placeholder="Password"
+			 name="password"
+			 clearInput
+			 required></ion-input>
+	    </ion-item>
+
+	  </ion-list>
+	  <button [disabled]="!logInForm.form.valid" ion-button block large>LOGIn</button>
+	</form>
+
+	<ion-item>
+	  <ion-label>Remember Me</ion-label>
+	  <ion-checkbox color="light" checked="true"></ion-checkbox>
+	</ion-item>
+
+	<a [routerLink]="['/auth/forgotPassword']" class="anchor-link">Forgot password?</a>
+
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</ion-content>

@@ -1,0 +1,20 @@
+<form (ngSubmit)="onRegister($event)">
+  <div class="form-group">
+    <h2>Create account</h2>
+  </div>
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="registrationUser.email" [ngModelOptions]="{standalone: true}" name="email" clearInput required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="registrationUser.password" [ngModelOptions]="{standalone: true}"
+	       name="password" clearInput required></ion-input>
+  </ion-item>
+
+  <div padding>
+    <button ion-button block>Create your account</button>
+  </div>
+
+  <p>Already have an account? <a [routerLink]="['/auth/login']"> <i class="fa fa-fw fa-lock"></i>Login</a></p>
+</form>

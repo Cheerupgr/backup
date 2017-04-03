@@ -1,0 +1,63 @@
+<ion-header>
+  <!-- <ion-navbar>
+
+  </ion-navbar> -->
+</ion-header>
+<ion-content class="has_sidebar scrollbar">
+  <div class="list-header">
+    <button ion-button icon-only class="patient-type-button" (click)="presentPopover()">
+        <p>{{patientType}}</p>
+        <ion-icon name="ios-arrow-down"></ion-icon>
+    </button>
+    <ion-list class="patient-type-list" *ngIf="typeClickedFlag">
+      <div class="patient-list-item" *ngFor="let type of typeList" (click)="onSelectType(type)">
+        <p>{{type.name}}</p>
+      </div>
+    </ion-list>
+
+
+    <div class="patient-pagination">
+      <p>Records/Page</p>
+      <button ion-button icon-only class="pagination-count-button" (click)="openCountList()">
+          <p>{{countofRecord}}</p>
+          <ion-icon name="ios-arrow-down"></ion-icon>
+      </button>
+      <ion-icon name="ios-arrow-back" (click)="backPage()" ></ion-icon>
+      <p>
+        {{recordFirst}} - {{recordLast}} of {{patientList.length}} records
+      </p>
+      <ion-icon name="ios-arrow-forward" (click)="nextPage()" ></ion-icon>
+
+      <ion-list class="page-count-list" *ngIf="countClickedFlag">
+        <div class="count-list-item" *ngFor="let type of pageCountList; let i = index" (click)="onSelectCount(type)">
+          <p>{{type.count}}</p>
+        </div>
+      </ion-list>
+
+    </div>
+  </div>
+
+
+  <div class="list-content">
+    <div class="profile-sub-list" *ngFor="let patients of pagepatientList; let i = index">
+      <div class="profile-list-content record-{{countofRecord}}" *ngFor="let patient of patients; let ii = index" (click)="gotoPatientpage(patient)">
+        <div class="patient-header-letter" *ngIf="ii==0">{{patient.name[0]}}</div>
+        <profile-card [info]="patient"></profile-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="sort-list">
+    <div class="category">
+      <div class="category-title">Sort by Patient Status:</div>
+      <div class="category-content"></div>
+      <div class="category-title">Ok</div>
+      <div class="category-content"></div>
+      <div class="category-title">Attention Required</div>
+      <div class="category-content"></div>
+      <div class="category-title">Critical</div>
+
+    </div>
+  </div>
+
+</ion-content>

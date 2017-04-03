@@ -1,0 +1,176 @@
+//breakpoint min
+@mixin breakpointMin($point) {
+
+        @if $point == max {
+                @media (min-width: 1600px) {
+                        @content;
+                }
+        }
+        @else if $point == tablet-landscape {
+                @media (min-width: 1200px) {
+                        @content;
+                }
+        }
+        @else if $point == tablet-portrait {
+                @media (min-width: 992px) {
+                        @content;
+                }
+        }
+        @else if $point == phone-landscape {
+                @media (min-width: 768px) {
+                        @content;
+                }
+        }
+        @else if $point == phone-portrait {
+                @media (min-width: 550px) {
+                        @content;
+                }
+        }
+        @else if $point == extrasmall {
+                @media (min-width: 400px) {
+                        @content;
+                }
+        }
+        @else {
+                @media (min-width: $point) {
+                        @content;
+                }
+        }
+}
+
+//custom breakpoint
+@mixin breakpointCustom($point, $value) {
+        @media ($point:$value) {
+                @content;
+        }
+}
+//breakpoint min
+@mixin breakpointMax($point) {
+
+        @if $point == max {
+                @media (max-width: 1600px) {
+                        @content;
+                }
+        }
+        @else if $point == tablet-landscape {
+                @media (max-width: 1199px) {
+                        @content;
+                }
+        }
+        @else if $point == tablet-portrait {
+                @media (max-width: 991pxpx) {
+                        @content;
+                }
+        }
+        @else if $point == phone-landscape {
+                @media (max-width: 767px) {
+                        @content;
+                }
+        }
+        @else if $point == phone-portrait {
+                @media (max-width: 550px) {
+                        @content;
+                }
+        }
+        @else if $point == extrasmall {
+                @media (max-width: 400px) {
+                        @content;
+                }
+        }
+        @else {
+                @media (max-width: $point) {
+                        @content;
+                }
+        }
+}
+
+//Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+//Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//Convert measure
+@function strip-unit($num)
+{
+        @return $num / ($num * 0 + 1);
+}
+
+//Font size in rem
+@mixin rem-fallback($property, $values...)
+{
+        $max: length($values);
+        $pxValues: '';
+        $remValues: '';
+
+        @for $i from 1 through $max
+        {
+                $value: strip-unit(nth($values, $i));
+                $pxValues: #{$pxValues + $value*strip-unit($default-font-size)}px;
+
+                @if $i < $max
+                {
+                        $pxValues: #{$pxValues + " "};
+                }
+        }
+
+        @for $i from 1 through $max
+        {
+                $value: strip-unit(nth($values, $i));
+                $remValues: #{$remValues + $value}rem;
+
+                @if $i < $max
+                {
+                        $remValues: #{$remValues + " "};
+                }
+        }
+
+        #{$property}: $pxValues;
+        #{$property}: $remValues;
+}
+
+// Browser Prefixes
+@mixin transform($transforms) {
+        -webkit-transform: $transforms;
+        -moz-transform: $transforms;
+        -ms-transform: $transforms;
+        transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+        @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+        @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+        @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+        @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+        -webkit-transform-origin: $origin;
+        -moz-transform-origin: $origin;
+        -ms-transform-origin: $origin;
+        transform-origin: $origin;
+}

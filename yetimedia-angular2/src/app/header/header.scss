@@ -1,0 +1,62 @@
+page-header {
+    ion-header{
+        ion-buttons{
+            .logo{
+                width: 90px;
+                padding: 5px;
+            }
+        }
+        .left-actions {
+            display: inline-flex;
+            float: right;
+            padding: 0 12px;
+            .add-user-popup{
+              background: white;
+              border: 1px solid #95989a;
+              border-radius: 4px;
+              width: 120px;
+              .special-popup-item{
+                height: 29px;
+                text-align: center;
+                width: 100%;
+                text-align: center;
+                color: #777;
+
+              }
+              .special-popup-item:first-child{
+                border-bottom: 1px solid #95989a;
+              }
+            }
+            .buttons-actions, .header-setting {
+              display: table;
+              height: 54px;
+              span {
+                color: white;
+                display: table-cell;
+                vertical-align: middle;
+              }
+            }
+            .buttons-actions {
+                padding: 0 12 0 0px;
+                button {
+                  box-shadow: none;
+                  margin: 12px 0;
+                }
+            }
+            .header-setting {
+                padding: 0 12px;
+                button {
+                  box-shadow: none;
+                  margin: 12px 0;
+                }
+            }
+            .header-thumb {
+
+            }
+            .user-img{
+                width:55px;
+                border-radius:28px;
+            }
+        }
+    }
+}

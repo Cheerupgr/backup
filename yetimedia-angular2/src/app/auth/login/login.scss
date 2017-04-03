@@ -1,0 +1,140 @@
+login-page {
+
+  ion-content {
+
+    background: $background-login;
+    background: -webkit-linear-gradient(bottom, $background-login, $background-2-login);
+    background: -o-linear-gradient(bottom, $background-login, $background-2-login);
+    background: -moz-linear-gradient(bottom, $background-login, $background-2-login);
+    background: linear-gradient(to bottom, $background-login, $background-2-login) ;
+
+    .login{
+      background: transparent;
+      color:$text-color-1;
+      position:relative;
+
+      ion-row{
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-right: -50%;
+          transform: translate(-50%, -50%);
+
+          ion-col{
+            width: 450px;
+            margin: 0 auto;
+            max-width: 450px;
+
+            button{
+              &.button-default{
+                background-color: $accent-color;
+                border-radius: 9px;
+                box-shadow: none;
+                border: 1px solid $gray-light;
+                font-family: $font-3;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                @include rem-fallback(font-size, 2.2rem);
+
+                &:hover:not(.disable-hover){
+                  background-color: darken($accent-color,10%);;
+                }
+            }
+          }
+
+          .logo{
+            margin-bottom: 60px;
+
+            h2{
+              font-family: $font-1;
+              text-align:center;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+              @include rem-fallback(font-size, 3.5);
+            }
+
+            img{
+              display: block;
+              margin: 0px auto;
+              padding-right: 10px;
+              width: 180px;
+            }
+          }
+
+          .anchor-link{
+            text-align: center;
+            padding: 0;
+            color:$text-color-1;
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: $font-3;
+          }
+
+          ion-item{
+            background-color:transparent;
+
+            &.item-checkbox{
+              width: 200px;
+              margin: 20px auto -7px;
+              font-size: $default-font-size;
+              font-weight: 700;
+              font-family: $font-3;
+
+              ion-checkbox{
+                .checkbox-icon{
+                  border-radius:0;
+                  border-width: 1px;
+                  border-color: $gray-light;
+
+                  &.checkbox-checked{
+                    .checkbox-inner{
+                      top: -8px;
+                      left: 6px;
+                      width: 10px;
+                      height: 20px;
+                      border-width: 4px;
+                      border-radius: 3px;
+                      border-top-width: 0;
+                      border-left-width: 0;
+                    }
+                  }
+                }
+
+                &.checkbox-md{
+                  margin-right: 20px;
+                }
+              }
+              .item-inner{
+                color: $text-color-1;
+                border:none;
+              }
+            }
+
+            &.item-input{
+              border: 1px solid $gray-light;
+              background-color: white;
+              margin-bottom: 15px;
+              color: $input-color-login;
+              font-family: $font-2;
+              font-size: $default-font-size;
+
+              .item-inner{
+                border-bottom: 1px solid transparent;
+
+                &:after{
+                  content: "*";
+                }
+              }
+              &:last-child {
+                border-bottom: 1px solid #908989;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+page-new-caregiver {
+  ion-content{
+    background: color($colors, light) !important;
+    .list-header{
+        width: 82%;
+        margin-left: 3%;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        .title{
+          // float: left;
+          margin: 5px 15px 5px 5px;
+          text-transform: uppercase;
+
+        };
+
+        .profile-save-button{
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          background: #Fd7400 !important;
+          font-size: 18px;
+          font-weight: bold;
+          width: 100px;
+        }
+      };
+
+      .main-content{
+        background: color($colors, white);
+        width: 82%;
+        margin-left: 3%;
+        position: relative;
+        margin-top: 20px;
+        padding-left: 2%;
+        margin-bottom: 10px;
+        height: calc(100vh - 200px);
+
+        .role-type-button{
+          padding: 10px !important;
+          width: 250px;
+          margin: 20px 0px 5px 0px;
+          background-color: #E6DFDF;
+          color: black;
+
+          p{
+            width: 220px;
+            text-transform: none;
+          };
+        };
+        .role-type-button:hover{
+          background-color: #E6DFDF;
+        };
+
+        .role-type-list{
+          position: absolute;
+          top:65px; left: calc(3% - 7px);
+          background-color: white;
+          z-index: 100;
+          border-radius: 4px;
+          width: 250px;
+          border: 1px solid #95989A;
+          transition: bottom 1s ease-in;
+
+          .role-list-item{
+            border-bottom: 1px solid #95989A;
+          };
+          .role-list-item:last-child{
+            border-bottom: none;
+          };
+          p{
+            padding: 0px;
+            margin: 5px 0px;
+
+            text-align: center;
+          };
+        };
+
+        .patient-type-button{
+          padding: 10px !important;
+          width: 250px;
+          margin: 20px 0px 5px 0px;
+          background-color: #E6DFDF;
+          color: black;
+
+          p{
+            text-transform: none;
+            width: 220px;
+          };
+        };
+        .patient-type-button:hover{
+          background-color: #E6DFDF;
+        };
+
+        .patient-type-list{
+          position: absolute;
+          top:210px; left: calc(3% - 7px);
+          background-color: white;
+          z-index: 100;
+          border-radius: 4px;
+          width: 250px;
+          border: 1px solid #95989A;
+          transition: bottom 1s ease-in;
+          height: 250px;
+          overflow-y: scroll;
+
+          .patient-list-item{
+            .item-line{
+              border-top: 1px solid #95989A !important;
+            }
+
+            span{
+              float: right;
+            }
+          };
+          .patient-list-item:last-child{
+            border-bottom: none;
+          };
+          p{
+            padding: 0px;
+            margin: 5px 0px;
+
+            text-align: center;
+          };
+        };
+
+        .max-130{
+          max-width: 130px;
+          // text-align: right;
+        };
+        .user-form{
+          ion-item{
+            .item-inner{
+              border: none;
+              box-shadow: 0px 0px 0px transparent !important;
+            };
+
+          };
+          ion-item:last-child{
+            border: none;
+            box-shadow: 0px 0px 0px transparent !important;
+          };
+          .profile-image{
+            width: 105px;
+            // text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            img{
+              width: 60px;
+              height: 60px;
+              border-radius: 100%;
+            }
+          };
+          .add-image-button{
+            height: auto;
+
+            display: flex;
+            align-items: center;
+            .custom-file-input {
+            		display: inline-block;
+            		position: relative;
+            		color: #0da8fa;
+                input {
+                		visibility: hidden;
+                		width: 140px;
+                	}
+            	}
+            .custom-file-input:before {
+            		content: 'Add Image';
+            		display: block;
+            		text-align: center;
+            		font-size: 13pt;
+            		position: absolute;
+            		left: 0;
+            		right: 0;
+            	}
+          }
+        }
+        .selected-patient-list{
+          margin-top: 20px;
+          span{
+            padding: 8px;
+            margin: 6px;
+            border-radius: 5px;
+            background: #efecec;
+          }
+        };
+
+
+        .selected-speciallist{
+          display: inline-block;
+          p{
+            width: 180px;
+            float: left;
+            text-transform: capitalize;
+            vertical-align: middle;
+            img{
+              width: 30px;
+              vertical-align: middle;
+              margin-right: 10px;
+            }
+          }
+        }
+      };
+  };
+  a{
+    text-decoration: none;
+  }
+  ion-label{
+    color: #000 !important;
+  }
+
+
+
+
+}

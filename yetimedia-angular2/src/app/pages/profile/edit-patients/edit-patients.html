@@ -1,0 +1,19 @@
+<div class="padding-20">
+  <ion-list>
+      <p class="color-gray-2">Add Patient</p>
+      <ion-item>
+        <ion-input type="text" placeholder="Patient Name" [(ngModel)]="newPatient"></ion-input>
+      </ion-item>
+      <p class="color-gray-2">Remove:</p>
+      <ion-item *ngFor="let patient of patients; let i = index">
+        <ion-avatar item-left>
+          <img src="assets/mock_photo.jpeg">
+        </ion-avatar>
+        <h2>{{patient.name}}</h2>
+        <a item-right class="remove-patinet-button color-gray-2" (click)="removePatient(i)">
+          <ion-icon name="md-close"></ion-icon>
+        </a>
+      </ion-item>
+  </ion-list>
+  <button ion-button full (click)="done()" class="back-brown">DONE</button>
+</div>

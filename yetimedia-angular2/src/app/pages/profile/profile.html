@@ -1,0 +1,193 @@
+<ion-header></ion-header>
+<ion-content class="has_sidebar scrollbar back-gray">
+  <div class="profile margin-20">
+    <p class="title">CAREGIVER PROFILE</p>
+    <div class="content back-white">
+      <!-- Profile -->
+      <div class="col-2-3">
+        <div class="content">
+          <div class="col-1-4 padding-20">
+            <img src="/assets/mock_photo.jpeg" class="profile-img"/>
+            <button ion-button full class="back-brown">EDIT PROFILE</button>
+          </div>
+          <div class="col-3-4 padding-20">
+            <p class="name-spec">
+              <b>Name:</b>
+              &nbsp;Tammi Rutherford
+            </p>
+            <p class="name-spec">
+              <b>Email:</b>
+              &nbsp;trutherford@tether.com
+            </p>
+            <p class="name-spec">
+              <b>UserID:</b>
+              &nbsp;trutherford
+            </p>
+            <p class="title color-sky">ResetPassword</p>
+            <p class="name-spec">
+              <b>Address:</b>
+              &nbsp;55000 Fox Canyon Rd, Sausalito, CA 94965
+            </p>
+            <p class="name-spec">
+              <b>Phone # (H):</b>
+              &nbsp;(415)999-9999
+            </p>
+            <p class="name-spec">
+              <b>Phone # (C):</b>
+              &nbsp;(415)777-7777
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Patient list -->
+      <div class="col-1-3 padding-20 border-left">
+        <p class="title color-gray-2">Patient List:</p>
+        <div class="patients">
+          <ion-list class="patient-list">
+            <ion-item *ngFor="let patient of patients">
+              <ion-avatar item-left>
+                <img src="assets/mock_photo.jpeg">
+              </ion-avatar>
+              <h2>{{patient.name}}</h2>
+            </ion-item>
+          </ion-list>
+        </div>
+        <a class="edit-button color-gray-3" (click)="editPatients($event)">Edit</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="schedule-summary margin-20">
+    <div class="content">
+      <div class="schedule-task col-1-2">
+        <!-- Schedule -->
+        <div class="schedule">
+          <p class="title">SCHEDULE</p>
+          <div class="padding-20 back-white">
+            <div class="actions">
+              <a class="list-schedule-button" (click)="listSchedule()">
+                <ion-icon name="time"></ion-icon>
+              </a>
+              <ion-segment [(ngModel)]="relationship" color="primary">
+                <ion-segment-button class="segment-day" value="friends">
+                  DAY
+                </ion-segment-button>
+                <ion-segment-button class="segment-week" value="week">
+                  WEEK
+                </ion-segment-button>
+                <ion-segment-button class="segment-month" value="month">
+                  MONTH
+                </ion-segment-button>
+              </ion-segment>
+              <a class="edit-schedule-button" (click)="editSchedule()">
+                Edit
+              </a>
+            </div>
+
+            <div class="date-schedule">
+              <p class="title">Friday, October 21 </p>
+              <div class="schedules">
+                <!-- Schedule detail popover -->
+                <div class="schedule-detail padding-20" *ngIf="scheduleDetailShowed" (click)="hideScheduleDetail()">
+                  <p>Visit John Smith</p>
+                  <p>10:30 AM - 3:30 PM</p>
+                </div>
+                <ion-list>
+                  <ion-item *ngFor="let schedule of schedules; let i = index" (click)="showScheduleDetail(i)">
+                    <p>{{schedule.time}}</p>
+                  </ion-item>
+                </ion-list>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Task -->
+        <div class="task">
+          <p class="title">TASK LIST</p>
+          <div class="back-white">
+            <ion-list class="task-list">
+              <div class="task-detail" *ngFor="let task of tasks; let i = index">
+                <ion-item class="back-gray-1">
+                  <a class="expand-icon" (click)="toggleExpanded(i)">
+                    <span>{{task.name}}</span>
+                    <ion-icon name="ios-arrow-down" *ngIf="!expanded[i]"></ion-icon>
+                    <ion-icon name="ios-arrow-up" *ngIf="expanded[i]"></ion-icon>
+                  </a>
+                  <a (click)="addTask()"><ion-icon name="md-add-circle" class="add-icon"></ion-icon></a>
+                </ion-item>
+                <div class="detail back-white padding-10" *ngIf="expanded[i]">
+                  <p class="title">Friday, December 9, 2016</p>
+                  <p class="item"><span class="item-icon" style="background-image: url(assets/icon/wellness.png)"></span><span class="time">7 AM</span>Wellness</p>
+                  <p class="item"><span class="item-icon" style="background-image: url(assets/icon/pillicon.png)"></span><span class="time">8 AM</span>Medication</p>
+                  <p class="item"><span class="item-icon" style="background-image: url(assets/icon/foodicon.png)"></span><span class="time">9 AM</span>Breakfast</p>
+                  <p class="item"><span class="item-icon" style="background-image: url(assets/icon/walkicon.png)"></span><span class="time">12 PM</span>Exercise</p>
+                  <p class="item"><span class="item-icon" style="background-image: url(assets/icon/foodicon.png)"></span><span class="time">1 PM</span>Lunch</p>
+                  <p class="item"><span class="item-icon" style="background-image: url(assets/icon/appts.png)"></span><span class="time">4 PM</span>Appointments</p>
+                  <a (click)="editTask()">Edit</a>
+                </div>
+              </div>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+
+      <div class="summary-comment col-1-2">
+        <div class="summary">
+          <p class="title">TOTAL PERFORMANCE SUMMARY</p>
+          <div class="padding-20 back-white">
+            <p class="name-spec">
+              <b>Medication given on time</b>
+              <span>80 %</span>
+            </p>
+            <p class="name-spec">
+              <b>On-time arrival</b>
+              <span>60 %</span>
+            </p>
+            <p class="name-spec">
+              <b>Number of worked(total)</b>
+              <span>32 hrs</span>
+            </p>
+            <p class="name-spec">
+              <b>Rating on Wellness Questions</b>
+              <span>8/10</span>
+            </p>
+            <p class="name-spec">
+              <b>Patient Rating</b>
+              <span>9/10</span>
+            </p>
+            <p class="name-spec">
+              <b>Patient/Family Satisfaction</b>
+              <a>Generate Survey</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Family comment -->
+
+        <div class="comment">
+          <p class="title">FAMILY COMMENTS</p>
+          <div class="padding-20 back-white">
+            <ion-list class="comment-list">
+              <ion-item *ngFor="let comment of comments">
+                <ion-avatar item-left>
+                  <img src="assets/mock_photo.jpeg">
+                </ion-avatar>
+                <h2>{{comment.name + ': ' + comment.category}}</h2>
+                <p>
+                  <span class="item-icon" [style.background-image]="getCommentIcon(comment.category)"></span>
+                  {{comment.comment}}
+                </p>
+                <div item-right>
+                  <p>{{comment.date}}</p>
+                  <p>{{comment.time}}</p>
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

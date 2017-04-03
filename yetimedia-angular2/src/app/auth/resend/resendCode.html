@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-content padding="true" class="login">
+    <ion-row>
+      <ion-col>
+
+	<div class="logo">
+	  <h2>Tethercare</h2>
+	  <img src="/assets/logo.png" alt="">
+	</div>
+
+	<form (ngSubmit)="resendCode($event)" #logInForm="ngForm">
+
+	  <div class="form-group">
+	    <h2>Resend Code</h2>
+	  </div>
+
+	  <ion-list>
+
+	    <ion-item detail-none item-sm>
+	      <ion-input type="email"
+			 [(ngModel)]="email"
+			 placeholder="Email"
+			 name="email"
+			 clearInput
+			 required></ion-input>
+	    </ion-item>
+
+	  </ion-list>
+	  <button [disabled]="!logInForm.form.valid" ion-button block large>Resend Code</button>
+	</form>
+
+	<a [routerLink]="['/auth/login']" class="anchor-link"> <i class="fa fa-fw fa-user"></i> Login</a>
+
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</ion-content>

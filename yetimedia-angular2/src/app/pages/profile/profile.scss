@@ -1,0 +1,200 @@
+@import "../custom.scss";
+
+page-profile {
+  .profile-img {
+    width: 60%;
+    border-radius: 50%;
+    margin: 0 20%;
+  }
+  ion-content {
+    .scroll-content {
+      padding: 84px 0 0 80px;
+    }
+  }
+
+  .patients {
+    overflow-y: scroll;
+    width: 100%;
+    height: 180px;
+    .patient-list {
+      ion-item {
+        padding-left: 0;
+        ion-avatar {
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .edit-button {
+    float: right;
+    margin-top: 12px;
+  }
+
+  .schedule-summary {
+    .content {
+      .schedule-task {
+        padding-right: 10px;
+        .schedule {
+          div {
+            .actions {
+              width: 100%;
+              display: flex !important;
+              a {
+                font-size: 20px;
+                color: $color-gray-3;
+                ion-icon {
+                  font-size: 34px;
+                }
+              }
+              ion-segment {
+                margin: 0 20px;
+                .segment-button {
+                  border-width: 2px;
+                  border-style: solid;
+                  border-color: $color-gray-2;
+                  background-color: $color-white;
+                  color: $color-gray-2;
+                }
+                .segment-button.segment-activated {
+                  border-color: $color-sky;
+                  background-color: $color-sky;
+                  color: $color-white;
+                }
+                ion-segment-button {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+        .date-schedule {
+          .title {
+            text-align: center;
+          }
+          .schedules {
+            position: relative;
+            .schedule-detail {
+              width: 60%;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              background-color: $color-gray-1;
+              z-index: 10;
+              border-radius: 8px;
+              border: 1px solid $color-gray-2;
+
+              p {
+                margin: 4px 0;
+                font-size: 18px;
+              }
+            }
+            ion-list {
+              ion-item {
+                padding-left: 0;
+                ion-label {
+                  margin: 0;
+                  p {
+                    font-size: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .task {
+          .task-list {
+            ion-item {
+              border: 1px solid $color-gray-2;
+              text-align: center;
+              .add-icon {
+                float: right;
+                font-size: 30px;
+                color: $color-sky;
+                position: absolute;
+                right: 10px;
+                top: 8px;
+              }
+              .expand-icon {
+                color: black;
+                ion-icon {
+                  margin-left: 20px;
+                }
+              }
+              ion-label {
+                margin: 0;
+              }
+            }
+
+            .detail {
+              position: relative;
+              .title {
+                text-align: center;
+                font-size: 18px;
+              }
+              .item {
+                font-size: 18px;
+                margin: 8px 0;
+                span {
+                  padding: 0 12px;
+                }
+                .time {
+                  font-size: 16px;
+                  color: $color-gray-2;
+                }
+              }
+              a {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                color: $color-gray-3;
+              }
+              .item-icon {
+                width: 16px;
+                height: 16px;
+                content: " ";
+                display: inline-block;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+              }
+            }
+          }
+        }
+      }
+      .summary-comment {
+        padding-left: 10px;
+        .comment {
+          div {
+            .comment-list {
+              ion-item {
+                padding-left: 0;
+                ion-avatar {
+                  img {
+                    width: 50px;
+                    height: 50px;
+                  }
+                }
+                p {
+                  .item-icon {
+                    width: 16px;
+                    height: 16px;
+                    content: " ";
+                    display: inline-block;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

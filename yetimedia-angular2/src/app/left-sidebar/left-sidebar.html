@@ -1,0 +1,20 @@
+<ion-content>
+    <ion-content no-padding class="fix-sidebar" ion-fixed>
+        <ion-list no-lines>
+            <ion-item (click)="gotoDashboard()">
+                <ion-icon ios="ios-home" md="md-home"></ion-icon>
+            </ion-item>
+            <ion-item (click)="gotoPatientList()">
+                <ion-icon name="person"></ion-icon>
+            </ion-item>
+            <ion-item (click)="goto()">
+                <ion-icon ios="ios-document" md="md-document"></ion-icon>
+            </ion-item>
+            <ion-item (click)="gotoMessage()">
+                <ion-icon ios="ios-chatbubbles" md="md-chatbubbles">
+                    <ion-badge>3</ion-badge>
+                </ion-icon>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-content>

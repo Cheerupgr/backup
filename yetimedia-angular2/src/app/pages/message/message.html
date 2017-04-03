@@ -1,0 +1,98 @@
+<ion-header>
+  <!-- <ion-navbar>
+
+  </ion-navbar> -->
+</ion-header>
+<ion-content class="has_sidebar has-topbar messages-container">
+
+  <div class="list-header">
+    <ion-row>
+      <ion-col no-padding>
+        <p class="title bold">MESSAGES</p>
+        <button ion-button icon-only class="patient-type-button" (click)="presentPopover()">
+            <p>{{patientType}}</p>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+        </button>
+        <ion-list class="patient-type-list" *ngIf="typeClickedFlag">
+          <div class="patient-list-item" *ngFor="let type of typeList; let i = index" (click)="onSelectType(type)">
+            <p>{{type.name}}</p>
+          </div>
+        </ion-list>
+      </ion-col>
+      <ion-col no-padding>
+        <div class="notification-icon">
+          <ion-icon name="ios-notifications-outline"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="main-content">
+    <ion-row>
+      <ion-col class="colwidth40 list-content">
+        <ion-list>
+
+          <ion-row class="list-row" *ngFor="let type of patientList; let i = index" (click)="onClickList(i, type)">
+            <ion-col class="colwidth20 list-img">
+              <img src="/assets/profilepng/profile{{type.image}}.png"/>
+            </ion-col>
+            <ion-col class="colwidth60">
+              <p class="list-item-name">Patient: {{type.firstName}} {{type.lastName}}</p>
+              <p class="list-item-content">{{type.firstName}}</p>
+            </ion-col>
+            <ion-col class="colwidth20 time-col">
+              <p class="list-item-date">2:30 PM</p>
+              <ion-icon class="list-item-icon" name="ios-notifications-outline" *ngIf="i == clickedListFlags"></ion-icon>
+              <ion-icon class="list-item-icon" name="ios-notifications-off-outline" *ngIf="i != clickedListFlags"></ion-icon>
+            </ion-col>
+
+          </ion-row>
+
+        </ion-list>
+      </ion-col>
+
+
+
+      <ion-col class="colwidth60 message1">
+        <div class="message-content">
+          <ion-list>
+            <ion-row class="message-row" *ngFor="let msg of messageList; let i = index" >
+              <div class="message-patient" *ngIf="msg.type == 1">
+                <div class="text-profile">
+          					<img src="/assets/profilepng/profile{{selectedPerson.image}}.png"/>
+          			</div>
+          				<div class="text-body">
+          					<div class="triangle-border left">
+          						<p>{{msg.content}}</p>
+          					</div>
+
+          					<h3 class="msg-time left" >{{msg.date}}</h3>
+          				</div>
+
+              </div>
+
+
+
+              <div class="message-user" *ngIf="msg.type==0">
+                <div class="text-body right">
+        					<div class="triangle-border1">
+        						<p>{{msg.content}}</p>
+        					</div>
+        					<h3 class="msg-time right">{{msg.date}}</h3>
+        				</div>
+              </div>
+            </ion-row>
+          </ion-list>
+        </div>
+
+        <div class="send-list">
+          <input type="text" placeholder="new message"/>
+          <button>SEND</button>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+</ion-content>
